@@ -2,7 +2,7 @@ name: Deploy bbki.ng's changes
 on:
   push:
     branches:
-      - master
+      - main
 jobs:
   builds:
     runs-on: ubuntu-latest

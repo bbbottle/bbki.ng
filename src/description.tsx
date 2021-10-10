@@ -2,13 +2,17 @@ import React from "react";
 
 export const Description = () => {
   return (
-    <cite>
-      <b>"bbki.ng</b> means <b>baby king</b>
-      just like 'bbbottle' means baby bottle
+    <blockquote>
       <br />
-      and has nothing to do with those people who are good at talking [doge]"
       <br />
-      <br />- by bbbottle
-    </cite>
+      河流用一生梳理 <br />
+      地球的表情 <br />
+      沿岸收集人類的喜怒哀樂 <br />
+      檔案堆滿了海底的家 <br />
+      <br />
+      — 《河流紀事》鄧獻誌
+      <br />
+      <br />
+    </blockquote>
   );
 };

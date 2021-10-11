@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="h-full">
   <head>
     <title>bbki.ng</title>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -9,28 +9,10 @@
       href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 100 100%22><text y=%22.9em%22 font-size=%2290%22>&#128081;</text></svg>"
     />
     <meta charset="UTF-8" />
-    <style>
-      html {
-        height: 100%;
-      }
-      body {
-        height: 100%;
-        display: flex;
-        justify-content: center;
-        align-items: center;
-        padding: 0 50px;
-        flex-direction: column;
-        margin: 0;
-      }
-      blockquote {
-        position: relative;
-        top: -50px;
-      }
-    </style>
   </head>
 
-  <body>
-    <div id="root"></div>
+  <body class="h-full m-0 flex flex-col">
+    <div id="root" class="flex-grow"></div>
     <script type="module" src="/src/main.tsx"></script>
   </body>
 </html>

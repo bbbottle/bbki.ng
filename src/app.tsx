@@ -1,6 +1,7 @@
 import React from "react";
-import { Description, NavMainLayout } from "./components";
+import { NavMainLayout } from "./components";
+import { Cover } from "./components/cover";
 
 export const App = () => {
-  return <NavMainLayout nav={<span>bbki.ng</span>} main={<Description />} />;
+  return <NavMainLayout nav={<span>index</span>} main={<Cover />} />;
 };

@@ -10,7 +10,7 @@ export const Nav = () => {
     return path ? (
       <>
         <Link to={path}>{label}</Link>
-        <span className="ml-2">/</span>
+        <span className="ml-2">·</span>
       </>
     ) : (
       <DisabledText>{label}</DisabledText>

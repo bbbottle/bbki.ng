@@ -1,6 +1,6 @@
 import React from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { NavMainLayout, Nav, Cover } from "./components";
+import { Footer, NavMainLayout, Nav, Cover } from "./components";
 import { Extensions } from "./pages/extensions";
 
 const Content = () => {
@@ -19,7 +19,7 @@ const Content = () => {
 export const App = () => {
   return (
     <Router>
-      <NavMainLayout nav={<Nav />} main={<Content />} />
+      <NavMainLayout nav={<Nav />} main={<Content />} footer={<Footer />} />
     </Router>
   );
 };

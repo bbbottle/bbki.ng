@@ -1,30 +1,25 @@
 import React from "react";
-import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
-import { Description, NavMainLayout } from "./components";
-import { Cover } from "./components/cover";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { NavMainLayout, Nav, Cover } from "./components";
+import { Extensions } from "./pages/extensions";
 
-export const App = () => {
-  const mainJsx = (
+const Content = () => {
+  return (
     <Switch>
       <Route path="/ext">
-        <Description />
+        <Extensions />
       </Route>
-      <Route path="/">
+      <Route path="/" exact>
         <Cover />
       </Route>
     </Switch>
   );
+};
 
+export const App = () => {
   return (
     <Router>
-      <NavMainLayout
-        nav={
-          <Link to="/">
-            <span>index</span>
-          </Link>
-        }
-        main={mainJsx}
-      />
+      <NavMainLayout nav={<Nav />} main={<Content />} />
     </Router>
   );
 };

@@ -1,14 +1,15 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link } from "../link";
 import { ListWithTitle } from "../list";
+import { DisabledText } from "../disabled_text";
 
 export const Cover = () => {
   const question = "已满十八岁？";
   const answers = [
-    <Link to="/ext">
-      <span className="underline text-red-500">YES</span>
+    <Link to="/ext" color="red">
+      YES
     </Link>,
-    <span className="text-gray-200">NO</span>,
+    <DisabledText>No</DisabledText>,
   ];
 
   const renderer = (n: any) => n;

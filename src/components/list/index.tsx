@@ -1,17 +1,22 @@
 import React, { ReactElement } from "react";
+import cls from "classnames";
 
 interface listProps {
+  className?: string;
   items: any[];
   itemRenderer: (itemProps: any) => ReactElement;
+  horizontal?: boolean;
 }
 
 export const List = (props: listProps) => {
-  const { items, itemRenderer } = props;
+  const { items, itemRenderer, className, horizontal } = props;
+
   return (
-    <ul>
+    <ul className={cls(className, { flex: horizontal })}>
       {items.map((item, index) => {
+        const liCls = horizontal ? "mr-2" : "mb-2";
         return (
-          <li key={item.id || index} className="mb-1">
+          <li key={item.id || index} className={liCls}>
             {itemRenderer(item)}
           </li>
         );

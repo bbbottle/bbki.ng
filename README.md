@@ -11,3 +11,7 @@ Working In Progress.
 ### Contributing
 
 See [the contributing guide](CONTRIBUTING.md) for details.
+
+### License
+
+[MIT](LICENSE)

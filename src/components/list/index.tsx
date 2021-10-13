@@ -4,7 +4,7 @@ import cls from "classnames";
 interface listProps {
   className?: string;
   items: any[];
-  itemRenderer: (itemProps: any) => ReactElement;
+  itemRenderer: (itemProps: any, index: number) => ReactElement;
   horizontal?: boolean;
 }
 
@@ -17,7 +17,7 @@ export const List = (props: listProps) => {
         const liCls = horizontal ? "mr-2" : "mb-2";
         return (
           <li key={item.id || index} className={liCls}>
-            {itemRenderer(item)}
+            {itemRenderer(item, index)}
           </li>
         );
       })}

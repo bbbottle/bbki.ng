@@ -1,11 +1,11 @@
-# 贡献指南
+# Contributing guide
 
-感谢对 BBKi.ng 的关注，目前有多种途径对项目进行贡献，欢迎以任意方式进行。
+Thank you for your interest in contributing to BBKi.ng! There are many ways to contribute, and we appreciate all of them.
 
-## 报告缺陷
+## Bug reports
 
-如果你在浏览 [BBKi.ng](https://bbki.ng) 的过程中，发现任何问题，都可以在 [issue](https://github.com/bbbottle/bbki.ng/issues) 列表中提交缺陷报告。
+Find any bugs about [BBKi.ng](https://bbki.ng) on your device? [open an issue](https://github.com/bbbottle/bbki.ng/issues).
 
-## 代码指导
+## Code review
 
-如果你对代码感兴趣，并且发现十分不合理的问题，或者有任何建议也欢迎在 issue 中引用代码行号直接指出。
+If you are interested in the code and have any suggestions, please reference its line number in new issue and elaborate your thoughts.

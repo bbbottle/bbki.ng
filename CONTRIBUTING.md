@@ -9,3 +9,7 @@ Find any bugs about [BBKi.ng](https://bbki.ng) on your device? [open an issue](h
 ## Code review
 
 If you are interested in the code and have any suggestions, please reference its line number in new issue and elaborate your thoughts.
+
+## Design
+
+Any ideas about a new logo or other aspects? pr is always welcome.

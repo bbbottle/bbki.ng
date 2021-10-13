@@ -9,3 +9,5 @@ export { Nav } from "./nav";
 export { Cover } from "./cover";
 
 export { Link } from "./link";
+
+export { Footer } from "./footer";

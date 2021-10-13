@@ -1,6 +1,6 @@
 import React from "react";
 
-export const Description = () => {
+export const Txt = () => {
   return (
     <blockquote className="relative -top-1/4">
       <br />

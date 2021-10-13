@@ -14,7 +14,7 @@ export const Extensions = () => {
         const content = Comp ? <Comp /> : ext;
         return (
           <Route path={path} key={ext}>
-            {content}
+            <div className="relative -top-24">{content}</div>
           </Route>
         );
       })}
@@ -22,7 +22,7 @@ export const Extensions = () => {
         <List
           items={ExtensionsList}
           itemRenderer={renderExt}
-          className="relative -top-24 font-mono"
+          className="relative -top-24"
         />
       </Route>
     </Switch>

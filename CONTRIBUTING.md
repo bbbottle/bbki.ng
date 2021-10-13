@@ -4,7 +4,7 @@
 
 ## 报告缺陷
 
-如果你在浏览 [BBKi.ng](https://bbki.ng) 的过程中，发现任何问题，都可以在 issue 列表中提交缺陷报告。
+如果你在浏览 [BBKi.ng](https://bbki.ng) 的过程中，发现任何问题，都可以在 [issue](https://github.com/bbbottle/bbki.ng/issues) 列表中提交缺陷报告。
 
 ## 代码指导
 

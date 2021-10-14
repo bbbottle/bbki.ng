@@ -2,6 +2,10 @@ module.exports = {
   purge: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
   darkMode: false, // or 'media' or 'class'
   theme: {
+    flex: {
+      "almost-half": "0 0 42%",
+      half: "0 0 50%",
+    },
     extend: {},
     fontFamily: {
       sans: [

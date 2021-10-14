@@ -11,10 +11,11 @@ export const Extensions = () => {
   return (
     <Switch>
       {ExtensionsList.map(({ path, ext, component: Comp }) => {
-        const content = Comp ? <Comp /> : ext;
         return (
           <Route path={path} key={ext}>
-            <div className="relative -top-24">{content}</div>
+            <div className="relative -top-24">
+              <Comp />
+            </div>
           </Route>
         );
       })}

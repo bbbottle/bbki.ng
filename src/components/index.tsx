@@ -10,8 +10,6 @@ export { Link } from "./link";
 
 export { Footer } from "./footer";
 
-export { Jpg } from "./jpg";
-
 export { Avi } from "./avi";
 
 export { Txt } from "./txt";

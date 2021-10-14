@@ -1,4 +1,5 @@
-import { Avi, Txt, Jpg } from "../../components";
+import { Avi, Txt } from "../../components";
+import { Jpg } from "./jpg";
 
 export const ExtensionsList = [
   {

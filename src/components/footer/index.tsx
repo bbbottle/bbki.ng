@@ -2,6 +2,7 @@ import React from "react";
 import { List } from "../list";
 import { FooterLinks } from "./footer_links";
 import { Link } from "../link";
+import { LeftRightLayout } from "../layout";
 
 export const Footer = () => {
   const renderFooterLink = (l: any) => {
@@ -12,7 +13,19 @@ export const Footer = () => {
     );
   };
 
+  const renderList = () => {
+    return (
+      <List items={FooterLinks} itemRenderer={renderFooterLink} horizontal />
+    );
+  };
+
+  const renderEmpty = () => null;
+
   return (
-    <List items={FooterLinks} itemRenderer={renderFooterLink} horizontal />
+    <LeftRightLayout
+      leftRenderer={renderEmpty}
+      rightRenderer={renderList}
+      approximately
+    />
   );
 };

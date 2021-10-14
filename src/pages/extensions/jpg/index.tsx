@@ -13,17 +13,13 @@ export const Jpg = () => {
     <Switch>
       {JPGProjectList.map(({ path, name, imgList }) => {
         return (
-          <Route path={path}>
+          <Route path={path} key={name}>
             <JpgList srcList={imgList} />
           </Route>
         );
       })}
       <Route>
-        <List
-          items={JPGProjectList}
-          itemRenderer={renderProjects}
-          className="relative -top-24"
-        />
+        <List items={JPGProjectList} itemRenderer={renderProjects} />
       </Route>
     </Switch>
   );

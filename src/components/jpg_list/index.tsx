@@ -3,10 +3,11 @@ import cls from "classnames";
 
 type jpgProps = {
   srcList: string[];
+  classNames?: string;
 };
 
 export const JpgList = (props: jpgProps) => {
-  const { srcList } = props;
+  const { srcList, classNames } = props;
 
   const handlerScroll: WheelEventHandler = (event) => {
     if (!event.deltaY) {
@@ -18,7 +19,10 @@ export const JpgList = (props: jpgProps) => {
 
   return (
     <div
-      className="flex max-w-full no-scrollbar -backdrop-hue-rotate-15 overflow-auto px-96"
+      className={cls(
+        "flex max-w-full no-scrollbar -backdrop-hue-rotate-15 overflow-auto px-96",
+        classNames
+      )}
       onWheel={handlerScroll}
     >
       {srcList.map((src, index) => {
@@ -28,7 +32,7 @@ export const JpgList = (props: jpgProps) => {
             key={src}
             src={src}
             alt="*<]:{]"
-            className={cls("max-h-96", { "mr-60": !isLast })}
+            className={cls("max-h-96", { "mr-80": !isLast })}
           />
         );
       })}

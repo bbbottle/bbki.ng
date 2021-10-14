@@ -15,11 +15,6 @@ export const Cover = () => {
   const renderer = (n: any) => n;
 
   return (
-    <ListWithTitle
-      title={question}
-      items={answers}
-      itemRenderer={renderer}
-      className="relative -top-24"
-    />
+    <ListWithTitle title={question} items={answers} itemRenderer={renderer} />
   );
 };

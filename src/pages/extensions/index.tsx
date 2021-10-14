@@ -9,19 +9,17 @@ export const Extensions = () => {
   };
 
   return (
-    <div className="relative -top-24 max-w-full">
-      <Switch>
-        {ExtensionsList.map(({ path, ext, component: Comp }) => {
-          return (
-            <Route path={path} key={ext}>
-              <Comp />
-            </Route>
-          );
-        })}
-        <Route>
-          <List items={ExtensionsList} itemRenderer={renderExt} />
-        </Route>
-      </Switch>
-    </div>
+    <Switch>
+      {ExtensionsList.map(({ path, ext, component: Comp }) => {
+        return (
+          <Route path={path} key={ext}>
+            <Comp />
+          </Route>
+        );
+      })}
+      <Route>
+        <List items={ExtensionsList} itemRenderer={renderExt} />
+      </Route>
+    </Switch>
   );
 };

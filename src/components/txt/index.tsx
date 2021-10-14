@@ -2,7 +2,7 @@ import React from "react";
 
 export const Txt = () => {
   return (
-    <blockquote className="relative -top-1/4">
+    <blockquote>
       <br />
       <br />
       河流用一生梳理 <br />

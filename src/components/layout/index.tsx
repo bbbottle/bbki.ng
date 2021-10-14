@@ -65,9 +65,7 @@ export const AlmostCenterLayout = (props: centerLayoutProps) => {
   return (
     <LeftRightLayout
       approximately
-      rightRenderer={() => (
-        <TopBottomLayout bottomRenderer={() => props.children} approximately />
-      )}
+      rightRenderer={() => <div className="mt-64">{props.children}</div>}
     />
   );
 };

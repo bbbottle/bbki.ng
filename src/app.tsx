@@ -1,7 +1,7 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Footer, NavMainLayout, Nav, Cover } from "./components";
-import { Extensions } from "./pages/extensions";
+import { Footer, NavMainLayout, Nav } from "./components";
+import { Extensions, Cover } from "./pages";
 
 const Content = () => {
   return (

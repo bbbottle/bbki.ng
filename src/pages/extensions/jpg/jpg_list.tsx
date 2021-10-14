@@ -25,6 +25,7 @@ export const JpgList = (props: jpgProps) => {
         const isLast = index === srcList.length - 1;
         return (
           <img
+            key={src}
             src={src}
             alt="*<]:{]"
             className={cls("max-h-96", { "mr-60": !isLast })}

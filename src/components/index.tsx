@@ -13,3 +13,7 @@ export { Footer } from "./footer";
 export { Avi } from "./avi";
 
 export { Txt } from "./txt";
+
+export { ScrollIndicator } from "./scroll_indicator";
+
+export { DisabledText, SmallDisabledText } from "./disabled_text";

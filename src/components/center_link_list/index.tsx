@@ -2,6 +2,7 @@ import React from "react";
 import { List } from "../list";
 import { Link } from "../link";
 import { AlmostCenterLayout } from "../layout";
+import { pathObj } from "../../types/path";
 
 type centerLinkListProps = {
   list: pathObj[];

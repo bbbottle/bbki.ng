@@ -1,3 +1,5 @@
+import { pathObj } from "../../types/path";
+
 export const FooterLinks: pathObj[] = [
   {
     name: "source",

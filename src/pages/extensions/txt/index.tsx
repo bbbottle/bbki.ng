@@ -1,11 +1,7 @@
 import React from "react";
-import Poem from "./poem.mdx";
-import { AlmostCenterLayout } from "../../../components";
+import { SwitchComponentsRoute } from "../../../components";
+import { ArticleList } from "./consts";
 
 export const Txt = () => {
-  return (
-    <AlmostCenterLayout>
-      <Poem />
-    </AlmostCenterLayout>
-  );
+  return <SwitchComponentsRoute componentPathList={ArticleList} />;
 };

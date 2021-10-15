@@ -3,13 +3,8 @@ import { List } from "../list";
 import { Link } from "../link";
 import { AlmostCenterLayout } from "../layout";
 
-type link = {
-  path: string;
-  name: string;
-};
-
 type centerLinkListProps = {
-  list: link[];
+  list: pathObj[];
 };
 
 export const CenterLinkList = (props: centerLinkListProps) => {

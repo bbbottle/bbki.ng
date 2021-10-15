@@ -1,10 +1,5 @@
 import { useLocation } from "react-router-dom";
 
-type pathObj = {
-  name: string;
-  path?: string;
-};
-
 export const usePaths = (): pathObj[] => {
   const { pathname } = useLocation();
 

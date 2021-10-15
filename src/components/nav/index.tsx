@@ -6,14 +6,14 @@ import { DisabledText } from "../disabled_text";
 
 export const Nav = () => {
   const paths = usePaths();
-  const renderNavItem = ({ path, label }: any) => {
+  const renderNavItem = ({ path, name }: any) => {
     return path ? (
       <>
-        <Link to={path}>{label}</Link>
+        <Link to={path}>{name}</Link>
         <span className="ml-2">·</span>
       </>
     ) : (
-      <DisabledText>{label}</DisabledText>
+      <DisabledText>{name}</DisabledText>
     );
   };
 

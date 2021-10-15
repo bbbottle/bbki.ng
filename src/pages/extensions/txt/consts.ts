@@ -1,9 +1,8 @@
 import { compPathObj } from "@/types/path";
 import { withArticleWrapper } from "@/components";
-
-import River from "./articles/river.mdx";
-import Letter from "./articles/letter.mdx";
-import Shortcuts from "./articles/shortcuts.mdx";
+import River from "@/articles/river.mdx";
+import Letter from "@/articles/letter.mdx";
+import Shortcuts from "@/articles/shortcuts.mdx";
 
 export const ArticleList: compPathObj[] = [
   {

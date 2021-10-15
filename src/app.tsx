@@ -1,6 +1,6 @@
 import React from "react";
 import { HashRouter as Router, Switch, Route } from "react-router-dom";
-import { Footer, NavMainLayout, Nav } from "./components";
+import { Footer, NavMainLayout, Nav, HotKeyNav } from "./components";
 import { Extensions, Cover } from "./pages";
 
 const Content = () => {
@@ -19,7 +19,9 @@ const Content = () => {
 export const App = () => {
   return (
     <Router>
-      <NavMainLayout nav={<Nav />} main={<Content />} footer={<Footer />} />
+      <HotKeyNav>
+        <NavMainLayout nav={<Nav />} main={<Content />} footer={<Footer />} />
+      </HotKeyNav>
     </Router>
   );
 };

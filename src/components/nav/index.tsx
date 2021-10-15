@@ -1,8 +1,8 @@
 import React from "react";
+import { usePaths } from "@/hooks";
+import { DisabledText } from "@/components";
 import { Link } from "../link";
-import { usePaths } from "../../hooks";
 import { List } from "../list";
-import { DisabledText } from "../disabled_text";
 
 export const Nav = () => {
   const paths = usePaths();

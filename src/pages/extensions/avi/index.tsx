@@ -1,5 +1,5 @@
 import React from "react";
-import { DisabledText, AlmostCenterLayout } from "../../../components";
+import { DisabledText, AlmostCenterLayout } from "@/components";
 
 export const Avi = () => {
   return (

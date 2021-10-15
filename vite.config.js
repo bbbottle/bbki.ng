@@ -1,3 +1,4 @@
+import path from "path";
 import { defineConfig } from "vite";
 import mdx from "vite-plugin-mdx";
 import react from "@vitejs/plugin-react";
@@ -14,9 +15,7 @@ const options = {
 export default defineConfig({
   resolve: {
     alias: {
-      "@components": path.resolve(__dirname, "./src/components"),
-      "@hooks": path.resolve(__dirname, "./src/hooks"),
-      "@types": path.resolve(__dirname, "./src/types"),
+      "@": path.resolve(__dirname, "./src"),
     },
   },
   plugins: [react(), mdx(options)],

@@ -1,8 +1,8 @@
 import River from "./articles/river.mdx";
 import Letter from "./articles/letter.mdx";
 
-import { compPathObj } from "../../../types/path";
-import { withCenterWrapper } from "../../../components";
+import { compPathObj } from "@/types/path";
+import { withCenterWrapper } from "@/components";
 
 export const ArticleList: compPathObj[] = [
   {

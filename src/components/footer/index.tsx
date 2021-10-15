@@ -1,9 +1,9 @@
 import React from "react";
+import { pathObj } from "@/types/path";
 import { List } from "../list";
 import { FooterLinks } from "./footer_links";
 import { Link } from "../link";
 import { LeftRightLayout } from "../layout";
-import { pathObj } from "../../types/path";
 
 export const Footer = () => {
   const renderFooterLink = (l: pathObj) => {

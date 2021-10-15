@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
 import { JPGProjectList } from "./consts";
-import { CenterLinkList, JpgList } from "../../../components";
+import { CenterLinkList, JpgList } from "@/components";
 
 export const Jpg = () => {
   return (

@@ -4,7 +4,7 @@ import {
   DisabledText,
   Link,
   ListWithTitle,
-} from "../../components";
+} from "@/components";
 
 export const Cover = () => {
   const question = "已满十八岁？";

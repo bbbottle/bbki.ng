@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route } from "react-router-dom";
-import { compPathObj } from "../../types/path";
-import { CenterLinkList } from "../center_link_list";
+import { compPathObj } from "@/types/path";
+import { CenterLinkList } from "@/components";
 
 type switchComponentsRouteProps = {
   componentPathList: compPathObj[];

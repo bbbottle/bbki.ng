@@ -1,7 +1,9 @@
-export const FooterLinks = [
+import { pathObj } from "../../types/path";
+
+export const FooterLinks: pathObj[] = [
   {
-    text: "source",
-    link: "https://github.com/bbbottle/bbki.ng",
+    name: "source",
+    path: "https://github.com/bbbottle/bbki.ng",
   },
   // {
   //   text: "contributing",

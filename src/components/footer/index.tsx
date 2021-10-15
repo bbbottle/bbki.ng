@@ -3,12 +3,13 @@ import { List } from "../list";
 import { FooterLinks } from "./footer_links";
 import { Link } from "../link";
 import { LeftRightLayout } from "../layout";
+import { pathObj } from "../../types/path";
 
 export const Footer = () => {
-  const renderFooterLink = (l: any) => {
+  const renderFooterLink = (l: pathObj) => {
     return (
-      <Link to={l.link} external color="gray">
-        {l.text}
+      <Link to={l.path as string} external color="gray">
+        {l.name}
       </Link>
     );
   };

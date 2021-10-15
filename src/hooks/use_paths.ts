@@ -1,15 +1,11 @@
 import { useLocation } from "react-router-dom";
-
-type pathObj = {
-  label: string;
-  path?: string;
-};
+import { pathObj } from "../types/path";
 
 export const usePaths = (): pathObj[] => {
   const { pathname } = useLocation();
 
   if (pathname === "/") {
-    return [{ label: "index" }];
+    return [{ name: "index" }];
   }
 
   const pathNameArr = pathname.split("/");
@@ -23,11 +19,11 @@ export const usePaths = (): pathObj[] => {
 
   return pathsArr.map((path, index) => {
     const isLast = index === pathsArr.length - 1;
-    const label = pathNameArr[index].replace(/^$/, "index");
+    const name = pathNameArr[index].replace(/^$/, "index");
     return isLast
-      ? { label }
+      ? { name }
       : {
-          label,
+          name,
           path,
         };
   });

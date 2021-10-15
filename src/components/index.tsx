@@ -3,6 +3,7 @@ export {
   TopBottomLayout,
   LeftRightLayout,
   AlmostCenterLayout,
+  ThreeColLayout,
 } from "./layout";
 
 export { List, ListWithTitle } from "./list";
@@ -23,7 +24,7 @@ export { JpgList } from "./jpg_list";
 
 export { SwitchComponentsRoute } from "./switch_components_route";
 
-export { withCenterWrapper } from "./with_center_wrapper";
+export { withCenterWrapper, withArticleWrapper } from "./with_wrapper";
 
 export { HotKeyNav } from "./hotkey_nav";
 

@@ -11,6 +11,7 @@ enum HotKeys {
   a = "a",
   f = "f",
   b = "b",
+  h = "h",
 }
 
 const KEY_ROUTES = [
@@ -19,6 +20,7 @@ const KEY_ROUTES = [
   { key: HotKeys.t, route: ROUTES.TXT },
   { key: HotKeys.j, route: ROUTES.JPG },
   { key: HotKeys.a, route: ROUTES.AVI },
+  { key: HotKeys.h, route: ROUTES.HELP },
 ];
 
 export const HotKeyNav = (props: any) => {

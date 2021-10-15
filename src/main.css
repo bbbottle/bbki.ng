@@ -14,3 +14,21 @@
     }
   }
 }
+
+@layer base {
+  h1 {
+    @apply text-2xl mt-4 mb-8;
+  }
+
+  h2 {
+    @apply text-xl;
+  }
+
+  p {
+    @apply my-8;
+  }
+
+  a:focus {
+    @apply no-underline outline-none rounded bg-blue-600 text-white;
+  }
+}

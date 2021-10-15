@@ -1,7 +1,7 @@
 export const JPGProjectList = [
   {
-    path: "/ext/jpg/before-the-light",
-    name: "before-the-light",
+    path: "/ext/jpg/光前村系列",
+    name: "光前村系列",
     imgList: [
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/photo_2021-07-04_17-03-43.jpg",
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_E1668.JPG",
@@ -10,8 +10,8 @@ export const JPGProjectList = [
     ],
   },
   {
-    path: "/ext/jpg/the-river-banks",
-    name: "the-river-banks",
+    path: "/ext/jpg/河东河西",
+    name: "河东河西",
     imgList: [
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2693870407.webp",
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2693886443.webp",

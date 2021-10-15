@@ -1,6 +1,6 @@
 import React from "react";
 import { usePaths } from "@/hooks";
-import { DisabledText } from "@/components";
+import { DisabledText, NonEnWordOffset } from "@/components";
 import { Link } from "../link";
 import { List } from "../list";
 
@@ -9,11 +9,15 @@ export const Nav = () => {
   const renderNavItem = ({ path, name }: any) => {
     return path ? (
       <>
-        <Link to={path}>{name}</Link>
+        <Link to={path} underlineFirstLetter>
+          {name}
+        </Link>
         <span className="ml-2">·</span>
       </>
     ) : (
-      <DisabledText>{name}</DisabledText>
+      <DisabledText>
+        <NonEnWordOffset>{name}</NonEnWordOffset>
+      </DisabledText>
     );
   };
 

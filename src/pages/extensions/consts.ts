@@ -1,21 +1,21 @@
 import { Txt } from "./txt";
-import { Jpg } from "./jpg";
+import { Png } from "./png";
 import { Avi } from "./avi";
 
 export const ExtensionsList = [
   {
     path: "/ext/txt",
-    name: ".txt",
+    name: "txt",
     component: Txt,
   },
   {
-    path: "/ext/jpg",
-    name: ".jpg",
-    component: Jpg,
+    path: "/ext/png",
+    name: "png",
+    component: Png,
   },
   {
     path: "/ext/avi",
-    name: ".avi",
+    name: "avi",
     component: Avi,
   },
 ];

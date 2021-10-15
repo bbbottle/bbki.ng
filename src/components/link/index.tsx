@@ -6,6 +6,7 @@ interface LinkProps extends BaseLinkProps {
   color?: "blue" | "red" | "gray";
   external?: boolean;
   to: string;
+  underlineFirstLetter?: boolean;
 }
 
 const COLOR_CLS_MAP = {
@@ -15,7 +16,7 @@ const COLOR_CLS_MAP = {
 };
 
 export const Link = (props: LinkProps) => {
-  const { color = "blue", external } = props;
+  const { color = "blue", external, underlineFirstLetter, ...rest } = props;
   const colorCls = COLOR_CLS_MAP[color];
   const linkCls = cls(colorCls, "underline");
   if (external) {
@@ -26,5 +27,14 @@ export const Link = (props: LinkProps) => {
     );
   }
 
-  return <BaseLink {...props} className={linkCls} />;
+  if (typeof props.children !== "string" || !underlineFirstLetter) {
+    return <BaseLink {...rest} className={linkCls} />;
+  }
+
+  return (
+    <BaseLink {...rest} className={colorCls}>
+      {<span className="underline">{props.children[0]}</span>}
+      {props.children.slice(1)}
+    </BaseLink>
+  );
 };

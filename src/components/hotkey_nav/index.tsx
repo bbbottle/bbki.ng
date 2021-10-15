@@ -7,7 +7,7 @@ enum HotKeys {
   i = "i",
   e = "e",
   t = "t",
-  j = "j",
+  p = "p",
   a = "a",
   f = "f",
   b = "b",
@@ -18,7 +18,7 @@ const KEY_ROUTES = [
   { key: HotKeys.i, route: ROUTES.INDEX },
   { key: HotKeys.e, route: ROUTES.EXT },
   { key: HotKeys.t, route: ROUTES.TXT },
-  { key: HotKeys.j, route: ROUTES.JPG },
+  { key: HotKeys.p, route: ROUTES.PNG },
   { key: HotKeys.a, route: ROUTES.AVI },
   { key: HotKeys.h, route: ROUTES.HELP },
 ];

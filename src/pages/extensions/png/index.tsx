@@ -3,7 +3,7 @@ import { Switch, Route } from "react-router-dom";
 import { JPGProjectList } from "./consts";
 import { CenterLinkList, JpgList } from "@/components";
 
-export const Jpg = () => {
+export const Png = () => {
   return (
     <Switch>
       {JPGProjectList.map(({ path, name, imgList }) => {

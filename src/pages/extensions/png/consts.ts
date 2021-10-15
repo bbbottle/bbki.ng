@@ -1,6 +1,6 @@
 export const JPGProjectList = [
   {
-    path: "/ext/jpg/光前村系列",
+    path: "/ext/png/光前村系列",
     name: "光前村系列",
     imgList: [
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/photo_2021-07-04_17-03-43.jpg",
@@ -10,7 +10,7 @@ export const JPGProjectList = [
     ],
   },
   {
-    path: "/ext/jpg/河东河西",
+    path: "/ext/png/河东河西",
     name: "河东河西",
     imgList: [
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2693870407.webp",

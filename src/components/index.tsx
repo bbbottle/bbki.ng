@@ -26,3 +26,5 @@ export { SwitchComponentsRoute } from "./switch_components_route";
 export { withCenterWrapper } from "./with_center_wrapper";
 
 export { HotKeyNav } from "./hotkey_nav";
+
+export { NonEnWordOffset } from "./non_en_word_offset";

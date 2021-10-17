@@ -1,7 +1,7 @@
 import React from "react";
 import { useHistory } from "react-router-dom";
 import { useHotkeys } from "react-hotkeys-hook";
-import { ROUTES } from "@/constants";
+import { GITHUB_REPO_ADDRESS, ROUTES } from "@/constants";
 
 enum HotKeys {
   i = "i",
@@ -12,6 +12,7 @@ enum HotKeys {
   f = "f",
   b = "b",
   h = "h",
+  s = "s",
 }
 
 const KEY_ROUTES = [
@@ -34,6 +35,9 @@ export const HotKeyNav = (props: any) => {
   });
   useHotkeys(HotKeys.f, () => {
     history.goForward();
+  });
+  useHotkeys(HotKeys.s, () => {
+    window.open(GITHUB_REPO_ADDRESS);
   });
 
   KEY_ROUTES.map(({ key, route }) => {

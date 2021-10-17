@@ -6,5 +6,6 @@ export interface pathObj {
 }
 
 export interface compPathObj extends pathObj {
-  component: FunctionComponent;
+  component: FunctionComponent<any>;
+  componentProps?: any;
 }

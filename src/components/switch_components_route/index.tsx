@@ -11,13 +11,15 @@ export const SwitchComponentsRoute = (props: switchComponentsRouteProps) => {
   const { componentPathList } = props;
   return (
     <Switch>
-      {componentPathList.map(({ path, name, component: Comp }) => {
-        return (
-          <Route path={path} key={name}>
-            <Comp />
-          </Route>
-        );
-      })}
+      {componentPathList.map(
+        ({ path, name, component: Comp, componentProps = {} }) => {
+          return (
+            <Route path={path} key={name}>
+              <Comp {...componentProps} />
+            </Route>
+          );
+        }
+      )}
       <Route>
         <CenterLinkList list={componentPathList} />
       </Route>

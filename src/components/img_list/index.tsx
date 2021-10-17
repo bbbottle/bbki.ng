@@ -1,12 +1,12 @@
 import React, { WheelEventHandler } from "react";
 import cls from "classnames";
 
-type jpgProps = {
+type imgListProps = {
   srcList: string[];
   classNames?: string;
 };
 
-export const JpgList = (props: jpgProps) => {
+export const ImgList = (props: imgListProps) => {
   const { srcList, classNames } = props;
 
   const handlerScroll: WheelEventHandler = (event) => {

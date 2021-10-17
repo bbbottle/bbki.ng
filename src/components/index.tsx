@@ -20,12 +20,18 @@ export { DisabledText, SmallDisabledText } from "./disabled_text";
 
 export { CenterLinkList } from "./center_link_list";
 
-export { JpgList } from "./jpg_list";
+export { ImgList } from "./img_list";
 
 export { SwitchComponentsRoute } from "./switch_components_route";
 
-export { withCenterWrapper, withArticleWrapper } from "./with_wrapper";
+export {
+  withCenterWrapper,
+  withArticleWrapper,
+  withVideoWrapper,
+} from "./with_wrapper";
 
 export { HotKeyNav } from "./hotkey_nav";
 
 export { NonEnWordOffset } from "./non_en_word_offset";
+
+export { VideoPlayer } from "./video_player";

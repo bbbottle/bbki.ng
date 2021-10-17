@@ -1,7 +1,7 @@
 import React from "react";
 import { FunctionComponent } from "react";
 import { Article } from "@/components/article";
-import { AlmostCenterLayout } from "../layout";
+import { AlmostCenterLayout, ThreeColLayout } from "../layout";
 
 export const withCenterWrapper =
   (Component: FunctionComponent) => (props: any) => {
@@ -13,7 +13,7 @@ export const withCenterWrapper =
   };
 
 export const withArticleWrapper =
-  (Component: FunctionComponent) => (props: any) => {
+  (Component: FunctionComponent<any>) => (props: any) => {
     return (
       <Article>
         <div className="py-40">
@@ -21,4 +21,12 @@ export const withArticleWrapper =
         </div>
       </Article>
     );
+  };
+
+export const withVideoWrapper =
+  (Component: FunctionComponent<any>) => (props: any) => {
+    const renderChildren = () => {
+      return <Component {...props} className="mt-40" />;
+    };
+    return <ThreeColLayout middleRenderer={renderChildren} />;
   };

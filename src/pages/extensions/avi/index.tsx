@@ -1,10 +1,7 @@
 import React from "react";
-import { DisabledText, AlmostCenterLayout } from "@/components";
+import { SwitchComponentsRoute } from "@/components";
+import { Logs } from "@/pages/extensions/avi/consts";
 
 export const Avi = () => {
-  return (
-    <AlmostCenterLayout>
-      <DisabledText>404</DisabledText>
-    </AlmostCenterLayout>
-  );
+  return <SwitchComponentsRoute componentPathList={Logs} />;
 };

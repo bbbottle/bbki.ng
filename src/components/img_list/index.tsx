@@ -3,11 +3,11 @@ import cls from "classnames";
 
 type imgListProps = {
   srcList: string[];
-  classNames?: string;
+  className?: string;
 };
 
 export const ImgList = (props: imgListProps) => {
-  const { srcList, classNames } = props;
+  const { srcList, className } = props;
 
   const handlerScroll: WheelEventHandler = (event) => {
     if (!event.deltaY) {
@@ -21,7 +21,7 @@ export const ImgList = (props: imgListProps) => {
     <div
       className={cls(
         "flex max-w-full no-scrollbar -backdrop-hue-rotate-15 overflow-auto px-96",
-        classNames
+        className
       )}
       onWheel={handlerScroll}
     >

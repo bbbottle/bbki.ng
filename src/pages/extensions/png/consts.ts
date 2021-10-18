@@ -29,8 +29,8 @@ export const ProjectList = [
     },
   },
   {
-    path: "/ext/png/光前村系列",
-    name: "光前村系列",
+    path: "/ext/png/光前村",
+    name: "光前村",
     component: ImgList,
     componentProps: {
       className: "mt-40",

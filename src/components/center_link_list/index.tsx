@@ -1,8 +1,9 @@
 import React from "react";
 import { pathObj } from "@/types/path";
-import { List } from "../list";
+import { useRouteName } from "@/hooks";
+import { ListWithTitle } from "../list";
 import { Link } from "../link";
-import { AlmostCenterLayout } from "../layout";
+import { ThreeColLayout } from "../layout";
 
 type centerLinkListProps = {
   list: pathObj[];
@@ -10,13 +11,13 @@ type centerLinkListProps = {
 
 export const CenterLinkList = (props: centerLinkListProps) => {
   const { list } = props;
+  const name = useRouteName();
   const renderExt = ({ name, path }: any) => {
     return <Link to={path}>{name}</Link>;
   };
 
-  return (
-    <AlmostCenterLayout>
-      <List items={list} itemRenderer={renderExt} />
-    </AlmostCenterLayout>
+  const renderList = () => (
+    <ListWithTitle items={list} itemRenderer={renderExt} title={name} />
   );
+  return <ThreeColLayout middleRenderer={renderList} />;
 };

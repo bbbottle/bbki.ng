@@ -34,8 +34,11 @@ export const ListWithTitle = (props: listWithTitleProps) => {
   const { title, className, ...rest } = props;
   return (
     <div className={className}>
-      <div className="mb-4">{title}</div>
-      <List {...rest} />
+      <h1>{title}</h1>
+      <hr />
+      <p>
+        <List {...rest} />
+      </p>
     </div>
   );
 };

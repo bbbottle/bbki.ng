@@ -38,7 +38,7 @@ export const NavMainLayout = (props: navMainLayoutProps) => {
       </nav>
       <section className="flex-grow flex-shrink-0 px-10">{main}</section>
       {footer && (
-        <footer className="flex-grow-0 flex-shrink-0 flex items-center p-6">
+        <footer className="flex-grow-0 flex-shrink-0 flex items-center justify-center p-6">
           {footer}
         </footer>
       )}

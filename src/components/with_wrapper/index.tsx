@@ -16,9 +16,7 @@ export const withArticleWrapper =
   (Component: FunctionComponent<any>) => (props: any) => {
     return (
       <Article>
-        <div className="py-40">
-          <Component {...props} />
-        </div>
+        <Component {...props} />
       </Article>
     );
   };

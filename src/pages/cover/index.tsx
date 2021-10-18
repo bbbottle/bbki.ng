@@ -4,6 +4,7 @@ import {
   DisabledText,
   Link,
   ListWithTitle,
+  ThreeColLayout,
 } from "@/components";
 
 export const Cover = () => {
@@ -17,9 +18,9 @@ export const Cover = () => {
 
   const renderer = (n: any) => n;
 
-  return (
-    <AlmostCenterLayout>
-      <ListWithTitle title={question} items={answers} itemRenderer={renderer} />
-    </AlmostCenterLayout>
+  const rendererQuestion = () => (
+    <ListWithTitle title={question} items={answers} itemRenderer={renderer} />
   );
+
+  return <ThreeColLayout middleRenderer={rendererQuestion} />;
 };

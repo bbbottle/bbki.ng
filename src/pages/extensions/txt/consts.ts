@@ -3,6 +3,7 @@ import { withArticleWrapper } from "@/components";
 import River from "@/articles/river.mdx";
 import Letter from "@/articles/letter.mdx";
 import Shortcuts from "@/articles/shortcuts.mdx";
+import Travel from "@/articles/travel.mdx";
 
 export const ArticleList: compPathObj[] = [
   {
@@ -19,5 +20,10 @@ export const ArticleList: compPathObj[] = [
     path: "/ext/txt/信",
     name: "信",
     component: withArticleWrapper(Letter),
+  },
+  {
+    path: "/ext/txt/离开",
+    name: "离开",
+    component: withArticleWrapper(Travel),
   },
 ];

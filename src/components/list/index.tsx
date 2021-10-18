@@ -35,7 +35,6 @@ export const ListWithTitle = (props: listWithTitleProps) => {
   return (
     <div className={className}>
       <h1>{title}</h1>
-      <hr className="mb-8" />
       <List {...rest} />
     </div>
   );

@@ -16,8 +16,13 @@
 }
 
 @layer base {
-  h1 {
-    @apply text-2xl mt-4 mb-8;
+  .markdown-body h1 {
+    margin: unset;
+  }
+
+  h1,
+  .markdown-body h1 {
+    @apply text-2xl py-10 mb-10 border border-t-0 border-r-0 border-l-0;
   }
 
   h2 {
@@ -30,5 +35,12 @@
 
   a:focus {
     @apply no-underline outline-none rounded bg-blue-600 text-white;
+  }
+
+  /**
+   * markdown-body patch
+   */
+  .markdown-body {
+    @apply font-mono leading-7;
   }
 }

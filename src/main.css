@@ -25,7 +25,7 @@
   }
 
   p {
-    @apply my-8;
+    @apply my-8 leading-7;
   }
 
   a:focus {

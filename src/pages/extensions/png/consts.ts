@@ -36,9 +36,7 @@ export const ProjectList = [
       className: "mt-40",
       srcList: [
         "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_1844.jpg",
-        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/photo_2021-07-04_17-03-43.jpg",
         "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_E1668.JPG",
-        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/LFKW1496.JPG",
         "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_E1677.JPG",
       ],
     },

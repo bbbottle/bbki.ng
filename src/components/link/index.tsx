@@ -24,8 +24,9 @@ export const Link = (props: LinkProps) => {
     ...rest
   } = props;
 
-  const linkCls = cls(color, HOVER_COLOR_MAPPING[color], "transition-colors", {
-    "hover:underline": !underlineFirstLetter,
+  const linkCls = cls(color, "rounded", "no-underline", "transition-colors", {
+    [HOVER_COLOR_MAPPING[color]]: !underlineFirstLetter,
+    underline: !underlineFirstLetter,
   });
 
   if (external) {

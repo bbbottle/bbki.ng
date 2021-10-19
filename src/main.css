@@ -39,7 +39,7 @@
   }
 
   a:focus {
-    @apply no-underline outline-none rounded bg-blue-600 text-white;
+    @apply no-underline outline-none rounded bg-blue-600 text-white !important;
   }
 
   /**

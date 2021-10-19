@@ -1,16 +1,16 @@
 import React from "react";
 import {
-  AlmostCenterLayout,
   DisabledText,
   Link,
   ListWithTitle,
   ThreeColLayout,
 } from "@/components";
+import { TextColors } from "@/types/color";
 
 export const Cover = () => {
   const question = "已满十八岁？";
   const answers = [
-    <Link to="/ext" color="red">
+    <Link to="/ext" color={TextColors.RED}>
       YES
     </Link>,
     <DisabledText>No</DisabledText>,

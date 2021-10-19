@@ -1,24 +1,33 @@
 import cls from "classnames";
 import { Link as BaseLink, LinkProps as BaseLinkProps } from "react-router-dom";
 import React from "react";
+import { HoveredTextColors, TextColors } from "@/types/color";
 
 interface LinkProps extends BaseLinkProps {
-  color?: "blue" | "red" | "gray";
+  color?: TextColors;
   external?: boolean;
   to: string;
   underlineFirstLetter?: boolean;
 }
 
-const COLOR_CLS_MAP = {
-  blue: "text-blue-600",
-  red: "text-red-500",
-  gray: "text-gray-400",
+const HOVER_COLOR_MAPPING = {
+  [TextColors.BLUE]: HoveredTextColors.BLUR,
+  [TextColors.RED]: HoveredTextColors.RED,
+  [TextColors.GRAY]: HoveredTextColors.GRAY,
 };
 
 export const Link = (props: LinkProps) => {
-  const { color = "blue", external, underlineFirstLetter, ...rest } = props;
-  const colorCls = COLOR_CLS_MAP[color];
-  const linkCls = cls(colorCls, "underline");
+  const {
+    color = TextColors.BLUE,
+    external,
+    underlineFirstLetter,
+    ...rest
+  } = props;
+
+  const linkCls = cls(color, HOVER_COLOR_MAPPING[color], "transition-colors", {
+    "hover:underline": !underlineFirstLetter,
+  });
+
   if (external) {
     return (
       <a href={props.to} className={linkCls} target="_blank">
@@ -32,7 +41,7 @@ export const Link = (props: LinkProps) => {
   }
 
   return (
-    <BaseLink {...rest} className={colorCls}>
+    <BaseLink {...rest} className={linkCls}>
       {<span className="underline">{props.children[0]}</span>}
       {props.children.slice(1)}
     </BaseLink>

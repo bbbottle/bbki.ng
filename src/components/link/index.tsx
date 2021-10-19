@@ -29,22 +29,28 @@ export const Link = (props: LinkProps) => {
     underline: !underlineFirstLetter,
   });
 
+  const shouldUseOriginChildren =
+    typeof props.children !== "string" || !underlineFirstLetter;
+  const childrenJSX = shouldUseOriginChildren ? (
+    props.children
+  ) : (
+    <>
+      {<span className="underline">{(props.children as string)[0]}</span>}
+      {(props.children as string).slice(1)}
+    </>
+  );
+
   if (external) {
     return (
       <a href={props.to} className={linkCls} target="_blank">
-        {props.children}
+        {childrenJSX}
       </a>
     );
   }
 
-  if (typeof props.children !== "string" || !underlineFirstLetter) {
-    return <BaseLink {...rest} className={linkCls} />;
-  }
-
   return (
     <BaseLink {...rest} className={linkCls}>
-      {<span className="underline">{props.children[0]}</span>}
-      {props.children.slice(1)}
+      {childrenJSX}
     </BaseLink>
   );
 };

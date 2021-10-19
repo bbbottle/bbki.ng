@@ -8,7 +8,12 @@ import { Link } from "../link";
 export const Footer = () => {
   const renderFooterLink = (l: pathObj) => {
     return (
-      <Link to={l.path as string} external color={TextColors.GRAY}>
+      <Link
+        to={l.path as string}
+        external
+        color={TextColors.GRAY}
+        underlineFirstLetter
+      >
         {l.name}
       </Link>
     );

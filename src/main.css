@@ -20,6 +20,11 @@
     margin: unset;
   }
 
+  nav {
+    background-color: rgba(255, 255, 255, 0.5);
+    backdrop-filter: blur(7px);
+  }
+
   h1,
   .markdown-body h1 {
     @apply text-2xl py-10 mb-10 border border-t-0 border-r-0 border-l-0;

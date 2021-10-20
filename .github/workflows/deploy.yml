@@ -18,7 +18,7 @@ jobs:
       - name: Install dependencies
         run: yarn install
       - name: Run build task
-        run: yarn build --if-present
+        run: yarn build
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:

@@ -13,10 +13,12 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: "14.17.6"
-      - name: Install npm dependencies
-        run: npm install
+      - name: Install Yarn
+        run: npm install -g yarn
+      - name: Install dependencies
+        run: yarn install
       - name: Run build task
-        run: npm run build --if-present
+        run: yarn build --if-present
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:

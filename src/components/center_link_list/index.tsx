@@ -13,7 +13,11 @@ export const CenterLinkList = (props: centerLinkListProps) => {
   const { list } = props;
   const name = useRouteName();
   const renderExt = ({ name, path }: any) => {
-    return <Link to={path}>{name}</Link>;
+    return (
+      <Link to={path} key={name}>
+        {name}
+      </Link>
+    );
   };
 
   const renderList = () => (

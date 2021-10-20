@@ -1,7 +1,7 @@
 export enum TextColors {
-  GRAY = "text-gray-400 bg-white",
-  RED = "text-red-500 bg-white",
-  BLUE = "text-blue-600 bg-white",
+  GRAY = "text-gray-400",
+  RED = "text-red-500",
+  BLUE = "text-blue-600",
 }
 
 export enum HoveredTextColors {

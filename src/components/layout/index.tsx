@@ -81,7 +81,7 @@ export const ThreeColLayout = (props: threeColLayoutProps) => {
   const { leftRenderer, middleRenderer, rightRenderer } = props;
   const colCls = cls("max-h-full overflow-auto");
   return (
-    <div className="grid grid-cols-3 gap-4 h-full">
+    <div className="grid grid-cols-3 gap-4 h-full w-full">
       <div className={colCls}>{leftRenderer && leftRenderer()}</div>
       <div className={colCls}>{middleRenderer && middleRenderer()}</div>
       <div className={colCls}>{rightRenderer && rightRenderer()}</div>

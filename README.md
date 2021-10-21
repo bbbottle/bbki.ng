@@ -1,4 +1,4 @@
-## 👶 👑
+![image](public/Logo.svg)
 
 ### About
 

@@ -4,9 +4,13 @@
 
 Code behind https://bbki.ng.
 
-### Status
+### Roadmap
 
-Working In Progress.
+The [BBKi.ng Public roadmap](https://github.com/bbbottle/bbki.ng/projects/2)
+
+### Q&A
+
+Open a new [discussion](https://github.com/bbbottle/bbki.ng/discussions/categories/q-a)
 
 ### Contributing
 

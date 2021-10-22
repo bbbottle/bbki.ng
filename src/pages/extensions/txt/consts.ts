@@ -40,8 +40,8 @@ export const ArticleList: compPathObj[] = [
     component: withArticleWrapper(Move),
   },
   {
-    path: "/ext/txt/Logo 使用规范",
-    name: "Logo 使用规范",
+    path: "/ext/txt/网站标识使用规范",
+    name: "网站标识使用规范",
     component: withArticleWrapper(LogoGuidelines),
   },
 ];

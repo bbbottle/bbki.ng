@@ -6,6 +6,7 @@ import Shortcuts from "@/articles/shortcuts.mdx";
 import Travel from "@/articles/travel.mdx";
 import CoolDown from "@/articles/cooldown.mdx";
 import Move from "@/articles/move.mdx";
+import LogoGuidelines from "@/articles/logo-guidelines.mdx";
 
 export const ArticleList: compPathObj[] = [
   {
@@ -37,5 +38,10 @@ export const ArticleList: compPathObj[] = [
     path: "/ext/txt/古老的小区",
     name: "古老的小区",
     component: withArticleWrapper(Move),
+  },
+  {
+    path: "/ext/txt/Logo 使用规范",
+    name: "Logo 使用规范",
+    component: withArticleWrapper(LogoGuidelines),
   },
 ];

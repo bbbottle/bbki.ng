@@ -16,6 +16,11 @@
 }
 
 @layer base {
+  ol,
+  ul {
+    list-style: unset;
+  }
+
   .markdown-body h1 {
     margin: unset;
   }
@@ -23,6 +28,10 @@
   .blur-cover {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7px);
+  }
+
+  .list-style-none {
+    list-style: none;
   }
 
   h1,
@@ -47,5 +56,9 @@
    */
   .markdown-body {
     @apply font-mono leading-7;
+  }
+
+  .markdown-body a:hover {
+    text-decoration: none;
   }
 }

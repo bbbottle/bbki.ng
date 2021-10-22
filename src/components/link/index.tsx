@@ -21,13 +21,21 @@ export const Link = (props: LinkProps) => {
     color = TextColors.BLUE,
     external,
     underlineFirstLetter,
+    className,
     ...rest
   } = props;
 
-  const linkCls = cls(color, "rounded", "no-underline", "transition-colors", {
-    [HOVER_COLOR_MAPPING[color]]: !underlineFirstLetter,
-    underline: !underlineFirstLetter,
-  });
+  const linkCls = cls(
+    color,
+    className,
+    "rounded",
+    "no-underline",
+    "transition-colors",
+    {
+      [HOVER_COLOR_MAPPING[color]]: !underlineFirstLetter,
+      underline: !underlineFirstLetter,
+    }
+  );
 
   const shouldUseOriginChildren =
     typeof props.children !== "string" || !underlineFirstLetter;

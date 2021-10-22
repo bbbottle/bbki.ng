@@ -35,3 +35,7 @@ export { HotKeyNav } from "./hotkey_nav";
 export { NonEnWordOffset } from "./non_en_word_offset";
 
 export { VideoPlayer } from "./video_player";
+
+export { ProgressBar } from "./progress_bar";
+
+export { BlurCover } from "./blur_cover";

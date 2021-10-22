@@ -1,12 +1,16 @@
-## 👶 👑
+![image](public/Logo.svg)
 
 ### About
 
 Code behind https://bbki.ng.
 
-### Status
+### Roadmap
 
-Working In Progress.
+The [BBKi.ng public roadmap](https://github.com/bbbottle/bbki.ng/projects/2).
+
+### Q&A
+
+Open a new [discussion](https://github.com/bbbottle/bbki.ng/discussions/categories/q-a).
 
 ### Contributing
 

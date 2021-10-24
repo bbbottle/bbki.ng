@@ -7,6 +7,7 @@ import Travel from "@/articles/travel.mdx";
 import CoolDown from "@/articles/cooldown.mdx";
 import Move from "@/articles/move.mdx";
 import LogoGuidelines from "@/articles/logo-guidelines.mdx";
+import Dreams from "@/articles/dreams.mdx";
 
 export const ArticleList: compPathObj[] = [
   {
@@ -43,5 +44,10 @@ export const ArticleList: compPathObj[] = [
     path: "/ext/txt/网站标识使用规范",
     name: "网站标识使用规范",
     component: withArticleWrapper(LogoGuidelines),
+  },
+  {
+    path: "/ext/txt/梦里的事",
+    name: "梦里的事",
+    component: withArticleWrapper(Dreams),
   },
 ];

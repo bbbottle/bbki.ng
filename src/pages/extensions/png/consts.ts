@@ -23,10 +23,9 @@ export const ProjectList = [
     componentProps: {
       className: "mt-40",
       srcList: [
-        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2693870407.webp",
-        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2693886443.webp",
-        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2693870393.webp",
-        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/788%20%283%29.jpg",
+        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705047873.webp",
+        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2704851973.webp",
+        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705529760.webp",
       ],
     },
   },

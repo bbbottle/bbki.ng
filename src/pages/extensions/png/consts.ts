@@ -1,4 +1,5 @@
 import { ImgList } from "@/components";
+import { addOssWebpProcessSuffix } from "@/utils";
 
 export const ProjectList = [
   {
@@ -26,6 +27,10 @@ export const ProjectList = [
         "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705047873.webp",
         "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2704851973.webp",
         "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705529760.webp",
+        "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211025194518.jpg",
+        addOssWebpProcessSuffix(
+          "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211025202204.jpg"
+        ),
       ],
     },
   },

@@ -32,7 +32,7 @@ export const ImgList = (props: imgListProps) => {
             key={src}
             src={src}
             alt="*<]:{]"
-            className={cls("max-h-96", { "mr-80": !isLast })}
+            className={cls("max-h-96", "max-w-none", { "mr-80": !isLast })}
           />
         );
       })}

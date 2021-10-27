@@ -1,10 +1,11 @@
 import { Link } from "@/components";
 import { TextColors } from "@/types/color";
+import { OSS_PHOTOS } from "@/constants/photos";
 
 # 网站标识使用规范
 
 <img
-  src="https://user-images.githubusercontent.com/11043540/138445568-7889029c-0d48-466f-aa3e-1b12d8549467.png"
+  src={OSS_PHOTOS.logoPreview.src}
   width="200"
   alt="logo"
 />
@@ -25,7 +26,7 @@ import { TextColors } from "@/types/color";
 <img
   width="600"
   alt="colors"
-  src="https://user-images.githubusercontent.com/11043540/138452715-077307f2-ff26-47db-8ba4-4971b150f039.png"
+  src={OSS_PHOTOS.logoColors.src}
 />
 
 ### 尺寸
@@ -36,7 +37,7 @@ import { TextColors } from "@/types/color";
 禁区宽度为图标宽度的一半
 
 <img
-  src="https://user-images.githubusercontent.com/11043540/138403834-995a28d5-8fbb-4ec5-80cf-d00632a66bb6.png"
+  src={OSS_PHOTOS.logoExcludesZone.src}
   width="300"
   alt="logo"
 />
@@ -48,13 +49,13 @@ import { TextColors } from "@/types/color";
 <img
   width="600"
   alt="Logos"
-  src="https://user-images.githubusercontent.com/11043540/138450539-967a3c69-cb55-4481-9e00-14de7c319486.png"
+  src={OSS_PHOTOS.logoVariants.src}
 />
 #### 图片背景
 <img
   width="300"
   alt="with img bg"
-  src="https://user-images.githubusercontent.com/11043540/138458744-364385f6-59e4-456a-85c0-79c302db8de5.png"
+  src={OSS_PHOTOS.validLogoExample.src}
 />
 
 ### 非法误用
@@ -70,10 +71,10 @@ import { TextColors } from "@/types/color";
 
 ---
 
-#### <div className={TextColors.RED}>错误示例</div>
+<div className={TextColors.RED}>**错误示例**</div>
 
 <img
   width="600"
   alt="invalid"
-  src="https://user-images.githubusercontent.com/11043540/138461363-cb76800d-85b9-4926-b1ec-d4341a47faca.png"
+  src={OSS_PHOTOS.badLogoExamples.src}
 />

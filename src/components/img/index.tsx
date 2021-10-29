@@ -6,7 +6,6 @@ import { calcDefaultImgSize } from "@/utils";
 
 interface ImgProps extends Photo {
   className?: string;
-  renderedWidth?: number;
 }
 
 export const Img = (props: ImgProps) => {

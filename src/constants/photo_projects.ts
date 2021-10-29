@@ -1,6 +1,7 @@
 import { OSS_PHOTOS } from "@/constants/photos";
+import { PhotoProject } from "@/types/photo";
 
-export const PHOTO_PROJECTS = [
+export const PHOTO_PROJECTS: PhotoProject[] = [
   {
     name: "敬县城",
     images: [

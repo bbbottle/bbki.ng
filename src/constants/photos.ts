@@ -13,6 +13,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2704851973.webp",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2704851973.webp?x-oss-process=style/thumbnail",
+    renderedWidth: 500,
     width: 1080,
     height: 720,
     avgColor: BgColors.LIGHT_GRAY,
@@ -21,6 +22,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705529760.webp",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705529760.webp?x-oss-process=style/thumbnail",
+    renderedWidth: 450,
     width: 1080,
     height: 726,
     avgColor: BgColors.LIGHT_GRAY,
@@ -37,6 +39,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211025202204.jpg?x-oss-process=style/webp",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211025202204.jpg?x-oss-process=style/thumbnail",
+    renderedWidth: 490,
     width: 4851,
     height: 3725,
     avgColor: BgColors.LIGHT_GRAY,
@@ -54,6 +57,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/3922C86B-79D5-455F-9FA8-7EB405CE95A6-38852-000007863DB50E30.jpg",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/3922C86B-79D5-455F-9FA8-7EB405CE95A6-38852-000007863DB50E30.jpg?x-oss-process=style/thumbnail",
+    renderedWidth: 400,
     width: 1501,
     height: 1144,
     avgColor: BgColors.LIGHT_GRAY,
@@ -70,6 +74,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/E2FDA467-AD6D-4410-9B50-66E1624C13D6-38852-0000078630EDA7C4.jpg",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/E2FDA467-AD6D-4410-9B50-66E1624C13D6-38852-0000078630EDA7C4.jpg?x-oss-process=style/thumbnail",
+    renderedWidth: 500,
     width: 1776,
     height: 1184,
     avgColor: BgColors.LIGHT_GRAY,
@@ -78,6 +83,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/IMG_3869.JPG",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/IMG_3869.JPG?x-oss-process=style/thumbnail",
+    renderedWidth: 490,
     width: 897,
     height: 720,
     avgColor: BgColors.LIGHT_GRAY,
@@ -86,6 +92,7 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_1844.jpg?x-oss-process=style/webp",
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_1844.jpg?x-oss-process=style/thumbnail",
+    renderedWidth: 400,
     width: 2673,
     height: 3564,
     avgColor: BgColors.LIGHT_GRAY,
@@ -103,6 +110,7 @@ export const OSS_PHOTOS = {
     thumbnailSrc:
       "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/before-the-light/IMG_E1677.JPG?x-oss-process=style/thumbnail",
     width: 2801,
+    renderedWidth: 600,
     height: 2801,
     avgColor: BgColors.LIGHT_GRAY,
   },

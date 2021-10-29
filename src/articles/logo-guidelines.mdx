@@ -4,16 +4,9 @@ import { OSS_PHOTOS } from "@/constants/photos";
 
 # 网站标识使用规范
 
-<img
-  src={OSS_PHOTOS.logoPreview.src}
-  width="200"
-  alt="logo"
-/>
+<Img {...OSS_PHOTOS.logoPreview} renderedWidth={200} />
 
-<Link
-  external
-  to="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/zip/bbki.ng.logos.zip"
->下载</Link>
+<Link external to="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/zip/bbki.ng.logos.zip">下载</Link>
 
 ## 目的
 
@@ -23,11 +16,7 @@ import { OSS_PHOTOS } from "@/constants/photos";
 
 ### 颜色
 
-<img
-  width="600"
-  alt="colors"
-  src={OSS_PHOTOS.logoColors.src}
-/>
+<Img {...OSS_PHOTOS.logoColors} renderedWidth={600}/>
 
 ### 尺寸
 标识宽高不得小于 24 像素。
@@ -36,27 +25,16 @@ import { OSS_PHOTOS } from "@/constants/photos";
 
 禁区宽度为图标宽度的一半
 
-<img
-  src={OSS_PHOTOS.logoExcludesZone.src}
-  width="300"
-  alt="logo"
-/>
+<Img {...OSS_PHOTOS.logoExcludesZone} renderedWidth={300} />
 
 ### 合法变体
 
 #### 纯色背景
 
-<img
-  width="600"
-  alt="Logos"
-  src={OSS_PHOTOS.logoVariants.src}
-/>
+<Img {...OSS_PHOTOS.logoVariants} renderedWidth={600} />
+
 #### 图片背景
-<img
-  width="300"
-  alt="with img bg"
-  src={OSS_PHOTOS.validLogoExample.src}
-/>
+<Img {...OSS_PHOTOS.validLogoExample} renderedWidth={300} />
 
 ### 非法误用
 
@@ -70,9 +48,5 @@ import { OSS_PHOTOS } from "@/constants/photos";
 - 禁止添加投影
 
 ---
-<div className={TextColors.RED}>**错误示例**</div>
-<img
-  width="600"
-  alt="invalid"
-  src={OSS_PHOTOS.badLogoExamples.src}
-/>
+### ~~错误示例~~
+<Img {...OSS_PHOTOS.badLogoExamples} renderedWidth={600} />

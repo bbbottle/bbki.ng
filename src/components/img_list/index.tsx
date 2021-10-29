@@ -1,41 +1,23 @@
-import React, { WheelEventHandler } from "react";
+import React from "react";
 import cls from "classnames";
+import { Photo } from "@/types/photo";
+import { Img, ThreeColLayout } from "@/components";
 
 type imgListProps = {
-  srcList: string[];
+  imgList: Photo[];
   className?: string;
 };
 
 export const ImgList = (props: imgListProps) => {
-  const { srcList, className } = props;
+  const { imgList, className } = props;
 
-  const handlerScroll: WheelEventHandler = (event) => {
-    if (!event.deltaY) {
-      return;
-    }
-
-    event.currentTarget.scrollLeft += event.deltaY + event.deltaX;
-  };
-
-  return (
-    <div
-      className={cls(
-        "flex max-w-full no-scrollbar -backdrop-hue-rotate-15 overflow-auto px-96",
-        className
-      )}
-      onWheel={handlerScroll}
-    >
-      {srcList.map((src, index) => {
-        const isLast = index === srcList.length - 1;
-        return (
-          <img
-            key={src}
-            src={src}
-            alt="*<]:{]"
-            className={cls("max-h-96", "max-w-none", { "mr-80": !isLast })}
-          />
-        );
+  const renderList = () => (
+    <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
+      {imgList.map((img) => {
+        return <Img {...img} className="mb-80" key={img.src} />;
       })}
     </div>
   );
+
+  return <ThreeColLayout middleRenderer={renderList} />;
 };

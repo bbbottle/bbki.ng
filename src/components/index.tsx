@@ -39,3 +39,7 @@ export { VideoPlayer } from "./video_player";
 export { ProgressBar } from "./progress_bar";
 
 export { BlurCover } from "./blur_cover";
+
+export { Img } from "./img";
+
+export { ImgPlaceholder } from "./img_placeholder";

@@ -4,29 +4,25 @@ export const PHOTO_PROJECTS = [
   {
     name: "敬县城",
     images: [
-      OSS_PHOTOS.motorcycle.src,
-      OSS_PHOTOS.cycle.src,
-      OSS_PHOTOS.corner.src,
-      OSS_PHOTOS.streetGames.src,
-      OSS_PHOTOS.localDishes.src,
+      OSS_PHOTOS.motorcycle,
+      OSS_PHOTOS.cycle,
+      OSS_PHOTOS.corner,
+      OSS_PHOTOS.streetGames,
+      OSS_PHOTOS.localDishes,
     ],
   },
   {
     name: "河东河西",
     images: [
-      OSS_PHOTOS.fishing.src,
-      OSS_PHOTOS.waterLine.src,
-      OSS_PHOTOS.bridge.src,
-      OSS_PHOTOS.building.src,
-      OSS_PHOTOS.chair.src,
+      OSS_PHOTOS.fishing,
+      OSS_PHOTOS.waterLine,
+      OSS_PHOTOS.bridge,
+      OSS_PHOTOS.building,
+      OSS_PHOTOS.chair,
     ],
   },
   {
     name: "光前村",
-    images: [
-      OSS_PHOTOS.oldMan.src,
-      OSS_PHOTOS.oldWomen.src,
-      OSS_PHOTOS.littleChild.src,
-    ],
+    images: [OSS_PHOTOS.oldMan, OSS_PHOTOS.oldWomen, OSS_PHOTOS.littleChild],
   },
 ];

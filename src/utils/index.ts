@@ -1,4 +1,5 @@
 import { Photo } from "@/types/photo";
+import { ossProcessType } from "@/types/oss";
 
 export const floatNumberToPercentageString = (num: number): string => {
   return `${num * 100}%`;
@@ -6,7 +7,7 @@ export const floatNumberToPercentageString = (num: number): string => {
 
 export const addOssWebpProcessStyle = (
   originUrl: string,
-  style: string
+  style: ossProcessType
 ): string => `${originUrl}?x-oss-process=style/${style}`;
 
 export const calcDefaultImgSize = (img: Photo, defaultWidth?: number) => {
@@ -14,7 +15,7 @@ export const calcDefaultImgSize = (img: Photo, defaultWidth?: number) => {
   const whRatio = width / height;
   const isHorizontal = width > height;
 
-  const finalWidth = defaultWidth || isHorizontal ? 576 : 384;
+  const finalWidth = defaultWidth || (isHorizontal ? 576 : 384);
 
   return {
     width: finalWidth,

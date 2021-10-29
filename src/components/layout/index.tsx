@@ -79,12 +79,18 @@ export const AlmostCenterLayout = (props: centerLayoutProps) => {
 
 export const ThreeColLayout = (props: threeColLayoutProps) => {
   const { leftRenderer, middleRenderer, rightRenderer } = props;
-  const colCls = cls("max-h-full overflow-auto");
+  const colCls = cls("max-h-full overflow-auto md:block");
   return (
     <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full w-full">
-      <div className={colCls}>{leftRenderer && leftRenderer()}</div>
-      <div className={colCls}>{middleRenderer && middleRenderer()}</div>
-      <div className={colCls}>{rightRenderer && rightRenderer()}</div>
+      <div className={cls(colCls, { hidden: !leftRenderer })}>
+        {leftRenderer && leftRenderer()}
+      </div>
+      <div className={cls(colCls, { hidden: !middleRenderer })}>
+        {middleRenderer && middleRenderer()}
+      </div>
+      <div className={cls(colCls, { hidden: !rightRenderer })}>
+        {rightRenderer && rightRenderer()}
+      </div>
     </div>
   );
 };

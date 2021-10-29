@@ -33,7 +33,7 @@ export const NavMainLayout = (props: navMainLayoutProps) => {
   const { nav, main, footer } = props;
   return (
     <main className="flex flex-col h-full">
-      <nav className="flex-grow-0 flex-shrink-0 p-6 flex items-start sticky top-0 blur-cover">
+      <nav className="flex-grow-0 flex-shrink-0 p-6 flex items-start sticky top-0 blur-cover z-50">
         {nav}
       </nav>
       <section className="flex-grow flex-shrink-0 px-10">{main}</section>

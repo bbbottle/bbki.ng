@@ -4,7 +4,7 @@ export const ROUTES = {
   PNG: "/ext/png",
   TXT: "/ext/txt",
   AVI: "/ext/avi",
-  HELP: "/ext/txt/%E5%BF%AB%E6%8D%B7%E9%94%AE",
+  HELP: "/ext/txt/网站快捷键",
 };
 
 export const ROUTE_NAME = {

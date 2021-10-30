@@ -9,6 +9,12 @@ export const OSS_PHOTOS = {
     height: 720,
     avgColor: BgColors.LIGHT_GRAY,
   },
+  dragonRiver: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/164-2.jpg",
+    width: 4021,
+    height: 4021,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
   waterLine: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2704851973.webp",
     thumbnailSrc:

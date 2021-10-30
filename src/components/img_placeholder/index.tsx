@@ -31,7 +31,12 @@ export const ImgPlaceholder = (props: imgPlaceholderProps) => {
       hwRatio={height / width}
       className={classnames(className, backgroundColor)}
     >
-      <div className="blur-cover absolute top-0 left-0 right-0 bottom-0 z-0 animate-pulse" />
+      <div
+        className={classnames(
+          "absolute top-0 left-0 right-0 bottom-0 z-0 animate-pulse opacity-25",
+          backgroundColor
+        )}
+      />
       <div className="blur-cover absolute top-0 left-0 right-0 bottom-0 z-0" />
       <img src={placeholderImg} style={{ width, height: "auto" }} />
     </AspectRatioBox>

@@ -1,8 +1,8 @@
-import { useLocation } from "react-router-dom";
 import { pathObj } from "@/types/path";
+import { usePathName } from "@/hooks/use_pathname";
 
 export const usePaths = (): pathObj[] => {
-  const { pathname } = useLocation();
+  const pathname = usePathName();
 
   if (pathname === "/") {
     return [{ name: "index" }];

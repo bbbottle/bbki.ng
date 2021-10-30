@@ -1,7 +1,7 @@
-import { useLocation } from "react-router-dom";
 import { ROUTE_NAME } from "@/constants";
+import { usePathName } from "@/hooks/use_pathname";
 
 export const useRouteName = () => {
-  const { pathname } = useLocation();
-  return ROUTE_NAME[pathname] || ROUTE_NAME.unknown;
+  const pathname = usePathName();
+  return ROUTE_NAME[pathname.replace(/\/$/, "")] || ROUTE_NAME.unknown;
 };

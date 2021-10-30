@@ -12,3 +12,5 @@ export const VIDEO_LOGS = [
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/video/2021-09-28-4k30H.mov",
   },
 ];
+
+export const VIDEO_TAG_ASPECT_RATIO = 0.5624910522548318;

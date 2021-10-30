@@ -2,7 +2,7 @@ import classnames from "classnames";
 import React from "react";
 
 type aspectRatioBoxProps = {
-  width: number;
+  width: number | string;
   hwRatio: number;
   className?: string;
   children?: any;

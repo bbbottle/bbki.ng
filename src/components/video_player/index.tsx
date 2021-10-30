@@ -2,7 +2,9 @@ import React, { ReactEventHandler, useState } from "react";
 import classnames from "classnames";
 import { useVideoControls, useVideoEleHeight, useVideoProgress } from "@/hooks";
 import { BlurCover, ProgressBar } from "@/components";
-import { TextColors } from "@/types/color";
+import { BgColors, TextColors } from "@/types/color";
+import { AspectRatioBox } from "@/components/aspect_ratio_box";
+import { VIDEO_TAG_ASPECT_RATIO } from "@/constants";
 
 type videoPlayProps = {
   src: string;
@@ -21,11 +23,15 @@ export const VideoPlayer = (props: videoPlayProps) => {
     setShowPlayer(true);
   };
 
-  const cls = classnames(className, { hidden: !showPlayer });
+  const cls = classnames({ hidden: !showPlayer });
 
   return (
     <div
-      className="flex flex-col relative cursor-pointer"
+      className={classnames(
+        "flex flex-col relative cursor-pointer",
+        className,
+        BgColors.LIGHT_GRAY
+      )}
       onClick={toggle}
       onMouseEnter={() => {
         setHovered(true);
@@ -34,16 +40,21 @@ export const VideoPlayer = (props: videoPlayProps) => {
         setHovered(false);
       }}
     >
-      <video
-        ref={videoRef}
-        src={src}
-        className={cls}
-        onTimeUpdate={onTimeUpdate}
-        onCanPlayThrough={onPlayerReady}
-      />
+      <AspectRatioBox
+        width="100%"
+        hwRatio={VIDEO_TAG_ASPECT_RATIO}
+        className={BgColors.LIGHT_GRAY}
+      >
+        <video
+          ref={videoRef}
+          src={src}
+          className={cls}
+          onTimeUpdate={onTimeUpdate}
+          onCanPlayThrough={onPlayerReady}
+        />
+      </AspectRatioBox>
       {hovered && (
         <BlurCover
-          className="mt-40"
           textColor={isPlay ? TextColors.RED : TextColors.BLUE}
           height={VideoHeight}
           visibleOnHover

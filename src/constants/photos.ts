@@ -18,6 +18,29 @@ export const OSS_PHOTOS = {
     height: 720,
     avgColor: BgColors.LIGHT_GRAY,
   },
+  riverAndBoats: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/x2705749244.jpg",
+    renderedWidth: 800,
+    width: 1080,
+    height: 830,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
+  riverSide: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/x2705752731.jpg",
+    renderedWidth: 400,
+    width: 1080,
+    height: 720,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
+  quilt: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/x2710816755.jpg",
+    thumbnailSrc:
+      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/x2710816755.jpg?x-oss-process=style/thumbnail",
+    renderedWidth: 490,
+    width: 1080,
+    height: 832,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
   bridge: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705529760.webp",
     thumbnailSrc:

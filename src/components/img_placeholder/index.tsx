@@ -1,7 +1,9 @@
 import React from "react";
 import classnames from "classnames";
 import { Photo } from "@/types/photo";
+import { ossProcessType } from "@/types/oss";
 import { AspectRatioBox } from "@/components/aspect_ratio_box";
+import { addOssWebpProcessStyle } from "@/utils";
 
 interface imgPlaceholderProps extends Photo {
   pWidth: number;
@@ -14,9 +16,14 @@ export const ImgPlaceholder = (props: imgPlaceholderProps) => {
     avgColor: backgroundColor,
     pWidth: width,
     pHeight: height,
-    thumbnailSrc: src,
+    thumbnailSrc,
+    src,
     className,
   } = props;
+
+  const placeholderImg = thumbnailSrc
+    ? thumbnailSrc
+    : addOssWebpProcessStyle(src, ossProcessType.THUMBNAIL);
 
   return (
     <AspectRatioBox
@@ -25,7 +32,7 @@ export const ImgPlaceholder = (props: imgPlaceholderProps) => {
       className={classnames(className, backgroundColor)}
     >
       <div className="blur-cover absolute top-0 left-0 right-0 bottom-0 z-0" />
-      <img src={src} style={{ width, height: "auto" }} />
+      <img src={placeholderImg} style={{ width, height: "auto" }} />
     </AspectRatioBox>
   );
 };

@@ -1,5 +1,6 @@
 import { Photo } from "@/types/photo";
 import { ossProcessType } from "@/types/oss";
+import { OSS_ADDRESS } from "@/constants/routes";
 
 export const floatNumberToPercentageString = (num: number): string => {
   return `${num * 100}%`;
@@ -8,7 +9,12 @@ export const floatNumberToPercentageString = (num: number): string => {
 export const addOssWebpProcessStyle = (
   originUrl: string,
   style: ossProcessType
-): string => `${originUrl}?x-oss-process=style/${style}`;
+): string => {
+  if (!originUrl.startsWith(OSS_ADDRESS)) {
+    return originUrl;
+  }
+  return `${originUrl}?x-oss-process=style/${style}`;
+};
 
 export const calcDefaultImgSize = (img: Photo, defaultWidth?: number) => {
   const { width, height } = img;

@@ -144,33 +144,24 @@ export const OSS_PHOTOS = {
     avgColor: BgColors.LIGHT_GRAY,
   },
   logoPreview: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/logo-preview.png",
-    thumbnailSrc:
-      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/logo-preview.png?x-oss-process=style/thumbnail",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/favicon.png",
     width: 640,
     height: 640,
     avgColor: BgColors.LIGHT_GRAY,
   },
   validLogoExample: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/valid-example.png",
-    thumbnailSrc:
-      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/valid-example.png?x-oss-process=style/thumbnail",
-    width: 1092,
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/Logo-with-image.png",
     height: 1386,
     avgColor: BgColors.LIGHT_GRAY,
   },
   logoVariants: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/variants.png",
-    thumbnailSrc:
-      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/variants.png?x-oss-process=style/thumbnail",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/valid-variations.png",
     width: 2800,
     height: 640,
     avgColor: BgColors.LIGHT_GRAY,
   },
   badLogoExamples: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/bad-examples.png",
-    thumbnailSrc:
-      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/bad-examples.png?x-oss-process=style/thumbnail",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/Bad-Examples.png",
     width: 2801,
     height: 1362,
     avgColor: BgColors.LIGHT_GRAY,
@@ -184,9 +175,7 @@ export const OSS_PHOTOS = {
     avgColor: BgColors.LIGHT_GRAY,
   },
   logoExcludesZone: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/excludes-zone.png",
-    thumbnailSrc:
-      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/excludes-zone.png?x-oss-process=style/thumbnail",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/Logo-Clear-Area.png",
     width: 1000,
     height: 1000,
     avgColor: BgColors.LIGHT_GRAY,

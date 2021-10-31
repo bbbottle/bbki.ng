@@ -12,7 +12,7 @@ export const Nav = () => {
         <Link to={path} underlineFirstLetter>
           {name}
         </Link>
-        <span className="ml-2">·</span>
+        <span className="ml-3">·</span>
       </>
     ) : (
       <DisabledText>
@@ -24,7 +24,7 @@ export const Nav = () => {
   return (
     <>
       <img src="/Logo.svg" width="24" className="mr-2" alt="logo" />
-      <span className="mr-2">·</span>
+      <span className="mr-3">·</span>
       <List
         horizontal
         items={paths}

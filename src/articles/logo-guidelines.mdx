@@ -1,12 +1,11 @@
 import { Img, Link } from "@/components";
-import { TextColors } from "@/types/color";
 import { OSS_PHOTOS } from "@/constants/photos";
 
 # 网站标识使用规范
 
-<Img {...OSS_PHOTOS.logoPreview} renderedWidth={200} />
+<Link external to="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/zip/LOGOs.zip">下载</Link>
 
-<Link external to="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/zip/bbki.ng.logos.zip">下载</Link>
+<Img {...OSS_PHOTOS.logoPreview} renderedWidth={200} />
 
 ## 目的
 
@@ -48,8 +47,5 @@ import { OSS_PHOTOS } from "@/constants/photos";
 - 禁止添加投影
 
 ### 错误示例
----
 
 <Img {...OSS_PHOTOS.badLogoExamples} renderedWidth={600} />
-
----

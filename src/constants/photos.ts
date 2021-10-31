@@ -24,6 +24,12 @@ export const OSS_PHOTOS = {
     height: 720,
     avgColor: BgColors.LIGHT_GRAY,
   },
+  phone: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/301/DSCF1355.RAF.jpg",
+    width: 1080,
+    height: 723,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
   riverAndBoats: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/x2705749244.jpg",
     renderedWidth: 800,

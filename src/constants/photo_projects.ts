@@ -23,11 +23,14 @@ export const PHOTO_PROJECTS: PhotoProject[] = [
       OSS_PHOTOS.waterLine,
       OSS_PHOTOS.bridge,
       OSS_PHOTOS.building,
-      OSS_PHOTOS.chair,
     ],
   },
   {
-    name: "光前村",
+    name: "光前",
     images: [OSS_PHOTOS.oldMan, OSS_PHOTOS.oldWomen, OSS_PHOTOS.littleChild],
+  },
+  {
+    name: "三百零一",
+    images: [OSS_PHOTOS.phone, OSS_PHOTOS.chair],
   },
 ];

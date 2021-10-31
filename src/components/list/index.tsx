@@ -14,7 +14,7 @@ export const List = (props: listProps) => {
   return (
     <ul className={cls(className, "list-style-none", { flex: horizontal })}>
       {items.map((item, index) => {
-        const liCls = horizontal ? "mr-2" : "mb-2";
+        const liCls = horizontal ? "mr-3" : "mb-2";
         return (
           <li key={item.id || index} className={liCls}>
             {itemRenderer(item, index)}

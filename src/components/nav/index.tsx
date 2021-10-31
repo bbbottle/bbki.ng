@@ -23,7 +23,7 @@ export const Nav = () => {
 
   return (
     <>
-      <img src="/Logo.svg" width="24" className="mr-2" alt="logo" />
+      <img src="/Logo.svg" width="24" className="mr-3" alt="logo" />
       <span className="mr-3">·</span>
       <List
         horizontal

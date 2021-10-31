@@ -34,7 +34,7 @@ export default defineConfig({
         "Logo.svg",
       ],
       workbox: {
-        cleanupOutdatedCaches: true,
+        cleanupOutdatedCaches: false,
         runtimeCaching: [
           {
             urlPattern:

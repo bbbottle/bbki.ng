@@ -9,6 +9,7 @@ export enum BgColors {
   GRAY = "bg-gray-400",
   RED = "bg-red-500",
   BLUE = "bg-blue-600",
+  LIGHT_BLUE = "bg-blue-300",
 }
 
 export enum HoveredTextColors {

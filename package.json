@@ -43,7 +43,9 @@
     "tailwindcss": "^2.2.16",
     "typescript": "^4.3.2",
     "vite": "2.6.9",
-    "vite-plugin-mdx": "^3.5.8"
+    "vite-plugin-mdx": "^3.5.8",
+    "vite-plugin-pwa": "^0.11.3",
+    "workbox-window": "^6.3.0"
   },
   "author": "bbbottle",
   "license": "MIT",

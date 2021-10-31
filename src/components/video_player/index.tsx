@@ -1,4 +1,4 @@
-import React, { ReactEventHandler, useState } from "react";
+import React, { ReactEventHandler, useEffect, useState } from "react";
 import classnames from "classnames";
 import { useVideoControls, useVideoEleHeight, useVideoProgress } from "@/hooks";
 import { BlurCover, ProgressBar } from "@/components";
@@ -19,6 +19,10 @@ export const VideoPlayer = (props: videoPlayProps) => {
   const { progress, onTimeUpdate } = useVideoProgress();
   const VideoHeight = useVideoEleHeight(videoRef);
 
+  // useEffect(() => {
+  //   videoRef.current && videoRef.current.load();
+  // }, []);
+
   const onPlayerReady: ReactEventHandler = () => {
     setShowPlayer(true);
   };
@@ -32,7 +36,12 @@ export const VideoPlayer = (props: videoPlayProps) => {
         className,
         BgColors.LIGHT_GRAY
       )}
-      onClick={toggle}
+      onClick={async () => {
+        await toggle();
+        if (!isPlay) {
+          setHovered(false);
+        }
+      }}
       onMouseEnter={() => {
         setHovered(true);
       }}
@@ -46,7 +55,7 @@ export const VideoPlayer = (props: videoPlayProps) => {
         className={BgColors.LIGHT_GRAY}
       >
         <video
-          preload="metadata"
+          preload="auto"
           playsInline
           ref={videoRef}
           src={src}
@@ -55,7 +64,7 @@ export const VideoPlayer = (props: videoPlayProps) => {
           onCanPlayThrough={onPlayerReady}
         />
       </AspectRatioBox>
-      {hovered && (
+      {hovered && showPlayer && (
         <BlurCover
           textColor={isPlay ? TextColors.RED : TextColors.BLUE}
           height={VideoHeight}

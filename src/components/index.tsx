@@ -43,3 +43,7 @@ export { BlurCover } from "./blur_cover";
 export { Img } from "./img";
 
 export { ImgPlaceholder } from "./img_placeholder";
+
+export { ReloadPrompt } from "./reload_prompt";
+
+export { CornerPromptBox } from "./corner_prompt_box";

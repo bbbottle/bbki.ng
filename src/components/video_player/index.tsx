@@ -46,6 +46,7 @@ export const VideoPlayer = (props: videoPlayProps) => {
         className={BgColors.LIGHT_GRAY}
       >
         <video
+          preload="metadata"
           playsInline
           ref={videoRef}
           src={src}

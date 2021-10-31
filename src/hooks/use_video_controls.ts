@@ -37,6 +37,10 @@ export const useVideoProgress = () => {
   const [progress, setProgress] = useState(0);
   const onTimeUpdate: ReactEventHandler<HTMLVideoElement> = (event) => {
     const video = event.currentTarget;
+    if (!video.duration) {
+      setProgress(0);
+      return;
+    }
     setProgress(video.currentTime / video.duration);
   };
 

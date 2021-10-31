@@ -19,9 +19,12 @@ export const VideoPlayer = (props: videoPlayProps) => {
   const { progress, onTimeUpdate } = useVideoProgress();
   const VideoHeight = useVideoEleHeight(videoRef);
 
-  // useEffect(() => {
-  //   videoRef.current && videoRef.current.load();
-  // }, []);
+  useEffect(() => {
+    if (!videoRef.current) {
+      return;
+    }
+    videoRef.current.load();
+  }, []);
 
   const onPlayerReady: ReactEventHandler = () => {
     setShowPlayer(true);
@@ -55,7 +58,6 @@ export const VideoPlayer = (props: videoPlayProps) => {
         className={BgColors.LIGHT_GRAY}
       >
         <video
-          preload="auto"
           playsInline
           ref={videoRef}
           src={src}

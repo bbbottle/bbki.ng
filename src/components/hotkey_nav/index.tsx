@@ -20,7 +20,7 @@ const KEY_ROUTES = [
   { key: HotKeys.e, route: ROUTES.EXT },
   { key: HotKeys.t, route: ROUTES.TXT },
   { key: HotKeys.p, route: ROUTES.PNG },
-  { key: HotKeys.a, route: ROUTES.AVI },
+  // { key: HotKeys.a, route: ROUTES.AVI },
   { key: HotKeys.h, route: ROUTES.HELP },
 ];
 

@@ -13,9 +13,9 @@ export const ExtensionsList = [
     name: "png",
     component: Png,
   },
-  {
-    path: "/ext/avi",
-    name: "avi",
-    component: Avi,
-  },
+  // {
+  //   path: "/ext/avi",
+  //   name: "avi",
+  //   component: Avi,
+  // },
 ];

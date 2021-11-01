@@ -25,7 +25,7 @@ export const ReloadPrompt = () => {
 
   return (
     <CornerPromptBox
-      content="🚀 新版本可用，点击更新按钮获取最新内容。"
+      content="🚀 点击更新可获取最新内容。"
       showBox={needRefresh}
       onCancel={close}
       cancelLabel="关闭"

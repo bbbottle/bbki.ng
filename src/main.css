@@ -51,6 +51,11 @@
     @apply no-underline outline-none rounded bg-blue-600 text-white !important;
   }
 
+  img {
+    max-width: 100%;
+    height: auto;
+    content-visibility: auto;
+  }
   /**
    * markdown-body patch
    */

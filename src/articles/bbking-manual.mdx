@@ -1,0 +1,70 @@
+import { Img, Link } from "@/components";
+import { OSS_PHOTOS } from "@/constants/photos";
+
+# 网站说明书
+
+## 导航快捷键
+
+在浏览本站的过程中，需要频繁在路由间跳转，除了用鼠标点击超链接的方式，也可以直接按下对应的快捷键进行跳转。下表是快捷键说明。
+
+| 快捷键 | 含义       | 描述                           |
+| :----- | :--------- | :----------------------------- |
+| `h`    | help       | 跳转到本文                     |
+| `i`    | index      | 跳转到首页                     |
+| `e`    | extensions | 跳转到扩展名（媒体类型）选择页 |
+| `t`    | txt        | 跳转到文本列表                 |
+| `p`    | png        | 跳转到图片列表                 |
+| `f`    | forward    | 前进一页                       |
+| `b`    | back       | 后退一页                       |
+| `s`    | source     | 查看本站源代码                 |
+
+跳转到目标页面后，按下 tab 可方便地进一步选择目标链接。
+
+## 网站标识使用规范
+
+<Link external to="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/zip/LOGOs.zip">下载</Link>
+
+<Img {...OSS_PHOTOS.logoPreview} renderedWidth={200} />
+
+### 目的
+
+以下规范用于保证网站标识使用时，能得到最佳视觉效果。
+
+### 规范
+
+#### 颜色
+
+<Img {...OSS_PHOTOS.logoColors} renderedWidth={600}/>
+
+#### 尺寸
+标识宽高不得小于 24 像素。
+
+#### 禁区
+
+禁区宽度为图标宽度的一半
+
+<Img {...OSS_PHOTOS.logoExcludesZone} renderedWidth={300} />
+
+#### 合法变体
+
+##### 纯色背景
+
+<Img {...OSS_PHOTOS.logoVariants} renderedWidth={600} />
+
+##### 图片背景
+<Img {...OSS_PHOTOS.validLogoExample} renderedWidth={300} />
+
+#### 非法误用
+
+- 禁止旋转
+- 禁止前景背景色出现合法变体外的组合
+- 禁止拉伸、压缩
+- 禁止使用描边形式
+- 禁止修改增删
+- 禁止图标越过禁区
+- 禁止添加文字
+- 禁止添加投影
+
+#### 错误示例
+
+<Img {...OSS_PHOTOS.badLogoExamples} renderedWidth={600} />

@@ -1,32 +1,57 @@
-import React from "react";
+import React, { useState } from "react";
+import classnames from "classnames";
 import { Photo } from "@/types/photo";
-import { useImgLoading } from "@/hooks";
-import { ImgPlaceholder } from "@/components";
-import { calcDefaultImgSize } from "@/utils";
+import { addOssWebpProcessStyle, calcDefaultImgSize } from "@/utils";
+import { ossProcessType } from "@/types/oss";
 
 interface ImgProps extends Photo {
   className?: string;
 }
 
 export const Img = (props: ImgProps) => {
-  const { src, className, renderedWidth } = props;
+  const { src, className, renderedWidth, avgColor, thumbnailSrc } = props;
   const { width, height } = calcDefaultImgSize(props, renderedWidth);
-  const loading = useImgLoading(src);
+  const [loaded, setLoaded] = useState(false);
 
-  const imgStyle = {
-    width,
+  const imgStyle = loaded
+    ? {
+        transform: `scale(1)`,
+      }
+    : {
+        filter: "blur(20px)",
+        transform: `scale(${(width + 80) / width})`,
+        backgroundSize: "cover",
+        backgroundPosition: "0% 0%",
+        backgroundImage: `url(${
+          thumbnailSrc
+            ? thumbnailSrc
+            : addOssWebpProcessStyle(src, ossProcessType.THUMBNAIL)
+        })`,
+      };
+
+  const wrapperStyle = {
+    display: "inline-block",
+    overflow: "hidden",
+    width: "initial",
+    height: "initial",
+    background: "none",
+    opacity: 1,
+    border: 0,
   };
 
-  if (loading) {
-    return (
-      <ImgPlaceholder
-        {...props}
-        pHeight={height}
-        pWidth={width}
-        className={className}
+  return (
+    <span className={className} style={wrapperStyle}>
+      <img
+        onLoad={() => {
+          setLoaded(true);
+        }}
+        width={width}
+        height={height}
+        src={src}
+        style={Object.assign({ transition: "all" }, imgStyle)}
+        decoding="async"
+        className={classnames(avgColor, { "animation-pulse": !loaded })}
       />
-    );
-  }
-
-  return <img src={src} style={imgStyle} className={className} />;
+    </span>
+  );
 };

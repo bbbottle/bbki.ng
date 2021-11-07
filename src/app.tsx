@@ -1,13 +1,17 @@
-import React from "react";
+import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Footer, NavMainLayout, Nav, HotKeyNav } from "./components";
-import { Extensions, Cover } from "./pages";
+import { Cover } from "./pages";
+
+const Extensions = lazy(() => import("./pages/extensions"));
 
 const Content = () => {
   return (
     <Switch>
       <Route path="/ext">
-        <Extensions />
+        <Suspense fallback={() => null}>
+          <Extensions />
+        </Suspense>
       </Route>
       <Route path="/" exact>
         <Cover />

@@ -23,6 +23,8 @@ export const PHOTO_PROJECTS: PhotoProject[] = [
       OSS_PHOTOS.waterLine,
       OSS_PHOTOS.bridge,
       OSS_PHOTOS.building,
+      OSS_PHOTOS.smoking,
+      OSS_PHOTOS.jzBridge,
     ],
   },
   {

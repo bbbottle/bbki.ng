@@ -79,7 +79,19 @@ export const OSS_PHOTOS = {
     height: 3725,
     avgColor: BgColors.LIGHT_GRAY,
   },
-
+  smoking: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF1383.jpg",
+    width: 2023,
+    height: 2670,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
+  jzBridge: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF1401.jpg",
+    width: 5980,
+    height: 3699,
+    renderedWidth: 700,
+    avgColor: BgColors.LIGHT_GRAY,
+  },
   motorcycle: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/county-town/4688FF3F-8EF5-4F63-B726-9AC275C1A97E-50268-000009856F7D5885.jpg",
     thumbnailSrc:

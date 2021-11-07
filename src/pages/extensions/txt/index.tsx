@@ -2,6 +2,8 @@ import React from "react";
 import { SwitchComponentsRoute } from "@/components";
 import { ArticleList } from "./consts";
 
-export const Txt = () => {
+const Txt = () => {
   return <SwitchComponentsRoute componentPathList={ArticleList} />;
 };
+
+export default Txt;

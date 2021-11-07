@@ -169,6 +169,7 @@ export const OSS_PHOTOS = {
   },
   validLogoExample: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/illustration/illustration/Logo-with-image.png",
+    width: 1092,
     height: 1386,
     avgColor: BgColors.LIGHT_GRAY,
   },

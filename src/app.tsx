@@ -4,12 +4,13 @@ import { Footer, NavMainLayout, Nav, HotKeyNav } from "./components";
 import { Cover } from "./pages";
 
 const Extensions = lazy(() => import("./pages/extensions"));
+const Spinner = () => null;
 
 const Content = () => {
   return (
     <Switch>
       <Route path="/ext">
-        <Suspense fallback={() => null}>
+        <Suspense fallback={<Spinner />}>
           <Extensions />
         </Suspense>
       </Route>

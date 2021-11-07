@@ -4,13 +4,16 @@ import { VitePWA } from "vite-plugin-pwa";
 import mdx from "vite-plugin-mdx";
 import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
+import remarkFrontmatter from "remark-frontmatter";
+import { remarkMdxFrontmatter } from "remark-mdx-frontmatter";
 import react from "@vitejs/plugin-react";
 
 const options = {
   // See https://mdxjs.com/advanced/plugins
   remarkPlugins: [
-    // E.g. `remark-frontmatter`
     remarkParse,
+    [remarkFrontmatter, { type: "yaml", marker: "-" }],
+    [remarkMdxFrontmatter, { name: "meta" }],
     remarkGfm,
   ],
   rehypePlugins: [],
@@ -21,6 +24,14 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(__dirname, "./src"),
+    },
+  },
+  // build.rollupOptions.output.manualChunks
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
     },
   },
   plugins: [

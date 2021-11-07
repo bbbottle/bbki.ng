@@ -5,6 +5,7 @@ export const ROUTES = {
   TXT: "/ext/txt",
   AVI: "/ext/avi",
   HELP: "/ext/txt/网站快捷键",
+  TAGS: "/tags",
 };
 
 export const ROUTE_NAME = {

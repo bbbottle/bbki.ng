@@ -4,7 +4,6 @@ import { ROUTES } from "@/constants";
 import { MdxArticleList } from "@/articles";
 
 export const ArticleList: compPathObj[] = MdxArticleList.map(
-  // @ts-ignore
   ({ default: component, meta }) => {
     return {
       path: `${ROUTES.TXT}/${meta.title}`,

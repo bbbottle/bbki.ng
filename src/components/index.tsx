@@ -47,3 +47,5 @@ export { ImgPlaceholder } from "./img_placeholder";
 export { ReloadPrompt } from "./reload_prompt";
 
 export { CornerPromptBox } from "./corner_prompt_box";
+
+export { Tags } from "./tags";

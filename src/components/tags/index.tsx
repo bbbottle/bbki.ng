@@ -1,4 +1,5 @@
 import React from "react";
+import classnames from "classnames";
 import {
   DisabledText,
   Link,
@@ -28,7 +29,7 @@ export const Tags = (props: Tags) => {
           items={tags}
           itemRenderer={renderTag}
           horizontal={inline}
-          className={className}
+          className={classnames(className, "inline-flex", "ml-3")}
         />
       </>
     );

@@ -5,7 +5,7 @@ import { compPathObj } from "@/types/path";
 
 type TxtProps = {
   title?: string;
-  articleList: compPathObj[];
+  articleList?: compPathObj[];
 };
 
 const Txt = (props: TxtProps) => {

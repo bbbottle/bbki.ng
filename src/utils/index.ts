@@ -28,3 +28,5 @@ export const calcDefaultImgSize = (img: Photo, defaultWidth?: number) => {
     height: finalWidth / whRatio,
   };
 };
+
+export * from "./tags";

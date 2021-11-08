@@ -4,7 +4,8 @@ export const ROUTES = {
   PNG: "/ext/png",
   TXT: "/ext/txt",
   AVI: "/ext/avi",
-  HELP: "/ext/txt/网站快捷键",
+  HELP: "/ext/txt/网站说明书",
+  TAGS: "/tags",
 };
 
 export const ROUTE_NAME = {

@@ -12,7 +12,12 @@ export const List = (props: listProps) => {
   const { items, itemRenderer, className, horizontal } = props;
 
   return (
-    <ul className={cls(className, "list-style-none", { flex: horizontal })}>
+    <ul
+      className={cls(className, "list-style-none", {
+        flex: horizontal,
+        "align-center": horizontal,
+      })}
+    >
       {items.map((item, index) => {
         const liCls = horizontal ? "mr-3" : "mb-2";
         return (

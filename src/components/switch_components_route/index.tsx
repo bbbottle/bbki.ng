@@ -4,11 +4,12 @@ import { compPathObj } from "@/types/path";
 import { CenterLinkList } from "@/components";
 
 type switchComponentsRouteProps = {
+  title?: string;
   componentPathList: compPathObj[];
 };
 
 export const SwitchComponentsRoute = (props: switchComponentsRouteProps) => {
-  const { componentPathList } = props;
+  const { componentPathList, title } = props;
   return (
     <Switch>
       {componentPathList.map(
@@ -21,7 +22,7 @@ export const SwitchComponentsRoute = (props: switchComponentsRouteProps) => {
         }
       )}
       <Route>
-        <CenterLinkList list={componentPathList} />
+        <CenterLinkList list={componentPathList} title={title} />
       </Route>
     </Switch>
   );

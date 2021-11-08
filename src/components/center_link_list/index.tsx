@@ -6,12 +6,13 @@ import { Link } from "../link";
 import { ThreeColLayout } from "../layout";
 
 type centerLinkListProps = {
+  title?: string;
   list: pathObj[];
 };
 
 export const CenterLinkList = (props: centerLinkListProps) => {
-  const { list } = props;
-  const name = useRouteName();
+  const { list, title } = props;
+  const listTitle = title || useRouteName();
   const renderExt = ({ name, path }: any) => {
     return (
       <Link to={path} key={name}>
@@ -21,7 +22,7 @@ export const CenterLinkList = (props: centerLinkListProps) => {
   };
 
   const renderList = () => (
-    <ListWithTitle items={list} itemRenderer={renderExt} title={name} />
+    <ListWithTitle items={list} itemRenderer={renderExt} title={listTitle} />
   );
   return <ThreeColLayout middleRenderer={renderList} />;
 };

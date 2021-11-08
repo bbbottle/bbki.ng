@@ -13,6 +13,7 @@ enum HotKeys {
   b = "b",
   h = "h",
   s = "s",
+  T = "shift+t",
 }
 
 const KEY_ROUTES = [
@@ -22,6 +23,7 @@ const KEY_ROUTES = [
   { key: HotKeys.p, route: ROUTES.PNG },
   // { key: HotKeys.a, route: ROUTES.AVI },
   { key: HotKeys.h, route: ROUTES.HELP },
+  { key: HotKeys.T, route: ROUTES.TAGS },
 ];
 
 export const HotKeyNav = (props: any) => {

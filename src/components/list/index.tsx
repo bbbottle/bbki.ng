@@ -3,14 +3,16 @@ import cls from "classnames";
 
 interface listProps {
   className?: string;
+  compact?: boolean;
   items: any[];
   itemRenderer: (itemProps: any, index: number) => ReactElement;
   horizontal?: boolean;
 }
 
 export const List = (props: listProps) => {
-  const { items, itemRenderer, className, horizontal } = props;
+  const { items, itemRenderer, className, horizontal, compact } = props;
 
+  const spaceCls = compact ? "" : horizontal ? "mr-3" : "mb-2";
   return (
     <ul
       className={cls(className, "list-style-none", {
@@ -19,9 +21,8 @@ export const List = (props: listProps) => {
       })}
     >
       {items.map((item, index) => {
-        const liCls = horizontal ? "mr-3" : "mb-2";
         return (
-          <li key={item.id || index} className={liCls}>
+          <li key={item.id || index} className={spaceCls}>
             {itemRenderer(item, index)}
           </li>
         );

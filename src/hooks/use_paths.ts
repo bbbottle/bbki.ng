@@ -5,7 +5,7 @@ export const usePaths = (): pathObj[] => {
   const pathname = usePathName();
 
   if (pathname === "/") {
-    return [{ name: "index" }];
+    return [{ name: "~" }];
   }
 
   const pathNameArr = pathname.split("/");
@@ -19,7 +19,7 @@ export const usePaths = (): pathObj[] => {
 
   return pathsArr.map((path, index) => {
     const isLast = index === pathsArr.length - 1;
-    const name = pathNameArr[index].replace(/^$/, "index");
+    const name = pathNameArr[index].replace(/^$/, "~");
     return isLast
       ? { name }
       : {

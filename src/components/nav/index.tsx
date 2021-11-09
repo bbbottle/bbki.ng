@@ -9,10 +9,8 @@ export const Nav = () => {
   const renderNavItem = ({ path, name }: any) => {
     return path ? (
       <>
-        <Link to={path} underlineFirstLetter>
-          {name}
-        </Link>
-        <span className="ml-3">·</span>
+        <Link to={path}>{name}</Link>
+        <DisabledText>/</DisabledText>
       </>
     ) : (
       <DisabledText>
@@ -23,9 +21,9 @@ export const Nav = () => {
 
   return (
     <>
-      <img src="/Logo.svg" width="24" className="mr-3" alt="logo" />
-      <span className="mr-3">·</span>
+      <img src="/Logo.svg" width="24" className="mr-6" alt="logo" />
       <List
+        compact
         horizontal
         items={paths}
         itemRenderer={renderNavItem}

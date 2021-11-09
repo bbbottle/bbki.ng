@@ -5,6 +5,7 @@ export enum TextColors {
 }
 
 export enum BgColors {
+  WHITE_GRAY = "bg-gray-50",
   LIGHT_GRAY = "bg-gray-100",
   GRAY = "bg-gray-400",
   RED = "bg-red-500",

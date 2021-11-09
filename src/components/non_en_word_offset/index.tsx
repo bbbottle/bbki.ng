@@ -6,7 +6,7 @@ type nonEnWordOffsetProps = {
 };
 
 export const NonEnWordOffset = (props: nonEnWordOffsetProps) => {
-  const { children, offset = 2 } = props;
+  const { children, offset = 1 } = props;
   const isEnWord = /[a-z~]+/.test(children);
   if (isEnWord) {
     return <span>{children}</span>;

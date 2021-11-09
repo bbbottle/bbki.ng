@@ -1,7 +1,7 @@
 import React from "react";
 import { Switch, Route, match } from "react-router-dom";
 import Txt from "@/pages/extensions/txt";
-import { getAllTags, getArticleListByTag } from "@/utils/tags";
+import { getAllTags, getArticleListByTag } from "@/utils";
 import { MdxArticleList } from "@/articles";
 import { ROUTES } from "@/constants";
 import { Tags } from "@/components";

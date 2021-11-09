@@ -10,6 +10,7 @@ export const ArticleList: compPathObj[] = MdxArticleList.map(
       name: meta.title,
       componentProps: {
         tags: meta.tags,
+        title: meta.title,
       },
       component: withArticleWrapper(component),
     };

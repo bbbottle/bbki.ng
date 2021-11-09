@@ -49,3 +49,5 @@ export { ReloadPrompt } from "./reload_prompt";
 export { CornerPromptBox } from "./corner_prompt_box";
 
 export { Tags } from "./tags";
+
+export { Comment } from "./comment";

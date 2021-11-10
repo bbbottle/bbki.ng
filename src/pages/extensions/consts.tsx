@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { CenterListWithTitleSkeleton } from "@/components/list";
+import { CenterListWithTitleSkeleton } from "@/components";
 // import { Avi } from "./avi";
 
 const Png = lazy(() => import("./png"));

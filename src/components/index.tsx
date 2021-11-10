@@ -6,7 +6,7 @@ export {
   ThreeColLayout,
 } from "./layout";
 
-export { List, ListWithTitle } from "./list";
+export { List, ListWithTitle, CenterListWithTitleSkeleton } from "./list";
 
 export { Nav } from "./nav";
 

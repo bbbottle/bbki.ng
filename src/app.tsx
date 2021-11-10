@@ -1,9 +1,14 @@
 import React, { lazy, Suspense } from "react";
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
-import { Footer, NavMainLayout, Nav, HotKeyNav } from "./components";
+import {
+  Footer,
+  NavMainLayout,
+  Nav,
+  HotKeyNav,
+  CenterListWithTitleSkeleton,
+} from "./components";
 import { Cover } from "./pages";
 import { ROUTES } from "@/constants";
-import { CenterListWithTitleSkeleton } from "@/components/list";
 
 const Extensions = lazy(() => import("./pages/extensions"));
 const Tags = lazy(() => import("./pages/tags"));

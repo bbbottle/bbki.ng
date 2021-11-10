@@ -1,4 +1,4 @@
-import React, { ReactElement } from "react";
+import React, { ReactElement, useEffect, useState } from "react";
 import cls from "classnames";
 import { BgColors } from "@/types/color";
 import { ThreeColLayout } from "@/components";
@@ -98,6 +98,21 @@ export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
 export const CenterListWithTitleSkeleton = (
   props: ListWithTitleSkeletonProps
 ) => {
+  const [showSkeleton, setShowSkeleton] = useState(false);
+
+  useEffect(() => {
+    const timeOutId = setTimeout(() => {
+      setShowSkeleton(true);
+    }, 500);
+
+    return () => {
+      clearTimeout(timeOutId);
+    };
+  });
+
+  if (!showSkeleton) {
+    return null;
+  }
   return (
     <ThreeColLayout
       middleRenderer={() => <ListWithTitleSkeleton {...props} />}

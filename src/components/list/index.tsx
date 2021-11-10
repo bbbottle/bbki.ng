@@ -1,5 +1,7 @@
 import React, { ReactElement } from "react";
 import cls from "classnames";
+import { BgColors } from "@/types/color";
+import { ThreeColLayout } from "@/components";
 
 interface listProps {
   className?: string;
@@ -32,7 +34,7 @@ export const List = (props: listProps) => {
 };
 
 interface listWithTitleProps extends listProps {
-  title: string;
+  title: string | ReactElement;
   className?: string;
 }
 
@@ -43,5 +45,62 @@ export const ListWithTitle = (props: listWithTitleProps) => {
       <h1>{title}</h1>
       <List {...rest} />
     </div>
+  );
+};
+
+type SkeletonProps = {
+  bgColor: BgColors;
+  width?: number;
+  height?: number;
+};
+export const Skeleton = (props: SkeletonProps) => {
+  const { bgColor, width = 26, height = 24 } = props;
+  return (
+    <div
+      className={cls(bgColor, "animate-pulse", "rounded")}
+      style={{ width, height }}
+    />
+  );
+};
+
+type ListWithTitleSkeletonProps = {
+  titleLength: number;
+  listItemLength: number;
+  listItemWidthArray?: number[];
+};
+
+export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
+  const { titleLength, listItemLength, listItemWidthArray = [] } = props;
+  const items = new Array(listItemLength).fill(null).map((_, index) => {
+    return (
+      <Skeleton
+        bgColor={BgColors.WHITE_BLUE}
+        width={listItemWidthArray[index]}
+      />
+    );
+  });
+
+  return (
+    <ListWithTitle
+      title={
+        <Skeleton
+          bgColor={BgColors.LIGHT_GRAY}
+          height={28}
+          width={24 * titleLength}
+        />
+      }
+      items={items}
+      itemRenderer={(n) => n}
+    />
+  );
+};
+
+export const CenterListWithTitleSkeleton = (
+  props: ListWithTitleSkeletonProps
+) => {
+  return (
+    <ThreeColLayout
+      middleRenderer={() => <ListWithTitleSkeleton {...props} />}
+    />
   );
 };

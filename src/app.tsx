@@ -3,21 +3,33 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { Footer, NavMainLayout, Nav, HotKeyNav } from "./components";
 import { Cover } from "./pages";
 import { ROUTES } from "@/constants";
+import { CenterListWithTitleSkeleton } from "@/components/list";
 
 const Extensions = lazy(() => import("./pages/extensions"));
 const Tags = lazy(() => import("./pages/tags"));
-const Spinner = () => null;
 
 const Content = () => {
   return (
     <Switch>
       <Route path={ROUTES.EXT}>
-        <Suspense fallback={<Spinner />}>
+        <Suspense
+          fallback={
+            <CenterListWithTitleSkeleton titleLength={4} listItemLength={2} />
+          }
+        >
           <Extensions />
         </Suspense>
       </Route>
       <Route path={ROUTES.TAGS}>
-        <Suspense fallback={<Spinner />}>
+        <Suspense
+          fallback={
+            <CenterListWithTitleSkeleton
+              titleLength={2}
+              listItemLength={2}
+              listItemWidthArray={[61, 32]}
+            />
+          }
+        >
           <Tags />
         </Suspense>
       </Route>

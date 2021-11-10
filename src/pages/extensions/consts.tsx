@@ -1,9 +1,9 @@
 import React, { lazy, Suspense } from "react";
+import { CenterListWithTitleSkeleton } from "@/components/list";
 // import { Avi } from "./avi";
 
 const Png = lazy(() => import("./png"));
 const Txt = lazy(() => import("./txt"));
-const Spinner = () => null;
 
 export const ExtensionsList = [
   {
@@ -11,7 +11,15 @@ export const ExtensionsList = [
     name: "txt",
     component: () => {
       return (
-        <Suspense fallback={<Spinner />}>
+        <Suspense
+          fallback={
+            <CenterListWithTitleSkeleton
+              titleLength={2}
+              listItemLength={4}
+              listItemWidthArray={[80, 80, 32, 32]}
+            />
+          }
+        >
           <Txt />
         </Suspense>
       );
@@ -22,7 +30,15 @@ export const ExtensionsList = [
     name: "png",
     component: () => {
       return (
-        <Suspense fallback={<Spinner />}>
+        <Suspense
+          fallback={
+            <CenterListWithTitleSkeleton
+              titleLength={2}
+              listItemLength={4}
+              listItemWidthArray={[48, 64, 32, 64]}
+            />
+          }
+        >
           <Png />
         </Suspense>
       );

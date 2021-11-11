@@ -16,49 +16,16 @@
 }
 
 @layer base {
-  ol,
-  ul {
-    list-style: unset;
-  }
-
-  .markdown-body h1 {
-    margin: unset;
-  }
-
   .blur-cover {
     background-color: rgba(255, 255, 255, 0.5);
     backdrop-filter: blur(7px);
   }
 
-  .list-style-none {
-    list-style: none;
-  }
-
-  h1,
-  .markdown-body h1 {
-    @apply text-2xl py-10 mb-10 border border-t-0 border-r-0 border-l-0;
-  }
-
-  h2 {
-    @apply text-xl;
-  }
-
-  p {
-    @apply my-8 leading-7;
+  .prose h1 {
+    @apply mt-20 pb-10 mb-10 border border-t-0 border-r-0 border-l-0 !important;
   }
 
   a:focus {
     @apply no-underline outline-none rounded bg-blue-600 text-white !important;
-  }
-
-  /**
-   * markdown-body patch
-   */
-  .markdown-body {
-    @apply font-mono leading-7;
-  }
-
-  .markdown-body a:hover {
-    text-decoration: none;
   }
 }

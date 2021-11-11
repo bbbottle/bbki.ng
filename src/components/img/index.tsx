@@ -50,7 +50,10 @@ export const Img = (props: ImgProps) => {
         src={src}
         style={Object.assign({ transition: "all" }, imgStyle)}
         decoding="async"
-        className={classnames(avgColor, { "animation-pulse": !loaded })}
+        className={classnames({
+          "animation-pulse": !loaded,
+          [avgColor]: !loaded,
+        })}
       />
     </span>
   );

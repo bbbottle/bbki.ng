@@ -9,12 +9,7 @@ import { TextColors } from "@/types/color";
 
 export const Cover = () => {
   const question = "已满十八岁？";
-  const answers = [
-    <Link to="/ext" color={TextColors.RED}>
-      YES
-    </Link>,
-    <DisabledText>No</DisabledText>,
-  ];
+  const answers = [<Link to="/ext">No</Link>, <DisabledText>Yes</DisabledText>];
 
   const renderer = (n: any) => n;
 

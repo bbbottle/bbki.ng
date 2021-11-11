@@ -1,9 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import { ReactCusdis } from "react-cusdis";
-import { BgColors } from "@/types/color";
-import { useIframeReady } from "@/hooks/use_iframe_ready";
-import { CUSDIS_ATTRS } from "@/constants/cusdis";
+import { BgColors, TextColors } from "@/types/color";
+import { CUSDIS_ATTRS, CUSDIS_OFFICIAL_SITE_ADDRESS } from "@/constants/cusdis";
+import { useCusidsEvent } from "@/components/comment/use_cusdis_event";
+import { CornerPromptBox, Link } from "@/components";
 
 type CommentProps = {
   title: string;
@@ -17,7 +18,17 @@ export const Comment = (props: CommentProps) => {
     pageId: path,
   });
 
-  const ready = useIframeReady(3000);
+  const [ready, setReady] = useState(false);
+  const [showBox, setShowBox] = useState(false);
+
+  useCusidsEvent({
+    handleCommentLoaded: () => {
+      setReady(true);
+    },
+    handleCommentSent: () => {
+      setShowBox(true);
+    },
+  });
 
   return (
     <div
@@ -33,6 +44,26 @@ export const Comment = (props: CommentProps) => {
       )}
     >
       <ReactCusdis attrs={cusdisAttrs} />
+      <CornerPromptBox
+        autoCancelAfter={3000}
+        content="评论已发送，等待 18+ 内容审核。"
+        showBox={showBox}
+        cancelLabel="关闭"
+        onCancel={() => {
+          console.log("cancel");
+          setShowBox(false);
+        }}
+      />
+      <div className="text-center">
+        <Link
+          to={CUSDIS_OFFICIAL_SITE_ADDRESS}
+          external
+          color={TextColors.GRAY}
+          className="px-1"
+        >
+          powered by discus
+        </Link>
+      </div>
     </div>
   );
 };

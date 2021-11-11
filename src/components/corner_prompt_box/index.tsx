@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import classnames from "classnames";
 import { BgColors } from "@/types/color";
 
@@ -7,17 +7,39 @@ type cornerPromptBoxProps = {
   onOk?: (() => void) | null;
   onCancel?: (() => void) | null;
   cancelLabel?: string;
+  autoCancelAfter?: number;
   content: string;
   showBox: boolean;
 };
 
 export const CornerPromptBox = (props: cornerPromptBoxProps) => {
-  const { onOk, okLabel, onCancel, cancelLabel, content, showBox } = props;
+  const {
+    onOk,
+    okLabel,
+    onCancel,
+    cancelLabel,
+    content,
+    showBox,
+    autoCancelAfter,
+  } = props;
   const [loading, setLoading] = useState(false);
   const baseButtonCls = "border mr-3 rounded px-2 py-1";
   const primaryButtonCls = classnames("text-white", "disabled:opacity-50", {
     [BgColors.BLUE]: !loading,
   });
+
+  useEffect(() => {
+    if (!autoCancelAfter || !onCancel || !showBox) {
+      return;
+    }
+    const timerId = setTimeout(() => {
+      onCancel();
+    }, autoCancelAfter);
+
+    return () => {
+      clearTimeout(timerId);
+    };
+  }, [showBox]);
 
   const handleOk = async () => {
     if (!onOk) {

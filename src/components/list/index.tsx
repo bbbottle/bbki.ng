@@ -42,7 +42,11 @@ export const ListWithTitle = (props: listWithTitleProps) => {
   const { title, className, ...rest } = props;
   return (
     <div className={className}>
-      <h1>{title}</h1>
+      <article className="prose">
+        <span className="hidden">&nbsp;</span>
+        <h1>{title}</h1>
+        <span className="hidden">&nbsp;</span>
+      </article>
       <List {...rest} />
     </div>
   );
@@ -87,8 +91,8 @@ export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
       title={
         <Skeleton
           bgColor={BgColors.LIGHT_GRAY}
-          height={28}
-          width={24 * titleLength}
+          height={40}
+          width={26.5 * titleLength}
         />
       }
       items={items}

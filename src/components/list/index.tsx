@@ -65,20 +65,22 @@ export const Skeleton = (props: SkeletonProps) => {
 
 type ListWithTitleSkeletonProps = {
   titleLength: number;
-  listItemLength: number;
+  listItemLength?: number;
   listItemWidthArray?: number[];
 };
 
 export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
   const { titleLength, listItemLength, listItemWidthArray = [] } = props;
-  const items = new Array(listItemLength).fill(null).map((_, index) => {
-    return (
-      <Skeleton
-        bgColor={BgColors.WHITE_BLUE}
-        width={listItemWidthArray[index]}
-      />
-    );
-  });
+  const items = new Array(listItemLength || listItemWidthArray.length)
+    .fill(null)
+    .map((_, index) => {
+      return (
+        <Skeleton
+          bgColor={BgColors.WHITE_BLUE}
+          width={listItemWidthArray[index]}
+        />
+      );
+    });
 
   return (
     <ListWithTitle

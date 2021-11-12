@@ -1,5 +1,10 @@
 module.exports = {
-  purge: ["./index.html", "./src/**/*.{js,ts,jsx,tsx}"],
+  purge: {
+    content: ["./index.html", "./src/**/*.{js,ts,jsx,tsx, mdx}"],
+    options: {
+      keyframes: true,
+    },
+  },
   darkMode: false, // or 'media' or 'class'
   theme: {
     flex: {

@@ -6,6 +6,7 @@ import remarkGfm from "remark-gfm";
 import remarkParse from "remark-parse";
 import remarkFrontmatter from "remark-frontmatter";
 import { remarkMdxFrontmatter } from "remark-mdx-frontmatter";
+import rehypeHighlight from "rehype-highlight";
 import react from "@vitejs/plugin-react";
 
 const options = {
@@ -16,7 +17,7 @@ const options = {
     [remarkMdxFrontmatter, { name: "meta" }],
     remarkGfm,
   ],
-  rehypePlugins: [],
+  rehypePlugins: [rehypeHighlight],
 };
 
 // https://vitejs.dev/config/

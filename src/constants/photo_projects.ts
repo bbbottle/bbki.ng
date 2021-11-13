@@ -15,6 +15,8 @@ export const PHOTO_PROJECTS: PhotoProject[] = [
   {
     name: "河东河西",
     images: [
+      OSS_PHOTOS.player,
+      OSS_PHOTOS.players,
       OSS_PHOTOS.dragonRiver,
       OSS_PHOTOS.riverAndBoats,
       OSS_PHOTOS.riverSide,

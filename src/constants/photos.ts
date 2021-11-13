@@ -1,6 +1,16 @@
 import { BgColors } from "@/types/color";
 
 export const OSS_PHOTOS = {
+  player: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/player.jpg",
+    width: 2692,
+    height: 3546,
+  },
+  players: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/players.jpg",
+    width: 3368,
+    height: 2344,
+  },
   fishing: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705047873.webp",
     thumbnailSrc:

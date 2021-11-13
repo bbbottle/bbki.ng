@@ -27,8 +27,12 @@ export const Cover = () => {
   );
   const answers = [
     content,
-    <Link to="/ext">No</Link>,
-    <DisabledText>Yes</DisabledText>,
+    <br />,
+    <>
+      <DisabledText>- </DisabledText>
+      <Link to="/ext">No</Link>
+    </>,
+    <DisabledText>- Yes</DisabledText>,
   ];
 
   const renderer = (n: any) => n;

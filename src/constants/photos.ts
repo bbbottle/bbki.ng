@@ -5,11 +5,13 @@ export const OSS_PHOTOS = {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/player.jpg",
     width: 2692,
     height: 3546,
+    avgColor: BgColors.LIGHT_GRAY,
   },
   players: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/players.jpg",
     width: 3368,
     height: 2344,
+    avgColor: BgColors.LIGHT_GRAY,
   },
   fishing: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/p2705047873.webp",

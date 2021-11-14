@@ -13,13 +13,16 @@ export const Img = (props: ImgProps) => {
   const { width, height } = calcDefaultImgSize(props, renderedWidth);
   const [loaded, setLoaded] = useState(false);
 
-  const imgStyle = loaded
+  const baseWrapperStyle = {
+    width: "initial",
+    height: "initial",
+  };
+
+  const dynamicWrapperStyle = loaded
     ? {
-        transform: `scale(1)`,
+        backgroundImage: "none",
       }
     : {
-        filter: "blur(20px)",
-        transform: `scale(${(width + 80) / width})`,
         backgroundSize: "cover",
         backgroundPosition: "0% 0%",
         backgroundImage: `url(${
@@ -29,32 +32,40 @@ export const Img = (props: ImgProps) => {
         })`,
       };
 
-  const wrapperStyle = {
-    display: "inline-block",
-    overflow: "hidden",
-    width: "initial",
-    height: "initial",
-    background: "none",
-    opacity: 1,
-    border: 0,
-  };
-
   return (
-    <span className={className} style={wrapperStyle}>
+    <span
+      className={classnames(
+        className,
+        "inline-block",
+        "overflow-hidden",
+        "border-0",
+        {
+          [avgColor]: !loaded,
+        }
+      )}
+      style={Object.assign({}, baseWrapperStyle, dynamicWrapperStyle)}
+    >
       <img
-        onLoad={() => {
-          setLoaded(true);
+        ref={(input) => {
+          if (!input) {
+            return;
+          }
+
+          const img = input;
+
+          const updateFunc = () => {
+            setLoaded(true);
+          };
+          if (img.complete) {
+            updateFunc();
+          }
         }}
         width={width}
         height={height}
         src={src}
-        style={Object.assign({ transition: "all" }, imgStyle)}
         decoding="async"
         loading="lazy"
-        className={classnames({
-          "animation-pulse": !loaded,
-          [avgColor]: !loaded,
-        })}
+        className={classnames("lqip-blur")}
       />
     </span>
   );

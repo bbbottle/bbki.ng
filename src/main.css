@@ -21,6 +21,10 @@
     backdrop-filter: blur(7px);
   }
 
+  .lqip-blur {
+    backdrop-filter: blur(20px);
+  }
+
   .prose h1 {
     @apply mt-20 pb-10 mb-10 border border-t-0 border-r-0 border-l-0 !important;
   }

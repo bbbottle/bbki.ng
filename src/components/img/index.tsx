@@ -58,7 +58,10 @@ export const Img = (props: ImgProps) => {
           };
           if (img.complete) {
             updateFunc();
+            return;
           }
+
+          img.onload = updateFunc;
         }}
         width={width}
         height={height}

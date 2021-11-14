@@ -1,6 +1,12 @@
 import { BgColors } from "@/types/color";
 
 export const OSS_PHOTOS = {
+  swimmer: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/swimmer.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    width: 6081,
+    height: 4126,
+  },
   player: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/player.jpg",
     width: 2692,

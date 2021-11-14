@@ -9,5 +9,6 @@ export interface Photo {
 
 export interface PhotoProject {
   name: string;
+  description?: string;
   images: Photo[];
 }

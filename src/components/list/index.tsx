@@ -1,7 +1,13 @@
-import React, { ReactElement, useEffect, useState } from "react";
+import React, {
+  FunctionComponent,
+  ReactElement,
+  useEffect,
+  useState,
+} from "react";
 import cls from "classnames";
 import { BgColors } from "@/types/color";
 import { ThreeColLayout } from "@/components";
+import { withTitle } from "@/components/with_title";
 
 interface listProps {
   className?: string;
@@ -11,7 +17,7 @@ interface listProps {
   horizontal?: boolean;
 }
 
-export const List = (props: listProps) => {
+export const List: FunctionComponent<listProps> = (props) => {
   const { items, itemRenderer, className, horizontal, compact } = props;
 
   const spaceCls = compact ? "" : horizontal ? "mr-3" : "mb-2";
@@ -33,24 +39,7 @@ export const List = (props: listProps) => {
   );
 };
 
-interface listWithTitleProps extends listProps {
-  title: string | ReactElement;
-  className?: string;
-}
-
-export const ListWithTitle = (props: listWithTitleProps) => {
-  const { title, className, ...rest } = props;
-  return (
-    <div className={className}>
-      <article className="prose">
-        <span className="hidden">&nbsp;</span>
-        <h1>{title}</h1>
-        <span className="hidden">&nbsp;</span>
-      </article>
-      <List {...rest} />
-    </div>
-  );
-};
+export const ListWithTitle = withTitle(List);
 
 type SkeletonProps = {
   bgColor: BgColors;
@@ -96,7 +85,7 @@ export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
         />
       }
       items={items}
-      itemRenderer={(n) => n}
+      itemRenderer={(n: any) => n}
     />
   );
 };

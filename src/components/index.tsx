@@ -51,3 +51,5 @@ export { CornerPromptBox } from "./corner_prompt_box";
 export { Tags } from "./tags";
 
 export { Comment } from "./comment";
+
+export { withTitle } from "./with_title";

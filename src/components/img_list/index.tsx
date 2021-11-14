@@ -1,23 +1,31 @@
-import React from "react";
+import React, { FunctionComponent } from "react";
 import cls from "classnames";
 import { Photo } from "@/types/photo";
-import { Img, ThreeColLayout } from "@/components";
+import { DisabledText, Img, ThreeColLayout, withTitle } from "@/components";
 
-type imgListProps = {
+interface imgListProps {
+  className: string;
   imgList: Photo[];
-  className?: string;
-};
+  description?: string;
+}
 
-export const ImgList = (props: imgListProps) => {
-  const { imgList, className } = props;
+const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
+  const { imgList, className, description } = props;
 
-  const renderList = () => (
+  return (
     <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
+      <DisabledText className="mb-80 block">{description}</DisabledText>
       {imgList.map((img) => {
         return <Img {...img} className="mb-80" key={img.src} />;
       })}
     </div>
   );
+};
+
+const ImgListWithTitle = withTitle(BaseImgList);
+
+export const ImgList = (props: imgListProps) => {
+  const renderList = () => <ImgListWithTitle {...props} />;
 
   return <ThreeColLayout middleRenderer={renderList} />;
 };

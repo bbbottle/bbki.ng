@@ -10,7 +10,15 @@ export const addOssWebpProcessStyle = (
   originUrl: string,
   style: ossProcessType
 ): string => {
-  if (!originUrl.startsWith(OSS_ADDRESS)) {
+  const isInvalidOSSImgUrl = !originUrl.startsWith(OSS_ADDRESS);
+  const isProcessedOssImg = /x-oss-process=style\/\w+/.test(originUrl);
+  const isWebpImg = /webp$/.test(originUrl);
+
+  if (
+    isInvalidOSSImgUrl ||
+    isProcessedOssImg ||
+    (isWebpImg && style === ossProcessType.WEBP)
+  ) {
     return originUrl;
   }
   return `${originUrl}?x-oss-process=style/${style}`;

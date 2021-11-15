@@ -32,6 +32,22 @@ export const Img = (props: ImgProps) => {
         })`,
       };
 
+  const handleImgLoad = (img: HTMLImageElement) => {
+    const updateFunc = () => {
+      const p = "decode" in img ? img.decode() : Promise.resolve();
+      p.catch(() => {}).then(() => {
+        setLoaded(true);
+      });
+    };
+
+    if (img.complete) {
+      updateFunc();
+      return;
+    }
+
+    img.onload = updateFunc;
+  };
+
   return (
     <span
       className={classnames(
@@ -51,24 +67,18 @@ export const Img = (props: ImgProps) => {
             return;
           }
 
-          const img = input;
-
-          const updateFunc = () => {
-            setLoaded(true);
-          };
-          if (img.complete) {
-            updateFunc();
-            return;
-          }
-
-          img.onload = updateFunc;
+          handleImgLoad(input);
         }}
         width={width}
         height={height}
-        src={src}
+        src={addOssWebpProcessStyle(src, ossProcessType.WEBP)}
         decoding="async"
         loading="lazy"
-        className={classnames("lqip-blur")}
+        className={classnames("transition-opacity", {
+          "lqip-blur": !loaded,
+          "opacity-50": !loaded,
+          "opacity-100": !loaded,
+        })}
       />
     </span>
   );

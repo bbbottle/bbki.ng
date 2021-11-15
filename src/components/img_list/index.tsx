@@ -14,7 +14,7 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
 
   return (
     <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
-      <DisabledText className="mb-80 block">{description}</DisabledText>
+      <DisabledText className="mb-40 block">{description}</DisabledText>
       {imgList.map((img) => {
         return <Img {...img} className="mb-80" key={img.src} />;
       })}

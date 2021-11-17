@@ -74,6 +74,9 @@ export const Img = (props: ImgProps) => {
         src={addOssWebpProcessStyle(src, ossProcessType.WEBP)}
         decoding="async"
         loading="lazy"
+        style={{
+          contentVisibility: "auto",
+        }}
         className={classnames("transition-opacity", {
           "lqip-blur": !loaded,
           "opacity-50": !loaded,

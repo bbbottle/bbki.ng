@@ -5,7 +5,6 @@ import {
   ListWithTitle,
   ThreeColLayout,
 } from "@/components";
-import { TextColors } from "@/types/color";
 
 export const Cover = () => {
   const question = "年齢認証，18 歳未満？";
@@ -25,6 +24,7 @@ export const Cover = () => {
       </p>
     </DisabledText>
   );
+
   const answers = [
     content,
     <br />,
@@ -32,7 +32,7 @@ export const Cover = () => {
       <DisabledText>- </DisabledText>
       <Link to="/ext">No</Link>
     </>,
-    <DisabledText>- Yes</DisabledText>,
+    <DisabledText className="mb-8 block">- Yes</DisabledText>,
   ];
 
   const renderer = (n: any) => n;

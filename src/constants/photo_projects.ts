@@ -14,10 +14,11 @@ export const PHOTO_PROJECTS: PhotoProject[] = [
     ],
   },
   {
-    name: "河东河西",
+    name: "海底的家",
     description:
       '"河流用一生梳理 \\ 地球的表情 \\ 沿岸收集人類的喜怒哀樂 \\ 檔案堆滿了海底的家"',
     images: [
+      OSS_PHOTOS.chess,
       OSS_PHOTOS.player,
       // OSS_PHOTOS.swimmer,
       OSS_PHOTOS.players,

@@ -15,7 +15,7 @@ export const ExtensionsList = [
           fallback={
             <CenterListWithTitleSkeleton
               titleLength={2}
-              listItemWidthArray={[80, 80, 32, 32, 128]}
+              listItemWidthArray={[80, 96, 80, 32, 32, 128]}
             />
           }
         >

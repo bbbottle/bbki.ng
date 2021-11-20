@@ -11,7 +11,23 @@ module.exports = {
       "almost-half": "0 0 42%",
       half: "0 0 50%",
     },
-    extend: {},
+    extend: {
+      typography: (theme) => ({
+        DEFAULT: {
+          css: {
+            a: {
+              color: "rgb(37,99,235)",
+              textDecoration: "none",
+              borderRadius: ".25rem",
+              wordBreak: "break-all",
+              "&:hover": {
+                backgroundColor: "rgb(219,234,254)",
+              },
+            },
+          },
+        },
+      }),
+    },
     fontFamily: {
       sans: [
         "pt-sans",

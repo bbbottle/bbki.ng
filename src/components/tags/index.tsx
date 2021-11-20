@@ -8,6 +8,7 @@ import {
   ThreeColLayout,
 } from "@/components";
 import { ROUTES } from "@/constants";
+import { TextColors } from "@/types/color";
 
 type Tags = {
   tags: string[];
@@ -16,15 +17,23 @@ type Tags = {
 };
 
 export const Tags = (props: Tags) => {
+  const { inline, className, tags } = props;
+
   const renderTag = (tag: any) => {
+    if (inline) {
+      return (
+        <Link to={`${ROUTES.TAGS}/${tag}`} color={TextColors.GRAY}>
+          <small>#{tag}</small>
+        </Link>
+      );
+    }
+
     return <Link to={`${ROUTES.TAGS}/${tag}`}>{tag}</Link>;
   };
 
-  const { inline, className, tags } = props;
   if (inline) {
     return (
       <>
-        {<DisabledText>标签:</DisabledText>}
         <List
           items={tags}
           itemRenderer={renderTag}

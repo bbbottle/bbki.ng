@@ -44,7 +44,7 @@ BBKi.ng 主要用到前两种。我们先写下第一行代码：
 ### 低质量图片
 BBKi.ng 所有图片均存放在阿里云 OSS 中。OSS 数据处理下的图片处理功能可以创建样式。不同样式对应不同的图片处理细节，如图片格式转换、图片质量、缩略等。我们可以新建名为 `LQIP` 的样式，将原图压缩为低质量图片。假设上传原图后得到的地址为：`url/to/my-awesome-picture.jpg`, 那么通过地址 `url/to/my-awesome-picture.jpg?x-oss-process=style/LQIP` 即能获取低质量图片。
 ### 模糊效果
-实现图片模糊有很多中方式。比如
+实现图片模糊有很多种方式。比如
 1. CSS [滤镜](https://developer.mozilla.org/en-US/docs/Web/CSS/filter)
 2. CSS [背景滤镜](https://developer.mozilla.org/en-US/docs/Web/CSS/backdrop)
 3. Canvas 渲染（[blurhash](https://blurha.sh/)）

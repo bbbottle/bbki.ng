@@ -1,6 +1,12 @@
 import { BgColors } from "@/types/color";
 
 export const OSS_PHOTOS = {
+  roof: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF1807.RAF.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    width: 6262,
+    height: 3278,
+  },
   chess: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF1825.RAF.jpg",
     avgColor: BgColors.LIGHT_GRAY,

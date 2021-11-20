@@ -5,6 +5,9 @@ tags:
   - web
 ---
 
+import { OSS_PHOTOS } from "@/constants/photos";
+import { Img } from "@/components";
+
 # 网站图片展示
 图片是 BBKi.ng 的主要内容之一，友好地展示图片是必须考虑的问题。先考虑「展示」，再尽可能「友好地展示」。
 
@@ -75,7 +78,9 @@ img {
 6. 高清图加载成功后，去掉 `img` 背景模糊滤镜、`span` 背景图
     1. 如果不去掉背景模糊滤镜会影响性能
     2. 如果不去掉低质量背景图，会和某些 png 图片叠加展示，影响视觉效果
+
 **示例图片**
+<Img {...OSS_PHOTOS.roof} />
 
 **完整代码**
 - https://github.com/bbbottle/bbki.ng/blob/main/src/components/img/index.tsx

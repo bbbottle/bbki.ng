@@ -61,6 +61,10 @@ module.exports = {
       typography: (theme) => ({
         DEFAULT: {
           css: {
+            img: {
+              marginTop: 0,
+              marginBottom: 0,
+            },
             a: {
               color: "rgb(37,99,235)",
               textDecoration: "none",

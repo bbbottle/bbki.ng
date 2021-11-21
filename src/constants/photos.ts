@@ -1,6 +1,24 @@
 import { BgColors } from "@/types/color";
 
 export const OSS_PHOTOS = {
+  quyuan: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2044%5B1%5D.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    width: 4126,
+    height: 6262,
+  },
+  stone: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2023.RAF.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    width: 5536,
+    height: 4126,
+  },
+  weapons: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2039.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    width: 6155,
+    height: 4126,
+  },
   roof: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF1807.RAF.jpg",
     avgColor: BgColors.LIGHT_GRAY,

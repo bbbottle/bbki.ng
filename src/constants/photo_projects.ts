@@ -3,6 +3,11 @@ import { PhotoProject } from "@/types/photo";
 
 export const PHOTO_PROJECTS: PhotoProject[] = [
   {
+    name: "过去的来意",
+    description: '"往事越千年 魏武挥鞭 东临碣石有遗篇。"',
+    images: [OSS_PHOTOS.quyuan, OSS_PHOTOS.weapons, OSS_PHOTOS.stone],
+  },
+  {
     name: "敬县城",
     description: '"早秋惊落叶，飘零似客心。翻飞未肯下，犹言忆故林。"',
     images: [

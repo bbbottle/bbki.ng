@@ -1,6 +1,12 @@
 import { BgColors } from "@/types/color";
 
 export const OSS_PHOTOS = {
+  shopping: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/shopping.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    width: 1746,
+    height: 1746,
+  },
   quyuan: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2044%5B1%5D.jpg",
     avgColor: BgColors.LIGHT_GRAY,

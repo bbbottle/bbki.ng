@@ -13,8 +13,8 @@ export const Article = (props: ArticleProps) => {
     const { tags, title } = props;
     return (
       <>
-        <article className="prose mb-14">{props.children}</article>
-        {tags && <Tags inline tags={tags} className="mb-14" />}
+        <article className="prose mb-20">{props.children}</article>
+        {tags && <Tags inline tags={tags} className="mb-20" />}
         <Comment title={title} />
       </>
     );

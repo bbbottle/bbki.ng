@@ -20,20 +20,13 @@ export const Cover = () => {
         Accessing the website shall be done at your own judgement and risk, and
         BBKi.ng disclaims responsibility or liability in the event of your
         violation of laws by accessing the website. Do you wish to access the
-        website?
+        website? (<Link to="/ext">Yes</Link>/
+        <DisabledText className="mb-8">No</DisabledText>)
       </p>
     </DisabledText>
   );
 
-  const answers = [
-    content,
-    <br />,
-    <>
-      <DisabledText>- </DisabledText>
-      <Link to="/ext">No</Link>
-    </>,
-    <DisabledText className="mb-8 block">- Yes</DisabledText>,
-  ];
+  const answers = [content];
 
   const renderer = (n: any) => n;
 

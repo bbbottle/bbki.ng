@@ -7,7 +7,6 @@ export const ProjectList = PHOTO_PROJECTS.map(
     name,
     component: ImgList,
     componentProps: {
-      className: "mt-20",
       imgList,
       title: name,
       description,

@@ -18,14 +18,10 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
       {imgList.map((img, index) => {
         const isLast = index === imgList.length - 1;
         return (
-          <>
-            <Img {...img} className="mb-32" key={img.src} />
-            {!isLast && (
-              <DisabledText className="block mb-32" key={img.src + "."}>
-                ·
-              </DisabledText>
-            )}
-          </>
+          <div key={img.src}>
+            <Img {...img} className="mb-32" />
+            {!isLast && <DisabledText className="block mb-32">·</DisabledText>}
+          </div>
         );
       })}
     </div>

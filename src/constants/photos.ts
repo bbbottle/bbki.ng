@@ -8,19 +8,20 @@ export const OSS_PHOTOS = {
     height: 1746,
   },
   quyuan: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2044%5B1%5D.jpg",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/quyuan.webp",
     avgColor: BgColors.LIGHT_GRAY,
     width: 4126,
     height: 6262,
   },
   stone: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2023.RAF.jpg",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/stone.webp",
     avgColor: BgColors.LIGHT_GRAY,
+    renderedWidth: 300,
     width: 5536,
     height: 4126,
   },
   weapons: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/DSCF2039.jpg",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/from-the-past/weapon.webp",
     avgColor: BgColors.LIGHT_GRAY,
     width: 6155,
     height: 4126,
@@ -32,7 +33,7 @@ export const OSS_PHOTOS = {
     height: 3278,
   },
   chess: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF1825.RAF.jpg",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/checkmate.webp",
     avgColor: BgColors.LIGHT_GRAY,
     width: 6262,
     height: 4126,
@@ -44,7 +45,7 @@ export const OSS_PHOTOS = {
     height: 4126,
   },
   player: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/player.jpg",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/player-min.webp",
     width: 2692,
     height: 3546,
     avgColor: BgColors.LIGHT_GRAY,

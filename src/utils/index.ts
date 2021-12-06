@@ -37,4 +37,10 @@ export const calcDefaultImgSize = (img: Photo, defaultWidth?: number) => {
   };
 };
 
+export const getEnv = () => {
+  return /^http:\/\/localhost/.test(location.href)
+    ? "development"
+    : "production";
+};
+
 export * from "./tags";

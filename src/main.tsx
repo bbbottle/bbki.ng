@@ -5,11 +5,13 @@ import { Integrations } from "@sentry/tracing";
 import { ReloadPrompt } from "@/components";
 import App from "./app";
 import "./main.css";
+import { getEnv } from "@/utils";
 
 Sentry.init({
   dsn: "https://6c48bed663f24c78ad9ccb5754854b85@o1084530.ingest.sentry.io/6094373",
   integrations: [new Integrations.BrowserTracing()],
 
+  environment: getEnv(),
   // Set tracesSampleRate to 1.0 to capture 100%
   // of transactions for performance monitoring.
   // We recommend adjusting this value in production

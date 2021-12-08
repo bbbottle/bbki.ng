@@ -1,6 +1,14 @@
 import { BgColors } from "@/types/color";
+import { ossProcessType } from "@/types/oss";
 
 export const OSS_PHOTOS = {
+  playWithWater: {
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/DSCF2203-1.jpg",
+    avgColor: BgColors.LIGHT_GRAY,
+    processType: ossProcessType.PROG,
+    width: 1879,
+    height: 1238,
+  },
   shopping: {
     src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/shopping.jpg",
     avgColor: BgColors.LIGHT_GRAY,

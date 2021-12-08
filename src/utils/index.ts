@@ -17,7 +17,8 @@ export const addOssWebpProcessStyle = (
   if (
     isInvalidOSSImgUrl ||
     isProcessedOssImg ||
-    (isWebpImg && style === ossProcessType.WEBP)
+    (isWebpImg && style === ossProcessType.WEBP) ||
+    style === ossProcessType.NULL
   ) {
     return originUrl;
   }

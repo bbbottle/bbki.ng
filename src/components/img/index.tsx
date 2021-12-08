@@ -9,7 +9,8 @@ interface ImgProps extends Photo {
 }
 
 export const Img = (props: ImgProps) => {
-  const { src, className, renderedWidth, avgColor, thumbnailSrc } = props;
+  const { src, className, renderedWidth, avgColor, thumbnailSrc, processType } =
+    props;
   const { width, height } = calcDefaultImgSize(props, renderedWidth);
   const [loaded, setLoaded] = useState(false);
 
@@ -71,7 +72,7 @@ export const Img = (props: ImgProps) => {
         }}
         width={width}
         height={height}
-        src={addOssWebpProcessStyle(src, ossProcessType.WEBP)}
+        src={addOssWebpProcessStyle(src, processType || ossProcessType.WEBP)}
         decoding="async"
         loading="lazy"
         style={{

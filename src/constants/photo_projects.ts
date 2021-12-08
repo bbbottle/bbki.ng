@@ -23,6 +23,7 @@ export const PHOTO_PROJECTS: PhotoProject[] = [
     description:
       '"河流用一生梳理 \\ 地球的表情 \\ 沿岸收集人類的喜怒哀樂 \\ 檔案堆滿了海底的家"',
     images: [
+      OSS_PHOTOS.playWithWater,
       OSS_PHOTOS.shopping,
       OSS_PHOTOS.chess,
       OSS_PHOTOS.player,

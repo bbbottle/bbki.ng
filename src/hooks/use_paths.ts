@@ -10,7 +10,7 @@ export const usePaths = (): pathObj[] => {
 
   const pathNameArr = pathname.split("/");
 
-  const pathsArr: string[] = pathNameArr.map((p, index) => {
+  const pathsArr: string[] = pathNameArr.map((p: string, index: number) => {
     return pathNameArr
       .slice(0, index + 1)
       .join("/")

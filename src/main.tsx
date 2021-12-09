@@ -15,6 +15,7 @@ Sentry.init({
   dsn: "https://6c48bed663f24c78ad9ccb5754854b85@o1084530.ingest.sentry.io/6094373",
   integrations: [
     new Integrations.BrowserTracing({
+      tracingOrigins: ["localhost", "bbki.ng", /^\//],
       routingInstrumentation: Sentry.reactRouterV5Instrumentation(
         history as RouterHistory
       ),

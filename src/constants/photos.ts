@@ -88,9 +88,9 @@ export const OSS_PHOTOS = {
     avgColor: BgColors.LIGHT_GRAY,
   },
   phone: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/301/DSCF1355.RAF.jpg",
-    width: 1080,
-    height: 723,
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/301/DSCF1355.RAF.min.jpg",
+    width: 924,
+    height: 619,
     avgColor: BgColors.LIGHT_GRAY,
   },
   riverAndBoats: {
@@ -134,12 +134,10 @@ export const OSS_PHOTOS = {
     avgColor: BgColors.LIGHT_GRAY,
   },
   chair: {
-    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211025202204.jpg?x-oss-process=style/webp",
-    thumbnailSrc:
-      "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/xiang-jiang-river/%E5%BE%AE%E4%BF%A1%E5%9B%BE%E7%89%87_20211025202204.jpg?x-oss-process=style/thumbnail",
+    src: "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/301/room-301.jpg",
     renderedWidth: 490,
-    width: 4851,
-    height: 3725,
+    width: 970,
+    height: 745,
     avgColor: BgColors.LIGHT_GRAY,
   },
   smoking: {

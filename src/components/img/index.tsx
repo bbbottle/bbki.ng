@@ -1,10 +1,8 @@
-import React, { useEffect, useRef, useState } from "react";
+import React, { useState } from "react";
 import classnames from "classnames";
 import { Photo } from "@/types/photo";
 import { addOssWebpProcessStyle, calcDefaultImgSize } from "@/utils";
 import { ossProcessType } from "@/types/oss";
-import * as Sentry from "@sentry/react";
-import { Transaction } from "@sentry/types";
 
 interface ImgProps extends Photo {
   className?: string;
@@ -15,11 +13,6 @@ export const Img = (props: ImgProps) => {
     props;
   const { width, height } = calcDefaultImgSize(props, renderedWidth);
   const [loaded, setLoaded] = useState(false);
-
-  const transaction = Sentry.startTransaction({
-    name: "image presentation",
-  });
-  Sentry.getCurrentHub().configureScope((scope) => scope.setSpan(transaction));
 
   const baseWrapperStyle = {
     width: "initial",
@@ -42,26 +35,10 @@ export const Img = (props: ImgProps) => {
 
   const handleImgLoad = (img: HTMLImageElement) => {
     const updateFunc = () => {
-      const span = transaction.startChild({
-        data: {
-          img: src,
-        },
-        op: "load img",
-        description: "handle image load",
-      });
-
       const p = "decode" in img ? img.decode() : Promise.resolve();
-      p.catch(() => {
-        span.setStatus("error");
-      })
-        .then(() => {
-          span.setStatus("success");
-          setLoaded(true);
-        })
-        .finally(() => {
-          span.finish();
-          transaction.finish();
-        });
+      p.catch(() => {}).then(() => {
+        setLoaded(true);
+      });
     };
 
     if (img.complete) {

@@ -1,5 +1,5 @@
 import React, { lazy, Suspense } from "react";
-import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import { Switch, Route } from "react-router-dom";
 import * as Sentry from "@sentry/react";
 import {
   Footer,
@@ -48,11 +48,9 @@ const Content = () => {
 
 export const App = () => {
   return (
-    <Router>
-      <HotKeyNav>
-        <NavMainLayout nav={<Nav />} main={<Content />} footer={<Footer />} />
-      </HotKeyNav>
-    </Router>
+    <HotKeyNav>
+      <NavMainLayout nav={<Nav />} main={<Content />} footer={<Footer />} />
+    </HotKeyNav>
   );
 };
 

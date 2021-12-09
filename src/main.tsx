@@ -2,6 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom";
 import * as Sentry from "@sentry/react";
 import { Integrations } from "@sentry/tracing";
+import { Router } from "react-router-dom";
 import { RouterHistory } from "@sentry/react/dist/reactrouter";
 import { createBrowserHistory } from "history";
 import { ReloadPrompt } from "@/components";
@@ -9,7 +10,7 @@ import App from "./app";
 import "./main.css";
 import { getEnv } from "@/utils";
 
-const history: unknown = createBrowserHistory();
+const history = createBrowserHistory();
 
 Sentry.init({
   dsn: "https://6c48bed663f24c78ad9ccb5754854b85@o1084530.ingest.sentry.io/6094373",
@@ -31,8 +32,10 @@ Sentry.init({
 
 ReactDOM.render(
   <React.StrictMode>
-    <ReloadPrompt />
-    <App />
+    <Router history={history}>
+      <ReloadPrompt />
+      <App />
+    </Router>
   </React.StrictMode>,
   document.getElementById("root")
 );

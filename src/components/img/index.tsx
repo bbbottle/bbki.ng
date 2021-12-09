@@ -44,7 +44,7 @@ export const Img = (props: ImgProps) => {
     const updateFunc = () => {
       const span = transaction.startChild({
         data: {
-          img,
+          img: src,
         },
         op: "load img",
         description: "handle image load",

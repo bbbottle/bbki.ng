@@ -1227,81 +1227,6 @@
     estree-walker "^2.0.1"
     picomatch "^2.2.2"
 
-"@sentry/browser@6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/browser/-/browser-6.15.0.tgz#7a1d316dd31cedee446e359a21774bf93d1e553d"
-  integrity sha512-ZiqfHK5DMVgDsgMTuSwxilWIqEnZzy4yuJ9Sr6Iap1yZddPSiKHYjbBieSHn57UsWHViRB3ojbwu44LfvXKJdQ==
-  dependencies:
-    "@sentry/core" "6.15.0"
-    "@sentry/types" "6.15.0"
-    "@sentry/utils" "6.15.0"
-    tslib "^1.9.3"
-
-"@sentry/core@6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/core/-/core-6.15.0.tgz#5e877042fe18452f2273247126b32e139d5f907c"
-  integrity sha512-mCbKyqvD1G3Re6gv6N8tRkBz84gvVWDfLtC6d1WBArIopzter6ktEbvq0cMT6EOvGI2OLXuJ6mtHA93/Q0gGpw==
-  dependencies:
-    "@sentry/hub" "6.15.0"
-    "@sentry/minimal" "6.15.0"
-    "@sentry/types" "6.15.0"
-    "@sentry/utils" "6.15.0"
-    tslib "^1.9.3"
-
-"@sentry/hub@6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/hub/-/hub-6.15.0.tgz#fb8a91d12fdd2726a884374ea7242f6bbd081d69"
-  integrity sha512-cUbHPeG6kKpGBaEMgbTWeU03Y1Up5T3urGF+cgtrn80PmPYYSUPvVvWlZQWPb8CJZ1yQ0gySWo5RUTatBFrEHA==
-  dependencies:
-    "@sentry/types" "6.15.0"
-    "@sentry/utils" "6.15.0"
-    tslib "^1.9.3"
-
-"@sentry/minimal@6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/minimal/-/minimal-6.15.0.tgz#fcc083ba901cfe57d25303d0b5fa8cd13e164466"
-  integrity sha512-7RJIvZsjBa1qFUfMrAzQsWdfZT6Gm4t6ZTYfkpsXPBA35hkzglKbBrhhsUvkxGIhUGw/PiCUqxBUjcmzQP0vfg==
-  dependencies:
-    "@sentry/hub" "6.15.0"
-    "@sentry/types" "6.15.0"
-    tslib "^1.9.3"
-
-"@sentry/react@^6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/react/-/react-6.15.0.tgz#4a1a3f39f61c03a675b90a114ff79a9163bcbe3b"
-  integrity sha512-vrrFF/KtPJQ41tmDCWpaR+bN+/TqPwqncsGLfbClE2irY3x3eCJjT2qPstlB7NQ6rTYtScyekbB0fOoNkq9FFg==
-  dependencies:
-    "@sentry/browser" "6.15.0"
-    "@sentry/minimal" "6.15.0"
-    "@sentry/types" "6.15.0"
-    "@sentry/utils" "6.15.0"
-    hoist-non-react-statics "^3.3.2"
-    tslib "^1.9.3"
-
-"@sentry/tracing@^6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/tracing/-/tracing-6.15.0.tgz#5a5f08ee6b9cc1189227536fca053cd23488600d"
-  integrity sha512-V5unvX8qNEfdawX+m2n0jKgmH/YR2ItWZLH+3UevBTptO+xyfvRtpgGXYWUCo3iGvFgWb1C+iIC7LViR9rTvBg==
-  dependencies:
-    "@sentry/hub" "6.15.0"
-    "@sentry/minimal" "6.15.0"
-    "@sentry/types" "6.15.0"
-    "@sentry/utils" "6.15.0"
-    tslib "^1.9.3"
-
-"@sentry/types@6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/types/-/types-6.15.0.tgz#a2917f8aed91471bdfd6651384ffcd47b95c43ad"
-  integrity sha512-zBw5gPUsofXUSpS3ZAXqRNedLRBvirl3sqkj2Lez7X2EkKRgn5D8m9fQIrig/X3TsKcXUpijDW5Buk5zeCVzJA==
-
-"@sentry/utils@6.15.0":
-  version "6.15.0"
-  resolved "https://registry.npmjs.org/@sentry/utils/-/utils-6.15.0.tgz#0c247cb092b1796d39c3d16d8e6977b9cdab9ca2"
-  integrity sha512-gnhKKyFtnNmKWjDizo7VKD0/Vx8cgW1lCusM6WI7jy2jlO3bQA0+Dzgmr4mIReZ74mq4VpOd2Vfrx7ZldW1DMw==
-  dependencies:
-    "@sentry/types" "6.15.0"
-    tslib "^1.9.3"
-
 "@surma/rollup-plugin-off-main-thread@^1.4.1":
   version "1.4.2"
   resolved "https://registry.nlark.com/@surma/rollup-plugin-off-main-thread/download/@surma/rollup-plugin-off-main-thread-1.4.2.tgz?cache=0&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40surma%2Frollup-plugin-off-main-thread%2Fdownload%2F%40surma%2Frollup-plugin-off-main-thread-1.4.2.tgz#e6786b6af5799f82f7ab3a82e53f6182d2b91a58"
@@ -1348,11 +1273,6 @@
   version "4.7.9"
   resolved "https://registry.nlark.com/@types/history/download/@types/history-4.7.9.tgz#1cfb6d60ef3822c589f18e70f8b12f9a28ce8724"
   integrity sha1-HPttYO84IsWJ8Y5w+LEvmijOhyQ=
-
-"@types/history@4.7.0":
-  version "4.7.0"
-  resolved "https://registry.npmjs.org/@types/history/-/history-4.7.0.tgz#2fac51050c68f7d6f96c5aafc631132522f4aa3f"
-  integrity sha512-1A/RUAX4VtmGzNTGLSfmiPxQ3XwUSe/1YN4lW9GRa+j307oFK6MPjhlvw6jEHDodUBIvSvrA7/iHDchr5LS+0Q==
 
 "@types/mdast@^3.0.0", "@types/mdast@^3.0.3":
   version "3.0.10"
@@ -2501,17 +2421,6 @@ highlight.js@~11.3.0:
   resolved "https://registry.npmmirror.com/highlight.js/download/highlight.js-11.3.1.tgz?cache=0&sync_timestamp=1634563926361&other_urls=https%3A%2F%2Fregistry.npmmirror.com%2Fhighlight.js%2Fdownload%2Fhighlight.js-11.3.1.tgz#813078ef3aa519c61700f84fe9047231c5dc3291"
   integrity sha1-gTB47zqlGcYXAPhP6QRyMcXcMpE=
 
-history@4.7.0:
-  version "4.7.0"
-  resolved "https://registry.npmjs.org/history/-/history-4.7.0.tgz#a962bdeb0d4f2a53520c16ff9bb5f8d25b21efb2"
-  integrity sha512-jXiX6uxA4x7kUX461NiK40MJRBAsdK7TgZf9bwUYgA0BbR1Mwisu5y6CwK+M++EeMkUmKSWmpNrZZUJvRWjfhA==
-  dependencies:
-    invariant "^2.2.1"
-    loose-envify "^1.2.0"
-    resolve-pathname "^2.2.0"
-    value-equal "^0.2.0"
-    warning "^3.0.0"
-
 history@^4.9.0:
   version "4.10.1"
   resolved "https://registry.nlark.com/history/download/history-4.10.1.tgz#33371a65e3a83b267434e2b3f3b1b4c58aad4cf3"
@@ -2524,7 +2433,7 @@ history@^4.9.0:
     tiny-warning "^1.0.0"
     value-equal "^1.0.1"
 
-hoist-non-react-statics@^3.1.0, hoist-non-react-statics@^3.3.2:
+hoist-non-react-statics@^3.1.0:
   version "3.3.2"
   resolved "https://registry.nlark.com/hoist-non-react-statics/download/hoist-non-react-statics-3.3.2.tgz#ece0acaf71d62c2969c2ec59feff42a4b1a85b45"
   integrity sha1-7OCsr3HWLClpwuxZ/v9CpLGoW0U=
@@ -2620,13 +2529,6 @@ inline-style-parser@0.1.1:
   version "0.1.1"
   resolved "https://registry.npm.taobao.org/inline-style-parser/download/inline-style-parser-0.1.1.tgz#ec8a3b429274e9c0a1f1c4ffa9453a7fef72cea1"
   integrity sha1-7Io7QpJ06cCh8cT/qUU6f+9yzqE=
-
-invariant@^2.2.1:
-  version "2.2.4"
-  resolved "https://registry.npmjs.org/invariant/-/invariant-2.2.4.tgz#610f3c92c9359ce1db616e538008d23ff35158e6"
-  integrity sha512-phJfQVBuaJM5raOpJjSfkiD6BpbCE4Ns//LaXl6wGYtUBY83nWS6Rf9tXm2e8VaK60JEjYldbPif/A2B1C2gNA==
-  dependencies:
-    loose-envify "^1.0.0"
 
 is-alphabetical@^1.0.0:
   version "1.0.4"
@@ -2976,7 +2878,7 @@ longest-streak@^3.0.0:
   resolved "https://registry.npm.taobao.org/longest-streak/download/longest-streak-3.0.0.tgz#f127e2bded83caa6a35ac5f7a2f2b2f94b36f3dc"
   integrity sha1-8Sfive2DyqajWsX3ovKy+Us289w=
 
-loose-envify@^1.0.0, loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
+loose-envify@^1.1.0, loose-envify@^1.2.0, loose-envify@^1.3.1, loose-envify@^1.4.0:
   version "1.4.0"
   resolved "https://registry.npm.taobao.org/loose-envify/download/loose-envify-1.4.0.tgz#71ee51fa7be4caec1a63839f7e682d8132d30caf"
   integrity sha1-ce5R+nvkyuwaY4OffmgtgTLTDK8=
@@ -4224,11 +4126,6 @@ resolve-from@^5.0.0:
   resolved "https://registry.nlark.com/resolve-from/download/resolve-from-5.0.0.tgz#c35225843df8f776df21c57557bc087e9dfdfc69"
   integrity sha1-w1IlhD3493bfIcV1V7wIfp39/Gk=
 
-resolve-pathname@^2.2.0:
-  version "2.2.0"
-  resolved "https://registry.npmjs.org/resolve-pathname/-/resolve-pathname-2.2.0.tgz#7e9ae21ed815fd63ab189adeee64dc831eefa879"
-  integrity sha512-bAFz9ld18RzJfddgrO2e/0S2O81710++chRMUxHjXOYKF6jTAMrUNZrEZ1PvV0zlhfjidm08iRPdTLPno1FuRg==
-
 resolve-pathname@^3.0.0:
   version "3.0.0"
   resolved "https://registry.npm.taobao.org/resolve-pathname/download/resolve-pathname-3.0.0.tgz#99d02224d3cf263689becbb393bc560313025dcd"
@@ -4663,7 +4560,7 @@ trough@^2.0.0:
   resolved "https://registry.nlark.com/trough/download/trough-2.0.2.tgz#94a3aa9d5ce379fc561f6244905b3f36b7458d96"
   integrity sha1-lKOqnVzjefxWH2JEkFs/NrdFjZY=
 
-tslib@^1.9.0, tslib@^1.9.3:
+tslib@^1.9.0:
   version "1.14.1"
   resolved "https://registry.nlark.com/tslib/download/tslib-1.14.1.tgz#cf2d38bdc34a134bcaf1091c41f6619e2f672d00"
   integrity sha1-zy04vcNKE0vK8QkcQfZhni9nLQA=
@@ -4874,11 +4771,6 @@ uvu@^0.5.0:
     sade "^1.7.3"
     totalist "^2.0.0"
 
-value-equal@^0.2.0:
-  version "0.2.1"
-  resolved "https://registry.npmjs.org/value-equal/-/value-equal-0.2.1.tgz#c220a304361fce6994dbbedaa3c7e1a1b895871d"
-  integrity sha1-wiCjBDYfzmmU277ao8fhobiVhx0=
-
 value-equal@^1.0.1:
   version "1.0.1"
   resolved "https://registry.npm.taobao.org/value-equal/download/value-equal-1.0.1.tgz#1e0b794c734c5c0cade179c437d356d931a34d6c"
@@ -4954,13 +4846,6 @@ vite@2.6.9:
     rollup "^2.57.0"
   optionalDependencies:
     fsevents "~2.3.2"
-
-warning@^3.0.0:
-  version "3.0.0"
-  resolved "https://registry.npmjs.org/warning/-/warning-3.0.0.tgz#32e5377cb572de4ab04753bdf8821c01ed605b7c"
-  integrity sha1-MuU3fLVy3kqwR1O9+IIcAe1gW3w=
-  dependencies:
-    loose-envify "^1.0.0"
 
 webidl-conversions@^4.0.2:
   version "4.0.2"

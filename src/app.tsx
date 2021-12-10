@@ -1,6 +1,5 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
-import * as Sentry from "@sentry/react";
 import {
   Footer,
   NavMainLayout,
@@ -54,4 +53,4 @@ export const App = () => {
   );
 };
 
-export default Sentry.withProfiler(App, { name: "BBKingApp" });
+export default App;

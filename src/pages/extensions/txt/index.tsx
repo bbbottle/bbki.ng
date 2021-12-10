@@ -1,7 +1,6 @@
 import React from "react";
 import { SwitchComponentsRoute } from "@/components";
 import { ArticleList } from "./consts";
-import { withProfiler } from "@sentry/react";
 import { compPathObj } from "@/types/path";
 
 type TxtProps = {
@@ -18,4 +17,4 @@ const Txt = (props: TxtProps) => {
   );
 };
 
-export default withProfiler(Txt);
+export default Txt;

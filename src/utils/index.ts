@@ -1,9 +1,25 @@
 import { Photo } from "@/types/photo";
 import { ossProcessType } from "@/types/oss";
 import { OSS_ADDRESS } from "@/constants/routes";
+import { DEFAULT_DELAY } from "@/constants";
 
 export const floatNumberToPercentageString = (num: number): string => {
   return `${num * 100}%`;
+};
+
+export const delay = (time: number) => {
+  return new Promise((resolve) => {
+    setTimeout(resolve, time);
+  });
+};
+
+export const minDelay = async (
+  promise: Promise<any>,
+  time: number = DEFAULT_DELAY
+): Promise<any> => {
+  const delayPromise = delay(time);
+  await Promise.all([delayPromise, promise]);
+  return promise;
 };
 
 export const addOssWebpProcessStyle = (

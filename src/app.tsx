@@ -1,5 +1,7 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import { ROUTES } from "@/constants";
+import { minDelay } from "@/utils";
 import {
   Footer,
   NavMainLayout,
@@ -8,10 +10,9 @@ import {
   CenterListWithTitleSkeleton,
 } from "./components";
 import { Cover } from "./pages";
-import { ROUTES } from "@/constants";
 
-const Extensions = lazy(() => import("./pages/extensions"));
-const Tags = lazy(() => import("./pages/tags"));
+const Extensions = lazy(() => minDelay(import("./pages/extensions")));
+const Tags = lazy(() => minDelay(import("./pages/tags")));
 
 const Content = () => {
   return (

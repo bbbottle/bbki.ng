@@ -1,9 +1,10 @@
 import React, { lazy, Suspense } from "react";
 import { CenterListWithTitleSkeleton } from "@/components";
+import { minDelay } from "@/utils";
 // import { Avi } from "./avi";
 
-const Png = lazy(() => import("./png"));
-const Txt = lazy(() => import("./txt"));
+const Png = lazy(() => minDelay(import("./png")));
+const Txt = lazy(() => minDelay(import("./txt")));
 
 export const ExtensionsList = [
   {

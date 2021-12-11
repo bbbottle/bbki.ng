@@ -86,7 +86,11 @@ export const ThreeColLayout = (props: threeColLayoutProps) => {
       <div className={cls(colCls, { hidden: !leftRenderer })}>
         {leftRenderer && leftRenderer()}
       </div>
-      <div className={cls(colCls, { hidden: !middleRenderer }, "py-16")}>
+      <div
+        className={cls(colCls, "py-16", "relative", {
+          hidden: !middleRenderer,
+        })}
+      >
         {middleRenderer && middleRenderer()}
       </div>
       <div className={cls(colCls, { hidden: !rightRenderer })}>

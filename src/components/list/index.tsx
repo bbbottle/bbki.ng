@@ -8,6 +8,8 @@ import cls from "classnames";
 import { BgColors } from "@/types/color";
 import { ThreeColLayout } from "@/components";
 import { withTitle } from "@/components/with_title";
+import { FadeOutCover } from "@/components/fade_out_cover";
+import { DEFAULT_DELAY } from "@/constants";
 
 interface listProps {
   className?: string;
@@ -106,7 +108,7 @@ export const CenterListWithTitleSkeleton = (
   });
 
   if (!showSkeleton) {
-    return null;
+    return <FadeOutCover duration={DEFAULT_DELAY} coverColor="#fff" />;
   }
   return (
     <ThreeColLayout

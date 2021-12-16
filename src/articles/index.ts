@@ -5,6 +5,7 @@ import * as 与或非禁区 from "./anti-logic.mdx";
 import * as 没有女人的男人们 from "./men-without-women.mdx";
 import * as 一天计划 from "./movie-day.mdx";
 import * as 网站图片展示 from "./img.mdx";
+import * as 大雪 from "./fall.mdx";
 
 export const MdxArticleList = [
   网站说明书,
@@ -14,4 +15,5 @@ export const MdxArticleList = [
   降温,
   没有女人的男人们,
   一天计划,
+  大雪,
 ];

@@ -59,5 +59,3 @@ export const getEnv = () => {
     ? "development"
     : "production";
 };
-
-export * from "./tags";

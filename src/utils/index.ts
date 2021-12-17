@@ -41,7 +41,10 @@ export const addOssWebpProcessStyle = (
   return `${originUrl}?x-oss-process=style/${style}`;
 };
 
-export const calcDefaultImgSize = (img: Photo, defaultWidth?: number) => {
+export const calcDefaultImgSize = (
+  img: Photo,
+  defaultWidth?: number
+): { width: number; height: number } => {
   const { width, height } = img;
   const whRatio = width / height;
   const isHorizontal = width > height;
@@ -59,5 +62,3 @@ export const getEnv = () => {
     ? "development"
     : "production";
 };
-
-export * from "./tags";

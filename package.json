@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "test": "jest",
+    "test:cov": "jest --coverage",
     "dev": "vite",
     "build": "tsc && vite build",
     "serve": "vite preview",

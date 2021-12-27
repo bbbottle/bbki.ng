@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
-  @variants responsive {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
@@ -34,9 +32,9 @@
     background-color: #f6f8fa !important;
   }
 
-  a:focus {
-    @apply no-underline outline-none rounded bg-blue-600 text-white !important;
-  }
+  /*a:focus {*/
+  /*  @apply no-underline outline-none rounded bg-blue-600 text-white !important;*/
+  /*}*/
 
   /* syntax highlight */
   /*!

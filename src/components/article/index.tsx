@@ -1,6 +1,7 @@
 import React, { ReactElement } from "react";
-import { Comment } from "@/components";
-import { Tags, ThreeColLayout } from "@/components";
+import { ThreeColLayout } from "@/components";
+import { Tags } from "@bbki.ng/components";
+import { ROUTES } from "@/constants";
 
 type ArticleProps = {
   tags?: string[];
@@ -10,12 +11,14 @@ type ArticleProps = {
 
 export const Article = (props: ArticleProps) => {
   const renderArticle = () => {
-    const { tags, title } = props;
+    const { tags: tagNames, title } = props;
+    const tags = tagNames
+      ? tagNames.map((t) => ({ children: t, to: `${ROUTES.TAGS}/${t}` }))
+      : [];
     return (
       <>
         <article className="prose mb-20">{props.children}</article>
-        {tags && <Tags inline tags={tags} className="mb-20" />}
-        <Comment title={title} />
+        {tagNames && <Tags tags={tags} />}
       </>
     );
   };

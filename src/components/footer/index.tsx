@@ -3,17 +3,12 @@ import { pathObj } from "@/types/path";
 import { TextColors } from "@/types/color";
 // import { List } from "../list";
 import { FooterLinks } from "./footer_links";
-import { Link } from "../link";
+import { Link, LinkColor } from "@bbki.ng/components";
 
 export const Footer = () => {
   const renderFooterLink = (l: pathObj) => {
     return (
-      <Link
-        to={l.path as string}
-        external
-        color={TextColors.GRAY}
-        underlineFirstLetter
-      >
+      <Link to={l.path as string} external color={LinkColor.GRAY}>
         {l.name}
       </Link>
     );

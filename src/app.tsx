@@ -1,15 +1,16 @@
 import React, { lazy, Suspense } from "react";
 import { Switch, Route } from "react-router-dom";
+import { Nav } from "@bbki.ng/components";
 import { ROUTES } from "@/constants";
 import { minDelay } from "@/utils";
 import {
   Footer,
   NavMainLayout,
-  Nav,
   HotKeyNav,
   CenterListWithTitleSkeleton,
 } from "./components";
 import { Cover } from "./pages";
+import { usePaths } from "@/hooks";
 
 const Extensions = lazy(() => minDelay(import("./pages/extensions")));
 const Tags = lazy(() => minDelay(import("./pages/tags")));
@@ -49,7 +50,13 @@ const Content = () => {
 export const App = () => {
   return (
     <HotKeyNav>
-      <NavMainLayout nav={<Nav />} main={<Content />} footer={<Footer />} />
+      <NavMainLayout
+        nav={
+          <Nav paths={usePaths()} className="sticky top-0 blur-cover z-50" />
+        }
+        main={<Content />}
+        footer={<Footer />}
+      />
     </HotKeyNav>
   );
 };

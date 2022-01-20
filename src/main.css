@@ -2,16 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 @layer utilities {
-  @variants responsive {
-    /* Chrome, Safari and Opera */
-    .no-scrollbar::-webkit-scrollbar {
-      display: none;
-    }
+  /* Chrome, Safari and Opera */
+  .no-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-    .no-scrollbar {
-      -ms-overflow-style: none; /* IE and Edge */
-      scrollbar-width: none; /* Firefox */
-    }
+  .no-scrollbar {
+    -ms-overflow-style: none; /* IE and Edge */
+    scrollbar-width: none; /* Firefox */
   }
 }
 
@@ -25,18 +23,14 @@
     backdrop-filter: blur(20px);
   }
 
-  .prose h1 {
-    @apply mt-0 pb-16 mb-16 border border-t-0 border-r-0 border-l-0 !important;
-  }
-
   .prose pre {
     color: #24292f !important;
     background-color: #f6f8fa !important;
   }
 
-  a:focus {
-    @apply no-underline outline-none rounded bg-blue-600 text-white !important;
-  }
+  /*a:focus {*/
+  /*  @apply no-underline outline-none rounded bg-blue-600 text-white !important;*/
+  /*}*/
 
   /* syntax highlight */
   /*!

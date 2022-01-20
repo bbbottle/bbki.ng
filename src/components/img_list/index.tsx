@@ -14,13 +14,13 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
 
   return (
     <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
-      <DisabledText className="mb-32 block">{description}</DisabledText>
+      <DisabledText className="mb-128 block">{description}</DisabledText>
       {imgList.map((img, index) => {
         const isLast = index === imgList.length - 1;
         return (
           <div key={img.src}>
-            <Img {...img} className="mb-32" />
-            {!isLast && <DisabledText className="block mb-32">·</DisabledText>}
+            <Img {...img} className="mb-128" />
+            {!isLast && <DisabledText className="block mb-128">·</DisabledText>}
           </div>
         );
       })}

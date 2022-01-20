@@ -1,21 +1,26 @@
 import React, { ReactElement } from "react";
-import { Comment } from "@/components";
-import { Tags, ThreeColLayout } from "@/components";
+import { ThreeColLayout } from "@/components";
+import { Tags, Article } from "@bbki.ng/components";
+import { ROUTES } from "@/constants";
 
-type ArticleProps = {
+type ArticlePageProps = {
   tags?: string[];
   title: string;
   children: ReactElement;
 };
 
-export const Article = (props: ArticleProps) => {
+export const ArticlePage = (props: ArticlePageProps) => {
   const renderArticle = () => {
-    const { tags, title } = props;
+    const { tags: tagNames, title } = props;
+    const tags = tagNames
+      ? tagNames.map((t) => ({ children: t, to: `${ROUTES.TAGS}/${t}` }))
+      : [];
     return (
       <>
-        <article className="prose mb-20">{props.children}</article>
-        {tags && <Tags inline tags={tags} className="mb-20" />}
-        <Comment title={title} />
+        <Article title={title}>
+          <article className="prose mb-20">{props.children}</article>
+        </Article>
+        {tagNames && <Tags tags={tags} />}
       </>
     );
   };

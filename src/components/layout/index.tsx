@@ -34,12 +34,10 @@ export const NavMainLayout = (props: navMainLayoutProps) => {
   // mix-blend-luminosity md:mix-blend-normal
   return (
     <main className="flex flex-col h-full">
-      <nav className="flex-grow-0 flex-shrink-0 flex items-center sticky top-0 blur-cover z-50 h-16 p-2">
-        {nav}
-      </nav>
+      {nav}
       <section className="flex-grow flex-shrink-0 px-6">{main}</section>
       {footer && (
-        <footer className="flex-grow-0 flex-shrink-0 flex items-center justify-center h-16">
+        <footer className="flex-grow-0 flex-shrink-0 flex items-center justify-center h-64">
           {footer}
         </footer>
       )}
@@ -87,7 +85,7 @@ export const ThreeColLayout = (props: threeColLayoutProps) => {
         {leftRenderer && leftRenderer()}
       </div>
       <div
-        className={cls(colCls, "py-16", "relative", {
+        className={cls(colCls, "py-64", "relative", {
           hidden: !middleRenderer,
         })}
       >

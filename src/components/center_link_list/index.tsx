@@ -2,7 +2,7 @@ import React from "react";
 import { pathObj } from "@/types/path";
 import { useRouteName } from "@/hooks";
 import { ListWithTitle } from "../list";
-import { Link } from "@bbki.ng/components";
+import { Link } from "../link";
 import { ThreeColLayout } from "../layout";
 
 type centerLinkListProps = {

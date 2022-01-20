@@ -4,7 +4,7 @@ import { PhotoProject } from "@/types/photo";
 export const PHOTO_PROJECTS: PhotoProject[] = [
   {
     name: "过去的来意",
-    description: '"往事越千年"',
+    description: '"往事越千年 魏武挥鞭 东临碣石有遗篇。"',
     images: [OSS_PHOTOS.quyuan, OSS_PHOTOS.weapons, OSS_PHOTOS.stone],
   },
   {
@@ -41,14 +41,14 @@ export const PHOTO_PROJECTS: PhotoProject[] = [
       // OSS_PHOTOS.jzBridge,
     ],
   },
-  // {
-  //   name: "光前",
-  //   description: "城中村，个人深圳经历出入口。",
-  //   images: [OSS_PHOTOS.oldMan, OSS_PHOTOS.oldWomen, OSS_PHOTOS.littleChild],
-  // },
-  // {
-  //   name: "三百零一",
-  //   description: "陋室光影",
-  //   images: [OSS_PHOTOS.phone, OSS_PHOTOS.chair],
-  // },
+  {
+    name: "光前",
+    description: "城中村，个人深圳经历出入口。",
+    images: [OSS_PHOTOS.oldMan, OSS_PHOTOS.oldWomen, OSS_PHOTOS.littleChild],
+  },
+  {
+    name: "三百零一",
+    description: "陋室光影",
+    images: [OSS_PHOTOS.phone, OSS_PHOTOS.chair],
+  },
 ];

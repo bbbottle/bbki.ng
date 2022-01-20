@@ -23,10 +23,6 @@
     backdrop-filter: blur(20px);
   }
 
-  .prose h1 {
-    @apply mt-0 pb-16 mb-16 border border-t-0 border-r-0 border-l-0 !important;
-  }
-
   .prose pre {
     color: #24292f !important;
     background-color: #f6f8fa !important;

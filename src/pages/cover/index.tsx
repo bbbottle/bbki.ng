@@ -1,6 +1,6 @@
 import React from "react";
-import { DisabledText, ListWithTitle, ThreeColLayout } from "@/components";
-import { Link, LinkColor } from "@bbki.ng/components";
+import { DisabledText, ThreeColLayout } from "@/components";
+import { Link, LinkColor, Article } from "@bbki.ng/components";
 
 export const Cover = () => {
   const question = "年齢認証，18 歳未満？";
@@ -25,13 +25,9 @@ export const Cover = () => {
     </DisabledText>
   );
 
-  const answers = [content];
-
-  const renderer = (n: any) => n;
-
-  const rendererQuestion = () => (
-    <ListWithTitle title={question} items={answers} itemRenderer={renderer} />
+  return (
+    <ThreeColLayout
+      middleRenderer={() => <Article title={question}>{content}</Article>}
+    />
   );
-
-  return <ThreeColLayout middleRenderer={rendererQuestion} />;
 };

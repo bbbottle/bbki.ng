@@ -1,3 +1,4 @@
+import { Article } from "@bbki.ng/components";
 import React, { ComponentClass, FunctionComponent } from "react";
 
 export const withTitle =
@@ -6,12 +7,9 @@ export const withTitle =
 
     return (
       <div className={className}>
-        <article className="prose">
-          <span className="hidden">&nbsp;</span>
-          <h1>{title}</h1>
-          <span className="hidden">&nbsp;</span>
-        </article>
-        <Comp {...rest} />
+        <Article title={title}>
+          <Comp {...rest} />
+        </Article>
       </div>
     );
   };

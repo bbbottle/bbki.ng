@@ -8,10 +8,6 @@ export {
 
 export { List, ListWithTitle, CenterListWithTitleSkeleton } from "./list";
 
-export { Nav } from "./nav";
-
-export { Link } from "./link";
-
 export { Footer } from "./footer";
 
 export { ScrollIndicator } from "./scroll_indicator";

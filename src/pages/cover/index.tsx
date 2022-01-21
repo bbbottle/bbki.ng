@@ -1,10 +1,6 @@
 import React from "react";
-import {
-  DisabledText,
-  Link,
-  ListWithTitle,
-  ThreeColLayout,
-} from "@/components";
+import { DisabledText, ThreeColLayout } from "@/components";
+import { Link, LinkColor, Article } from "@bbki.ng/components";
 
 export const Cover = () => {
   const question = "年齢認証，18 歳未満？";
@@ -20,19 +16,18 @@ export const Cover = () => {
         Accessing the website shall be done at your own judgement and risk, and
         BBKi.ng disclaims responsibility or liability in the event of your
         violation of laws by accessing the website. Do you wish to access the
-        website? (<Link to="/ext">Yes</Link>/
-        <DisabledText className="mb-8">No</DisabledText>)
+        website? (
+        <Link to="/ext" color={LinkColor.RED}>
+          Yes
+        </Link>
+        /<DisabledText className="mb-8">No</DisabledText>)
       </p>
     </DisabledText>
   );
 
-  const answers = [content];
-
-  const renderer = (n: any) => n;
-
-  const rendererQuestion = () => (
-    <ListWithTitle title={question} items={answers} itemRenderer={renderer} />
+  return (
+    <ThreeColLayout
+      middleRenderer={() => <Article title={question}>{content}</Article>}
+    />
   );
-
-  return <ThreeColLayout middleRenderer={rendererQuestion} />;
 };

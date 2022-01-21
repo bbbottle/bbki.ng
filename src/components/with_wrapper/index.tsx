@@ -1,6 +1,6 @@
 import React from "react";
 import { FunctionComponent } from "react";
-import { ArticlePage } from "@/components/article";
+import { Article } from "@/components/article";
 import { AlmostCenterLayout, ThreeColLayout } from "../layout";
 
 export const withCenterWrapper =
@@ -15,9 +15,9 @@ export const withCenterWrapper =
 export const withArticleWrapper =
   (Component: FunctionComponent<any>) => (props: any) => {
     return (
-      <ArticlePage {...props}>
+      <Article {...props}>
         <Component />
-      </ArticlePage>
+      </Article>
     );
   };
 

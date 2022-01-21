@@ -1,11 +1,10 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import { ReactCusdis } from "react-cusdis";
-import { BgColors } from "@/types/color";
+import { BgColors, TextColors } from "@/types/color";
 import { CUSDIS_ATTRS, CUSDIS_OFFICIAL_SITE_ADDRESS } from "@/constants/cusdis";
 import { useCusidsEvent } from "@/components/comment/use_cusdis_event";
-import { CornerPromptBox } from "@/components";
-import { Link, LinkColor } from "@bbki.ng/components";
+import { CornerPromptBox, Link } from "@/components";
 
 type CommentProps = {
   title: string;
@@ -59,7 +58,7 @@ export const Comment = (props: CommentProps) => {
         <Link
           to={CUSDIS_OFFICIAL_SITE_ADDRESS}
           external
-          color={LinkColor.GRAY}
+          color={TextColors.GRAY}
           className="px-1"
         >
           powered by discus

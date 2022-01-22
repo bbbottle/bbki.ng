@@ -1222,10 +1222,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bbki.ng/components@1.4.5":
-  version "1.4.5"
-  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.4.5.tgz#c48ce7deb914a9d5926258823de17bfd14f334d0"
-  integrity sha512-bdQxF65elZl1InKZbQAICHjZeoYuAc0IBamH8HkNhVWJGtfVZtAv6H+AY4HKgda/XT0HWEGGGwpfN+6UiNZyiQ==
+"@bbki.ng/components@1.4.6":
+  version "1.4.6"
+  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.4.6.tgz#c8585bc71b6851d0ee138b2210af9efb9d048ff1"
+  integrity sha512-Thppp2SKLCIjebvJVUnKjeoKd3rmcmX1F4Rbktn8jJmeAoPQ1flpfSF0O6udU0+EhxW+ff4lpgafqGgxxignkw==
 
 "@bbki.ng/design@1.1.1":
   version "1.1.1"
@@ -1618,11 +1618,6 @@
   dependencies:
     "@types/unist" "*"
 
-"@types/history@*":
-  version "4.7.9"
-  resolved "https://registry.nlark.com/@types/history/download/@types/history-4.7.9.tgz#1cfb6d60ef3822c589f18e70f8b12f9a28ce8724"
-  integrity sha1-HPttYO84IsWJ8Y5w+LEvmijOhyQ=
-
 "@types/istanbul-lib-coverage@*", "@types/istanbul-lib-coverage@^2.0.0", "@types/istanbul-lib-coverage@^2.0.1":
   version "2.0.3"
   resolved "https://registry.npmjs.org/@types/istanbul-lib-coverage/-/istanbul-lib-coverage-2.0.3.tgz#4ba8ddb720221f432e443bd5f9117fd22cfd4762"
@@ -1697,23 +1692,6 @@
   resolved "https://registry.nlark.com/@types/react-dom/download/@types/react-dom-17.0.9.tgz?cache=0&sync_timestamp=1629708976357&other_urls=https%3A%2F%2Fregistry.nlark.com%2F%40types%2Freact-dom%2Fdownload%2F%40types%2Freact-dom-17.0.9.tgz#441a981da9d7be117042e1a6fd3dac4b30f55add"
   integrity sha1-RBqYHanXvhFwQuGm/T2sSzD1Wt0=
   dependencies:
-    "@types/react" "*"
-
-"@types/react-router-dom@^5.3.1":
-  version "5.3.1"
-  resolved "https://registry.npmmirror.com/@types/react-router-dom/download/@types/react-router-dom-5.3.1.tgz#76700ccce6529413ec723024b71f01fc77a4a980"
-  integrity sha1-dnAMzOZSlBPscjAktx8B/HekqYA=
-  dependencies:
-    "@types/history" "*"
-    "@types/react" "*"
-    "@types/react-router" "*"
-
-"@types/react-router@*":
-  version "5.1.17"
-  resolved "https://registry.npmmirror.com/@types/react-router/download/@types/react-router-5.1.17.tgz#087091006213b11042f39570e5cd414863693968"
-  integrity sha1-CHCRAGITsRBC85Vw5c1BSGNpOWg=
-  dependencies:
-    "@types/history" "*"
     "@types/react" "*"
 
 "@types/react@*", "@types/react@^17.0.0":

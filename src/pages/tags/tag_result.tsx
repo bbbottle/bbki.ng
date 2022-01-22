@@ -1,4 +1,4 @@
-import React from "React";
+import React from "react";
 import Txt from "@/pages/extensions/txt";
 import { getArticleListByTag } from "@/utils/tags";
 import { MdxArticleList } from "@/articles";

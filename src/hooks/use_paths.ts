@@ -19,7 +19,7 @@ export const usePaths = (): pathObj[] => {
 
   return pathsArr.map((path, index) => {
     const isLast = index === pathsArr.length - 1;
-    const name = pathNameArr[index].replace(/^$/, "~");
+    const name = decodeURIComponent(pathNameArr[index].replace(/^$/, "~"));
     return isLast
       ? { name }
       : {

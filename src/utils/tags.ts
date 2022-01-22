@@ -1,6 +1,5 @@
 import { MdxArticle } from "@/types/articles";
 import { ROUTES } from "@/constants";
-import { withArticleWrapper } from "@/components";
 
 export const getAllTags = (mdxArticles: MdxArticle[]): string[] => {
   return Array.from(
@@ -13,14 +12,10 @@ export const getArticleListByTag = (mdxArticles: MdxArticle[], tag: string) => {
     .filter(({ meta }) => {
       return meta.tags && meta.tags.includes(tag);
     })
-    .map(({ default: Component, meta }) => {
+    .map(({ meta }) => {
       return {
         path: `${ROUTES.TXT}/${meta.title}`,
         name: meta.title,
-        componentProps: {
-          tags: meta.tags,
-        },
-        component: withArticleWrapper(Component),
       };
     });
 };

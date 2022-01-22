@@ -1,20 +1,18 @@
 import React from "react";
-import { SwitchComponentsRoute } from "@/components";
+import { CenterLinkList } from "@/components";
 import { ArticleList } from "./consts";
-import { compPathObj } from "@/types/path";
+import { pathObj } from "@/types/path";
 
 type TxtProps = {
   title?: string;
-  articleList?: compPathObj[];
+  articleList?: pathObj[];
 };
 
-const Txt = (props: TxtProps) => {
+export default (props: TxtProps) => {
   return (
-    <SwitchComponentsRoute
+    <CenterLinkList
+      list={props.articleList || ArticleList}
       title={props.title}
-      componentPathList={props.articleList || ArticleList}
     />
   );
 };
-
-export default Txt;

@@ -13,7 +13,8 @@ export const withCenterWrapper =
   };
 
 export const withArticleWrapper =
-  (Component: FunctionComponent<any>) => (props: any) => {
+  (Component: FunctionComponent<any>): FunctionComponent<any> =>
+  (props: any) => {
     return (
       <ArticlePage {...props}>
         <Component />

@@ -1,9 +1,11 @@
 import React from "react";
 import { ProjectList } from "./consts";
-import { SwitchComponentsRoute } from "@/components";
+import { CenterLinkList, SwitchComponentsRoute } from "@/components";
 
 const Png = () => {
   return <SwitchComponentsRoute componentPathList={ProjectList} />;
 };
 
-export default Png;
+export default () => {
+  return <CenterLinkList list={ProjectList} title="图片" />;
+};

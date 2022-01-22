@@ -30,7 +30,11 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
 
 const ImgListWithTitle = withTitle(BaseImgList);
 
-export const ImgList = (props: imgListProps) => {
+interface TitledImageListProps extends imgListProps {
+  title: string;
+}
+
+export const ImgList = (props: TitledImageListProps) => {
   const renderList = () => <ImgListWithTitle {...props} />;
 
   return <ThreeColLayout middleRenderer={renderList} />;

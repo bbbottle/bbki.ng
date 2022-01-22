@@ -3,7 +3,7 @@ import { PHOTO_PROJECTS, ROUTES } from "@/constants";
 
 export const ProjectList = PHOTO_PROJECTS.map(
   ({ name, images: imgList, description }) => ({
-    path: `${ROUTES.PNG}/${name}`,
+    path: name,
     name,
     component: ImgList,
     componentProps: {

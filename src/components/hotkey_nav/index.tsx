@@ -1,5 +1,5 @@
 import React from "react";
-import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 import { useHotkeys } from "react-hotkeys-hook";
 import { GITHUB_REPO_ADDRESS, ROUTES } from "@/constants";
 
@@ -27,16 +27,16 @@ const KEY_ROUTES = [
 ];
 
 export const HotKeyNav = (props: any) => {
-  const history = useHistory();
+  const nav = useNavigate();
   const goto = (path: string) => {
-    history.push(path);
+    nav(path);
   };
 
   useHotkeys(HotKeys.b, () => {
-    history.goBack();
+    nav(-1);
   });
   useHotkeys(HotKeys.f, () => {
-    history.goForward();
+    nav(1);
   });
   useHotkeys(HotKeys.s, () => {
     window.open(GITHUB_REPO_ADDRESS);

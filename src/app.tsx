@@ -1,62 +1,44 @@
-import React, { lazy, Suspense } from "react";
-import { Switch, Route } from "react-router-dom";
+import React from "react";
+import { Routes, Route, Outlet } from "react-router-dom";
 import { Nav } from "@bbki.ng/components";
-import { ROUTES } from "@/constants";
-import { minDelay } from "@/utils";
+import { Footer, NavMainLayout, HotKeyNav } from "./components";
 import {
-  Footer,
-  NavMainLayout,
-  HotKeyNav,
-  CenterListWithTitleSkeleton,
-} from "./components";
-import { Cover } from "./pages";
+  ArticlePage,
+  Cover,
+  Ext,
+  PhotoProjects,
+  Png,
+  Tags,
+  TagsResult,
+  Txt,
+} from "./pages";
 import { usePaths } from "@/hooks";
 
-const Extensions = lazy(() => minDelay(import("./pages/extensions")));
-const Tags = lazy(() => minDelay(import("./pages/tags")));
-
-const Content = () => {
+const Layout = () => {
   return (
-    <Switch>
-      <Route path={ROUTES.EXT}>
-        <Suspense
-          fallback={
-            <CenterListWithTitleSkeleton titleLength={4} listItemLength={2} />
-          }
-        >
-          <Extensions />
-        </Suspense>
-      </Route>
-      <Route path={ROUTES.TAGS}>
-        <Suspense
-          fallback={
-            <CenterListWithTitleSkeleton
-              titleLength={2}
-              listItemLength={2}
-              listItemWidthArray={[61, 32]}
-            />
-          }
-        >
-          <Tags />
-        </Suspense>
-      </Route>
-      <Route path="/" exact>
-        <Cover />
-      </Route>
-    </Switch>
+    <NavMainLayout
+      nav={<Nav paths={usePaths()} className="sticky top-0 blur-cover z-50" />}
+      main={<Outlet />}
+      footer={<Footer />}
+    />
   );
 };
 
 export const App = () => {
   return (
     <HotKeyNav>
-      <NavMainLayout
-        nav={
-          <Nav paths={usePaths()} className="sticky top-0 blur-cover z-50" />
-        }
-        main={<Content />}
-        footer={<Footer />}
-      />
+      <Routes>
+        <Route path="/" element={<Layout />}>
+          <Route index element={<Cover />} />
+          <Route path="ext" element={<Ext />} />
+          <Route path="ext/txt" element={<Txt />} />
+          <Route path="ext/txt/:title" element={<ArticlePage />} />
+          <Route path="ext/png" element={<Png />} />
+          <Route path="ext/png/:title" element={<PhotoProjects />} />
+          <Route path="tags" element={<Tags />} />
+          <Route path="tags/:tag" element={<TagsResult />} />
+        </Route>
+      </Routes>
     </HotKeyNav>
   );
 };

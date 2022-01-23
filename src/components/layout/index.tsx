@@ -64,20 +64,16 @@ export const ThreeColLayout = (props: threeColLayoutProps) => {
   const { leftRenderer, middleRenderer, rightRenderer } = props;
   const colCls = cls("max-h-full overflow-auto md:block");
   return (
-    <div className="grid grid-cols-1 md:grid-cols-3 gap-4 h-full w-full">
-      <div className={cls(colCls, { hidden: !leftRenderer })}>
-        {leftRenderer && leftRenderer()}
-      </div>
+    <div className="grid grid-cols-1 xl:grid-cols-3 gap-4 h-full w-full">
+      <div className={cls(colCls)}>{leftRenderer && leftRenderer()}</div>
       <div
-        className={cls(colCls, "py-64", "relative", {
+        className={cls(colCls, "py-64 sm:px-128 xl:px-0", "relative", {
           hidden: !middleRenderer,
         })}
       >
         {middleRenderer && middleRenderer()}
       </div>
-      <div className={cls(colCls, { hidden: !rightRenderer })}>
-        {rightRenderer && rightRenderer()}
-      </div>
+      <div className={cls(colCls)}>{rightRenderer && rightRenderer()}</div>
     </div>
   );
 };

@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-import { Nav } from "@bbki.ng/components";
-import { Footer, NavMainLayout, HotKeyNav } from "./components";
+import { Nav, Page } from "@bbki.ng/components";
+import { Footer, HotKeyNav } from "./components";
 import {
   ArticlePage,
   Cover,
@@ -16,8 +16,8 @@ import { usePaths } from "@/hooks";
 
 const Layout = () => {
   return (
-    <NavMainLayout
-      nav={<Nav paths={usePaths()} className="sticky top-0 blur-cover z-50" />}
+    <Page
+      nav={<Nav paths={usePaths()} className="blur-cover" />}
       main={<Outlet />}
       footer={<Footer />}
     />

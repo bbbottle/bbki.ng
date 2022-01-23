@@ -1,5 +1,4 @@
 export {
-  NavMainLayout,
   TopBottomLayout,
   LeftRightLayout,
   AlmostCenterLayout,

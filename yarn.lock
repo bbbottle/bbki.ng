@@ -1222,10 +1222,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bbki.ng/components@1.4.6":
-  version "1.4.6"
-  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.4.6.tgz#c8585bc71b6851d0ee138b2210af9efb9d048ff1"
-  integrity sha512-Thppp2SKLCIjebvJVUnKjeoKd3rmcmX1F4Rbktn8jJmeAoPQ1flpfSF0O6udU0+EhxW+ff4lpgafqGgxxignkw==
+"@bbki.ng/components@1.4.7":
+  version "1.4.7"
+  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.4.7.tgz#41efc80693de03082f8c281dba87c4807de76828"
+  integrity sha512-4LqvgomLT0uXS2C/KB3V1sSgdPRJ/giTooiHv9xRLiC5g9OzPj/JWRw9gz1466jMPrsw3NA/GOI0KDLXtXu+oA==
 
 "@bbki.ng/design@1.1.1":
   version "1.1.1"

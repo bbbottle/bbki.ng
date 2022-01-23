@@ -29,22 +29,6 @@ type tbLayoutProps = {
   approximately?: boolean;
 };
 
-export const NavMainLayout = (props: navMainLayoutProps) => {
-  const { nav, main, footer } = props;
-  // mix-blend-luminosity md:mix-blend-normal
-  return (
-    <main className="flex flex-col h-full">
-      {nav}
-      <section className="flex-grow flex-shrink-0 px-6">{main}</section>
-      {footer && (
-        <footer className="flex-grow-0 flex-shrink-0 flex items-center justify-center h-64">
-          {footer}
-        </footer>
-      )}
-    </main>
-  );
-};
-
 export const LeftRightLayout = (props: lrLayoutProps) => {
   const { leftRenderer, rightRenderer, approximately } = props;
   const halfCls = approximately ? "flex-almost-half" : "flex-half";

@@ -6,6 +6,7 @@ import * as 没有女人的男人们 from "./men-without-women.mdx";
 import * as 一天计划 from "./movie-day.mdx";
 // import * as 网站图片展示 from "./img.mdx";
 import * as 大雪 from "./fall.mdx";
+import * as 大寒 from "./major-cold.mdx";
 
 export const MdxArticleList = [
   网站说明书,
@@ -16,4 +17,5 @@ export const MdxArticleList = [
   没有女人的男人们,
   一天计划,
   大雪,
+  大寒,
 ];

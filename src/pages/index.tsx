@@ -74,9 +74,19 @@ const TagsResult = () => (
   </Suspense>
 );
 
+const NowLazy = lazy(() => minDelay(import("./now")));
+const NowPage = () => {
+  return (
+    <Suspense fallback={null}>
+      <NowLazy />
+    </Suspense>
+  );
+};
+
 const ArticlePageLazy = lazy(() =>
   minDelay(import("./extensions/txt/article"))
 );
+
 const ArticlePage = () => {
   return (
     <Suspense fallback={null}>
@@ -98,4 +108,4 @@ const PhotoProjects = () => {
 };
 
 export { Cover } from "./cover";
-export { Tags, Ext, Txt, Png, ArticlePage, TagsResult, PhotoProjects };
+export { Tags, Ext, Txt, Png, ArticlePage, TagsResult, PhotoProjects, NowPage };

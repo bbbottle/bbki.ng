@@ -6,6 +6,7 @@ import {
   ArticlePage,
   Cover,
   Ext,
+  NowPage,
   PhotoProjects,
   Png,
   Tags,
@@ -31,6 +32,7 @@ export const App = () => {
         <Route path="/" element={<Layout />}>
           <Route index element={<Cover />} />
           <Route path="ext" element={<Ext />} />
+          <Route path="now" element={<NowPage />} />
           <Route path="ext/txt" element={<Txt />} />
           <Route path="ext/txt/:title" element={<ArticlePage />} />
           <Route path="ext/png" element={<Png />} />

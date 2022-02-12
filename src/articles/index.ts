@@ -1,4 +1,5 @@
 import * as 网站说明书 from "./bbking-manual.mdx";
+import * as 可以攻玉 from "./quote.mdx";
 import * as 离开 from "./travel.mdx";
 import * as 降温 from "./cooldown.mdx";
 import * as 与或非禁区 from "./anti-logic.mdx";
@@ -12,6 +13,7 @@ export const MdxArticleList = [
   网站说明书,
   // 网站图片展示,
   与或非禁区,
+  可以攻玉,
   离开,
   降温,
   没有女人的男人们,

@@ -25,7 +25,17 @@ const Txt = () => (
     fallback={
       <CenterListWithTitleSkeleton
         titleLength={2}
-        listItemWidthArray={[80, 96, 80, 32, 32, 128, 64, 32]}
+        listItemWidthArray={[
+          16 * 5,
+          16 * 5,
+          16 * 4,
+          16 * 2,
+          16 * 2,
+          16 * 8,
+          16 * 4,
+          16 * 2,
+          16 * 2,
+        ]}
       />
     }
   >

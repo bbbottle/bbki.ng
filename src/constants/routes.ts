@@ -18,3 +18,4 @@ export const ROUTE_NAME = {
 
 export const GITHUB_REPO_ADDRESS = "https://github.com/bbbottle/bbki.ng";
 export const OSS_ADDRESS = "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com";
+export const ONLINE_EDITOR = "https://github.dev/bbbottle/bbki.ng";

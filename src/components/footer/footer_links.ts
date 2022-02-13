@@ -1,10 +1,10 @@
 import { pathObj } from "@/types/path";
-import { ONLINE_EDITOR } from "@/constants";
+import { GITHUB_REPO_ADDRESS } from "@/constants";
 
 export const FooterLinks: pathObj[] = [
   {
-    name: "edit",
-    path: ONLINE_EDITOR,
+    name: "source",
+    path: GITHUB_REPO_ADDRESS,
   },
   // {
   //   text: "contributing",

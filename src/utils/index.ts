@@ -1,7 +1,8 @@
 import { Photo } from "@/types/photo";
 import { ossProcessType } from "@/types/oss";
-import { OSS_ADDRESS } from "@/constants/routes";
+import { API_ENDPOINT, OSS_ADDRESS } from "@/constants/routes";
 import { DEFAULT_DELAY } from "@/constants";
+import { Fetcher } from "swr";
 
 export const floatNumberToPercentageString = (num: number): string => {
   return `${num * 100}%`;
@@ -62,3 +63,8 @@ export const getEnv = () => {
     ? "development"
     : "production";
 };
+
+export const fetcher = (resource: string, init: RequestInit = {}) =>
+  fetch(`${API_ENDPOINT}/${resource}`, { ...init, mode: "cors" }).then((res) =>
+    res.json()
+  );

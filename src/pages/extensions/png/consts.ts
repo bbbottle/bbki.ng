@@ -5,11 +5,5 @@ export const ProjectList = PHOTO_PROJECTS.map(
   ({ name, images: imgList, description }) => ({
     path: name,
     name,
-    component: ImgList,
-    componentProps: {
-      imgList,
-      title: name,
-      description,
-    },
   })
 );

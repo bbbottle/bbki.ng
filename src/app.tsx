@@ -3,16 +3,21 @@ import { Routes, Route, Outlet } from "react-router-dom";
 import { Nav, Page } from "@bbki.ng/components";
 import { Footer, HotKeyNav } from "./components";
 import {
-  ArticlePage,
   Cover,
-  Ext,
-  NowPage,
-  PhotoProjects,
-  Png,
-  Tags,
-  TagsResult,
-  Txt,
+  // NowPage,
+  // PhotoProjects,
+  // Png,
 } from "./pages";
+
+import ArticlePage from "@/pages/extensions/txt/article";
+import Ext from "@/pages/extensions";
+import NowPage from "@/pages/now";
+import PhotoProjects from "@/pages/extensions/png/png_projects";
+import Png from "@/pages/extensions/png";
+import Tags from "@/pages/tags";
+import TagsResult from "@/pages/tags/tag_result";
+import Txt from "@/pages/extensions/txt";
+
 import { usePaths } from "@/hooks";
 
 const Layout = () => {

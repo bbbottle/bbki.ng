@@ -1,31 +1,30 @@
 import React from "react";
-import { PHOTO_PROJECTS } from "@/constants";
-import { ImgList } from "@/components";
-import { ReactElement } from "react";
+import { CenterListWithTitleSkeleton, ImgList } from "@/components";
 import { useParams } from "react-router-dom";
-
-type TProjectsMap = {
-  [key: string]: ReactElement;
-};
-const ProjectsMap: TProjectsMap = {};
-
-PHOTO_PROJECTS.forEach(({ name, images: imgList, description }) => {
-  const Comp = ImgList;
-  ProjectsMap[name] = (
-    <Comp
-      imgList={imgList}
-      title={name}
-      description={description}
-      className=""
-    />
-  );
-});
+import { useProjects } from "@/hooks/use_projects";
 
 export default () => {
-  const { title } = useParams();
-  if (!title) {
+  const { id } = useParams();
+  const { projects, isError, isLoading } = useProjects(id);
+
+  if (isError) {
     return null;
   }
 
-  return ProjectsMap[title];
+  if (isLoading) {
+    return (
+      <CenterListWithTitleSkeleton
+        titleLength={2}
+        listItemWidthArray={[16 * 10]}
+      />
+    );
+  }
+  return (
+    <ImgList
+      title={projects.name}
+      className=""
+      imgList={projects.images}
+      description={projects.description}
+    />
+  );
 };

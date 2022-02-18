@@ -11,7 +11,7 @@ export default () => {
     return (
       <CenterListWithTitleSkeleton
         titleLength={2}
-        listItemWidthArray={[16 * 4, 16 * 3, 16 * 4, 16 * 4]}
+        listItemWidthArray={[16 * 5, 16 * 3, 16 * 4, 16 * 4]}
       />
     );
   }

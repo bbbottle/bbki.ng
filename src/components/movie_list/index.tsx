@@ -7,6 +7,11 @@ const MOVIES = [
     link: "https://movie.douban.com/subject/35235502/",
     status: "看过",
   },
+  {
+    title: "魔幻时刻 ザ・マジックアワー",
+    link: "https://movie.douban.com/subject/2157507/",
+    status: "看过"
+  }
 ];
 
 export const MovieList = () => {

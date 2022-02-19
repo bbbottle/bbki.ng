@@ -11,6 +11,11 @@ const MOVIES = [
     title: "魔幻时刻 ザ・マジックアワー",
     link: "https://movie.douban.com/subject/2157507/",
     status: "看过"
+  },
+  {
+    title: "red rocket",
+    link: "https://movie.douban.com/subject/35251025/",
+    status: "看过"
   }
 ];
 

@@ -24,12 +24,17 @@ const BOOKS = [
   },
 ];
 
+const CELL_STYLE = {
+  width: 100,
+  maxWidth: 100,
+};
+
 export const BookList = () => {
   const renderHeader = () => {
     return (
       <>
-        <Table.HCell>书名</Table.HCell>
-        <Table.HCell>状态</Table.HCell>
+        <Table.HCell style={CELL_STYLE}>书名</Table.HCell>
+        <Table.HCell style={CELL_STYLE}>状态</Table.HCell>
       </>
     );
   };
@@ -38,12 +43,12 @@ export const BookList = () => {
     const { title, link, status } = BOOKS[index];
     return (
       <>
-        <Table.Cell>
+        <Table.Cell style={CELL_STYLE}>
           <Link to={link} external>
             {title}
           </Link>
         </Table.Cell>
-        <Table.Cell>{status}</Table.Cell>
+        <Table.Cell style={CELL_STYLE}>{status}</Table.Cell>
       </>
     );
   };

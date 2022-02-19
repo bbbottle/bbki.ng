@@ -21,5 +21,6 @@ export const OSS_ADDRESS = "https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com";
 export const API_ENDPOINT = "https://api.bbki.ng";
 export const API = {
   PROJECTS: "projects",
+  MOVIES: "movies",
   IMAGES: "images",
 };

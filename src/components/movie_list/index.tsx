@@ -1,30 +1,50 @@
 import React from "react";
-import { Table, Link } from "@bbki.ng/components";
-
-const MOVIES = [
-  {
-    title: "驾驶我的车",
-    link: "https://movie.douban.com/subject/35235502/",
-    status: "看过",
-  },
-  {
-    title: "魔幻时刻 ザ・マジックアワー",
-    link: "https://movie.douban.com/subject/2157507/",
-    status: "看过"
-  },
-  {
-    title: "red rocket",
-    link: "https://movie.douban.com/subject/35251025/",
-    status: "看过"
-  }
-];
+import { Table, Link, Skeleton, SkeletonColor } from "@bbki.ng/components";
+import { useMovies } from "@/hooks/use_movies";
 
 const CELL_STYLE = {
   width: 100,
   maxWidth: 100,
 };
 
+const TableSkeleton = () => {
+  const renderHeader = () => {
+    return (
+      <>
+        <Table.HCell style={CELL_STYLE}>名字</Table.HCell>
+        <Table.HCell style={CELL_STYLE}>状态</Table.HCell>
+      </>
+    );
+  };
+
+  const renderRow = () => {
+    return (
+      <>
+        <Table.Cell style={CELL_STYLE}>
+          <Skeleton width={84} height={16} bgColor={SkeletonColor.BLUE} />
+        </Table.Cell>
+        <Table.Cell style={CELL_STYLE}>
+          <Skeleton width={32} height={16} bgColor={SkeletonColor.GRAY} />
+        </Table.Cell>
+      </>
+    );
+  };
+
+  return (
+    <Table rowCount={1} rowRenderer={renderRow} headerRenderer={renderHeader} />
+  );
+};
+
 export const MovieList = () => {
+  const { movies, isLoading, isError } = useMovies();
+  if (isError) {
+    return null;
+  }
+
+  if (isLoading) {
+    return <TableSkeleton />;
+  }
+
   const renderHeader = () => {
     return (
       <>
@@ -35,12 +55,12 @@ export const MovieList = () => {
   };
 
   const renderRow = (index: number) => {
-    const { title, link, status } = MOVIES[index];
+    const { name, link, status } = movies[index];
     return (
       <>
         <Table.Cell style={CELL_STYLE}>
           <Link to={link} external>
-            {title}
+            {name}
           </Link>
         </Table.Cell>
         <Table.Cell style={CELL_STYLE}>{status}</Table.Cell>
@@ -49,7 +69,7 @@ export const MovieList = () => {
   };
   return (
     <Table
-      rowCount={MOVIES.length}
+      rowCount={movies.length}
       rowRenderer={renderRow}
       headerRenderer={renderHeader}
     />

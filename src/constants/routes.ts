@@ -23,4 +23,5 @@ export const API = {
   PROJECTS: "projects",
   MOVIES: "movies",
   IMAGES: "images",
+  BOOKS: "books",
 };

@@ -2,7 +2,7 @@ import { Photo } from "@/types/photo";
 import { ossProcessType } from "@/types/oss";
 import { API_ENDPOINT, OSS_ADDRESS } from "@/constants/routes";
 import { DEFAULT_DELAY } from "@/constants";
-import { Fetcher } from "swr";
+import useSWR from "swr";
 
 export const floatNumberToPercentageString = (num: number): string => {
   return `${num * 100}%`;
@@ -68,3 +68,14 @@ export const fetcher = (resource: string, init: RequestInit = {}) =>
   fetch(`${API_ENDPOINT}/${resource}`, { ...init, mode: "cors" }).then((res) =>
     res.json()
   );
+
+export const buildSimpleApiHooks = (api: string, payloadKey: string) => {
+  return () => {
+    const { data, error } = useSWR(api);
+    return {
+      [payloadKey]: data,
+      isError: error,
+      isLoading: !data && !error,
+    };
+  };
+};

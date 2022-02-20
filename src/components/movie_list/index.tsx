@@ -1,38 +1,11 @@
 import React from "react";
-import { Table, Link, Skeleton, SkeletonColor } from "@bbki.ng/components";
-import { useMovies } from "@/hooks/use_movies";
+import { Table, Link } from "@bbki.ng/components";
+import { TableSkeleton } from "@/components/table_skeleton";
+import { useMovies } from "@/hooks";
 
 const CELL_STYLE = {
   width: 100,
   maxWidth: 100,
-};
-
-const TableSkeleton = () => {
-  const renderHeader = () => {
-    return (
-      <>
-        <Table.HCell style={CELL_STYLE}>名字</Table.HCell>
-        <Table.HCell style={CELL_STYLE}>状态</Table.HCell>
-      </>
-    );
-  };
-
-  const renderRow = () => {
-    return (
-      <>
-        <Table.Cell style={CELL_STYLE}>
-          <Skeleton width={84} height={16} bgColor={SkeletonColor.BLUE} />
-        </Table.Cell>
-        <Table.Cell style={CELL_STYLE}>
-          <Skeleton width={32} height={16} bgColor={SkeletonColor.GRAY} />
-        </Table.Cell>
-      </>
-    );
-  };
-
-  return (
-    <Table rowCount={1} rowRenderer={renderRow} headerRenderer={renderHeader} />
-  );
 };
 
 export const MovieList = () => {

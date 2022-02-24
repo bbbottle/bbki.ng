@@ -1,10 +1,23 @@
 import React from "react";
 import { DisabledText, ThreeColLayout } from "@/components";
 import { Link, LinkColor, Article } from "@bbki.ng/components";
+import { useSupabaseSession } from "@/hooks/use_supa_session";
 
 export const Cover = () => {
-  const question = "年齢認証，18 歳未満？";
-  const content = (
+  const session = useSupabaseSession();
+  const userName = session?.user?.user_metadata?.name;
+  const title = session ? "Hi" : "年齢認証，18 歳未満？";
+  const content = session ? (
+    <DisabledText>
+      Welcome to{" "}
+      <Link to="/ext" color={LinkColor.BLUE}>
+        bbki.ng
+      </Link>
+      .
+      <br />
+      {userName}
+    </DisabledText>
+  ) : (
     <DisabledText>
       <p>
         Please be advised that the website you are attempting to visit contains
@@ -27,7 +40,7 @@ export const Cover = () => {
 
   return (
     <ThreeColLayout
-      middleRenderer={() => <Article title={question}>{content}</Article>}
+      middleRenderer={() => <Article title={title}>{content}</Article>}
     />
   );
 };

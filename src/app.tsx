@@ -1,6 +1,4 @@
 import React from "react";
-import { SWRConfig } from "swr";
-import { fetcher } from "@/utils";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { Nav, Page } from "@bbki.ng/components";
 import { Footer, HotKeyNav } from "./components";
@@ -21,6 +19,8 @@ import TagsResult from "@/pages/tags/tag_result";
 import Txt from "@/pages/extensions/txt";
 
 import { usePaths } from "@/hooks";
+import { Login } from "@/pages/login";
+import { SWR } from "@/swr";
 
 const Layout = () => {
   return (
@@ -34,11 +34,7 @@ const Layout = () => {
 
 export const App = () => {
   return (
-    <SWRConfig
-      value={{
-        fetcher: fetcher,
-      }}
-    >
+    <SWR>
       <HotKeyNav>
         <Routes>
           <Route path="/" element={<Layout />}>
@@ -50,11 +46,12 @@ export const App = () => {
             <Route path="ext/png" element={<Png />} />
             <Route path="ext/png/:id" element={<PhotoProjects />} />
             <Route path="tags" element={<Tags />} />
+            <Route path="login" element={<Login />} />
             <Route path="tags/:tag" element={<TagsResult />} />
           </Route>
         </Routes>
       </HotKeyNav>
-    </SWRConfig>
+    </SWR>
   );
 };
 

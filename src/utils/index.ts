@@ -2,7 +2,7 @@ import { Photo } from "@/types/photo";
 import { ossProcessType } from "@/types/oss";
 import { API_ENDPOINT, OSS_ADDRESS } from "@/constants/routes";
 import { DEFAULT_DELAY } from "@/constants";
-import useSWR from "swr";
+import useSWR, { Fetcher } from "swr";
 
 export const floatNumberToPercentageString = (num: number): string => {
   return `${num * 100}%`;
@@ -64,10 +64,31 @@ export const getEnv = () => {
     : "production";
 };
 
-export const fetcher = (resource: string, init: RequestInit = {}) =>
-  fetch(`${API_ENDPOINT}/${resource}`, { ...init, mode: "cors" }).then((res) =>
-    res.json()
-  );
+export const baseFetcher = (resource: string, init: RequestInit = {}) =>
+  fetch(resource, init).then((res) => res.json());
+
+export const withToken =
+  (fetcher: Fetcher) =>
+  (token?: string) =>
+  (resource: string, init: RequestInit = {}) => {
+    const { headers = {} } = init;
+    const finalHeaders = {
+      ...headers,
+      "X-Supabase-Auth": token,
+    };
+    return fetcher(resource, {
+      ...init,
+      headers: finalHeaders,
+    });
+  };
+
+export const withBBApi =
+  (fetcher: Fetcher<Promise<void>>) =>
+  (apiEndPoint = API_ENDPOINT): Fetcher =>
+  async (resource: string, init: RequestInit = {}) =>
+    fetcher(`${apiEndPoint}/${resource}`, { ...init, mode: "cors" });
+
+export const apiFetcher = withBBApi(baseFetcher)(API_ENDPOINT);
 
 export const buildSimpleApiHooks = (api: string, payloadKey: string) => {
   return () => {

@@ -35,6 +35,6 @@ export const TableSkeleton = (props: {
   };
 
   return (
-    <Table rowCount={1} rowRenderer={renderRow} headerRenderer={renderHeader} />
+    <Table rowCount={3} rowRenderer={renderRow} headerRenderer={renderHeader} />
   );
 };

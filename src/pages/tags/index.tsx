@@ -12,7 +12,7 @@ type tag =
   | string;
 
 export default (props: {
-  inline: boolean;
+  inline?: boolean;
   className?: string;
   withAll?: boolean;
 }) => {

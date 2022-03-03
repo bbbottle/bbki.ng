@@ -5,7 +5,11 @@ export {
   ThreeColLayout,
 } from "./layout";
 
-export { List, ListWithTitle, CenterListWithTitleSkeleton } from "./list";
+export {
+  List,
+  ListWithTitleAndDescription,
+  CenterListWithTitleSkeleton,
+} from "./list";
 
 export { Footer } from "./footer";
 
@@ -45,4 +49,4 @@ export { Tags } from "./tags";
 
 export { Comment } from "./comment";
 
-export { withTitle } from "./with_title";
+export { withTitleAndDescription } from "./with_title_description";

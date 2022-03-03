@@ -1,20 +1,24 @@
 import React, { FunctionComponent } from "react";
 import cls from "classnames";
 import { Photo } from "@/types/photo";
-import { DisabledText, Img, ThreeColLayout, withTitle } from "@/components";
+import {
+  DisabledText,
+  Img,
+  ThreeColLayout,
+  withTitleAndDescription,
+} from "@/components";
 
 interface imgListProps {
   className: string;
   imgList: Photo[];
-  description?: string;
+  description?: any;
 }
 
 const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
-  const { imgList, className, description } = props;
+  const { imgList, className } = props;
 
   return (
     <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
-      <DisabledText className="mb-128 block">{description}</DisabledText>
       {imgList.map((img, index) => {
         const isLast = index === imgList.length - 1;
         return (
@@ -28,7 +32,7 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
   );
 };
 
-const ImgListWithTitle = withTitle(BaseImgList);
+const ImgListWithTitle = withTitleAndDescription(BaseImgList);
 
 interface TitledImageListProps extends imgListProps {
   title: string;

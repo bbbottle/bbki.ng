@@ -11,7 +11,7 @@ export default () => {
   }
   return (
     <Txt
-      title={`标签：${tag}`}
+      title={`#${tag}`}
       articleList={getArticleListByTag(MdxArticleList, tag)}
     />
   );

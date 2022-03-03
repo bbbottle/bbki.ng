@@ -1,17 +1,18 @@
 import React from "react";
 import { pathObj } from "@/types/path";
 import { useRouteName } from "@/hooks";
-import { ListWithTitle } from "../list";
+import { ListWithTitleAndDescription } from "../list";
 import { Link } from "@bbki.ng/components";
 import { ThreeColLayout } from "../layout";
 
 type centerLinkListProps = {
   title?: string;
+  description?: any;
   list: pathObj[];
 };
 
 export const CenterLinkList = (props: centerLinkListProps) => {
-  const { list, title } = props;
+  const { list, title, description } = props;
   const listTitle = title || useRouteName();
   const renderExt = ({ name, path }: any) => {
     return (
@@ -22,7 +23,12 @@ export const CenterLinkList = (props: centerLinkListProps) => {
   };
 
   const renderList = () => (
-    <ListWithTitle items={list} itemRenderer={renderExt} title={listTitle} />
+    <ListWithTitleAndDescription
+      items={list}
+      itemRenderer={renderExt}
+      title={listTitle}
+      description={description}
+    />
   );
   return <ThreeColLayout middleRenderer={renderList} />;
 };

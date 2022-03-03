@@ -7,7 +7,7 @@ import React, {
 import cls from "classnames";
 import { BgColors } from "@/types/color";
 import { ThreeColLayout } from "@/components";
-import { withTitle } from "@/components/with_title";
+import { withTitleAndDescription } from "@/components/with_title_description";
 import { FadeOutCover } from "@/components/fade_out_cover";
 import { DEFAULT_DELAY } from "@/constants";
 
@@ -32,7 +32,7 @@ export const List: FunctionComponent<listProps> = (props) => {
     >
       {items.map((item, index) => {
         return (
-          <li key={item.id || index} className={spaceCls}>
+          <li key={item.id || index} className={cls(spaceCls, "flex-shrink-0")}>
             {itemRenderer(item, index)}
           </li>
         );
@@ -41,7 +41,7 @@ export const List: FunctionComponent<listProps> = (props) => {
   );
 };
 
-export const ListWithTitle = withTitle(List);
+export const ListWithTitleAndDescription = withTitleAndDescription(List);
 
 type SkeletonProps = {
   bgColor: BgColors;
@@ -78,7 +78,7 @@ export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
     });
 
   return (
-    <ListWithTitle
+    <ListWithTitleAndDescription
       title={
         <Skeleton
           bgColor={BgColors.LIGHT_GRAY}

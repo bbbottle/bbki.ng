@@ -1,5 +1,9 @@
 import React from "react";
-import { CenterListWithTitleSkeleton, ImgList } from "@/components";
+import {
+  CenterListWithTitleSkeleton,
+  DisabledText,
+  ImgList,
+} from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 
@@ -19,12 +23,16 @@ export default () => {
       />
     );
   }
+
+  const descriptionJSX = (
+    <DisabledText className="block">{projects.description}</DisabledText>
+  );
   return (
     <ImgList
       title={projects.name}
       className=""
       imgList={projects.images}
-      description={projects.description}
+      description={descriptionJSX}
     />
   );
 };

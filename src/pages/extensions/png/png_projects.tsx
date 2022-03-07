@@ -7,6 +7,18 @@ import {
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 
+const imageFormatter = (image: any) => {
+  const { rendered_width, thumbnail_src, avg_color, process_type, ...rest } =
+    image;
+  return {
+    renderedWidth: rendered_width,
+    thumbnailSrc: thumbnail_src,
+    avgColor: avg_color,
+    processType: process_type,
+    ...rest,
+  };
+};
+
 export default () => {
   const { id } = useParams();
   const { projects, isError, isLoading } = useProjects(id);
@@ -31,7 +43,7 @@ export default () => {
     <ImgList
       title={projects.name}
       className=""
-      imgList={projects.images}
+      imgList={projects.images.map(imageFormatter)}
       description={descriptionJSX}
     />
   );

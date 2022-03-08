@@ -17,6 +17,7 @@ export const Img = (props: ImgProps) => {
   const baseWrapperStyle = {
     width: "initial",
     height: "initial",
+    backgroundColor: avgColor || "rgb(243, 244, 246)",
   };
 
   const dynamicWrapperStyle = loaded
@@ -80,7 +81,7 @@ export const Img = (props: ImgProps) => {
         }}
         className={classnames("transition-opacity", {
           "lqip-blur": !loaded,
-          "opacity-50": !loaded,
+          "opacity-90": !loaded,
           "opacity-100": !loaded,
         })}
       />

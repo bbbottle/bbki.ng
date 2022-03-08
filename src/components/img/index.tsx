@@ -56,10 +56,7 @@ export const Img = (props: ImgProps) => {
         className,
         "inline-block",
         "overflow-hidden",
-        "border-0",
-        {
-          [avgColor]: !loaded,
-        }
+        "border-0"
       )}
       style={Object.assign({}, baseWrapperStyle, dynamicWrapperStyle)}
     >

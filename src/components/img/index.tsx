@@ -44,10 +44,10 @@ export const Img = (props: ImgProps) => {
       try {
         await p();
       } catch (e) {}
-      await delay(500);
-      setDecoded(true);
-      await delay(500);
-      setLoaded(true);
+      // await delay(500);
+      // setDecoded(true);
+      // await delay(500);
+      // setLoaded(true);
     };
 
     // if (img.complete) {
@@ -84,6 +84,8 @@ export const Img = (props: ImgProps) => {
         loading="lazy"
         style={{
           contentVisibility: "auto",
+          top: 0,
+          left: 0,
         }}
         className={classnames("transition-opacity", "opacity-100", {
           "opacity-0": !decoded,
@@ -100,6 +102,8 @@ export const Img = (props: ImgProps) => {
             "opacity-0": decoded,
           }
         )}
+        width={width}
+        height={height}
         style={{ width, height, top: 0, left: 0 }}
       />
     </span>

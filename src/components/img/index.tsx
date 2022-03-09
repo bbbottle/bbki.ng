@@ -1,23 +1,27 @@
 import React, { useState } from "react";
 import classnames from "classnames";
 import { Photo } from "@/types/photo";
-import { addOssWebpProcessStyle, calcDefaultImgSize } from "@/utils";
+import { addOssWebpProcessStyle, calcDefaultImgSize, delay } from "@/utils";
 import { ossProcessType } from "@/types/oss";
 
 interface ImgProps extends Photo {
   className?: string;
 }
 
+const emptyDataURL =
+  "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
+
 export const Img = (props: ImgProps) => {
   const { src, className, renderedWidth, avgColor, thumbnailSrc, processType } =
     props;
   const { width, height } = calcDefaultImgSize(props, renderedWidth);
   const [loaded, setLoaded] = useState(false);
+  const [decoded, setDecoded] = useState(false);
 
   const baseWrapperStyle = {
     width: "initial",
     height: "initial",
-    backgroundColor: avgColor || "rgb(243, 244, 246)",
+    backgroundColor: avgColor || "#fff",
   };
 
   const dynamicWrapperStyle = loaded
@@ -35,17 +39,21 @@ export const Img = (props: ImgProps) => {
       };
 
   const handleImgLoad = (img: HTMLImageElement) => {
-    const updateFunc = () => {
-      const p = "decode" in img ? img.decode() : Promise.resolve();
-      p.catch(() => {}).then(() => {
-        setLoaded(true);
-      });
+    const updateFunc = async () => {
+      const p = "decode" in img ? img.decode : Promise.resolve;
+      try {
+        await p();
+      } catch (e) {}
+      await delay(500);
+      setDecoded(true);
+      await delay(500);
+      setLoaded(true);
     };
 
-    if (img.complete) {
-      updateFunc();
-      return;
-    }
+    // if (img.complete) {
+    //   updateFunc().then();
+    //   return;
+    // }
 
     img.onload = updateFunc;
   };
@@ -55,6 +63,7 @@ export const Img = (props: ImgProps) => {
       className={classnames(
         className,
         "inline-block",
+        "relative",
         "overflow-hidden",
         "border-0"
       )}
@@ -76,11 +85,22 @@ export const Img = (props: ImgProps) => {
         style={{
           contentVisibility: "auto",
         }}
-        className={classnames("transition-opacity", {
-          "lqip-blur": !loaded,
-          "opacity-90": !loaded,
-          "opacity-100": !loaded,
+        className={classnames("transition-opacity", "opacity-100", {
+          "opacity-0": !decoded,
         })}
+      />
+      <img
+        src={emptyDataURL}
+        className={classnames(
+          "lqip-blur",
+          "absolute",
+          "transition-opacity",
+          "opacity-100",
+          {
+            "opacity-0": decoded,
+          }
+        )}
+        style={{ width, height, top: 0, left: 0 }}
       />
     </span>
   );

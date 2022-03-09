@@ -21,7 +21,7 @@ export const Img = (props: ImgProps) => {
   const baseWrapperStyle = {
     width: "initial",
     height: "initial",
-    backgroundColor: avgColor || "#fff",
+    backgroundColor: avgColor || "unset",
   };
 
   const dynamicWrapperStyle = loaded

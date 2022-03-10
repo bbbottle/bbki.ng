@@ -94,13 +94,15 @@ export const Img = (props: ImgProps) => {
         className={classnames(
           "lqip-blur",
           "absolute",
+          "h-full",
+          "w-full",
           "transition-opacity",
           "opacity-100",
           {
             "opacity-0": decoded,
           }
         )}
-        style={{ width, height, top: 0, left: 0 }}
+        style={{ top: 0, left: 0 }}
       />
     </span>
   );

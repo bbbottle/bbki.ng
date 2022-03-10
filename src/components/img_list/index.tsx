@@ -1,12 +1,7 @@
 import React, { FunctionComponent } from "react";
 import cls from "classnames";
 import { Photo } from "@/types/photo";
-import {
-  DisabledText,
-  Img,
-  ThreeColLayout,
-  withTitleAndDescription,
-} from "@/components";
+import { Img, ThreeColLayout, withTitleAndDescription } from "@/components";
 
 interface imgListProps {
   className: string;
@@ -24,7 +19,7 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
         return (
           <div key={img.src}>
             <Img {...img} className="mb-128" />
-            {!isLast && <DisabledText className="block mb-128">·</DisabledText>}
+            {!isLast && <span className="block mb-128" />}
           </div>
         );
       })}

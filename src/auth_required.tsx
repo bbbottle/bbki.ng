@@ -4,10 +4,12 @@ import { useSupabaseSession } from "@/hooks/use_supa_session";
 
 export const AuthRequired = (props: {
   children: any;
-  shouldRedirect: boolean;
+  shouldRedirect?: boolean;
+  shouldBeKing?: boolean;
 }) => {
-  const { access_token: token } = useSupabaseSession() || {};
-  if (!token) {
+  const { access_token: token, isKing } = useSupabaseSession() || {};
+
+  if (!token || (props.shouldBeKing && !isKing)) {
     return props.shouldRedirect ? <Navigate to={"/login"} /> : null;
   }
 

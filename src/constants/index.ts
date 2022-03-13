@@ -7,8 +7,10 @@ export const DEFAULT_DELAY = 200;
 export const SUPABASE: {
   ANNO: string;
   URL: string;
+  BB_KING_ID: string;
 } = {
   ANNO: "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImN2eHFtdXNmYXh3dXl2eXV1ZWNvIiwicm9sZSI6ImFub24iLCJpYXQiOjE2NDQ4MjkwNTEsImV4cCI6MTk2MDQwNTA1MX0.lg90OVR7s6tjbDamVaI9FR2M2fc6OVfsfGd4j9MXu3M",
   URL: "https://cvxqmusfaxwuyvyuueco.supabase.co",
+  BB_KING_ID: "e6795b1d-7ee0-4afe-be63-796670848175",
 };
 export const supabase = createClient(SUPABASE.URL, SUPABASE.ANNO);

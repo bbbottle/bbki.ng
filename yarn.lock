@@ -969,10 +969,10 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bbki.ng/components@1.5.2":
-  version "1.5.2"
-  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.5.2.tgz#74f0820f144aaa139fb66c76b57e43a044786bdb"
-  integrity sha512-EjRvmpASHMPSVe1FIu7P/mlxfaLjKObFsiPC+BJ4LS03mq40oEDzWLAVWaj2utgNbjOVhju/P2doldUTXgYl/A==
+"@bbki.ng/components@1.5.4":
+  version "1.5.4"
+  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.5.4.tgz#2c52359b3c17be1627d1202a65f1560fcacad5a5"
+  integrity sha512-QGKMHBfIxJhLvS99LbS9zeWA2yYZ1v6Q4E/Wh+oUY58+rj0ZD9+vNj9f45ME7Azz3wgUknJ3lGGHluL6LvlzQw==
 
 "@bbki.ng/design@1.1.1":
   version "1.1.1"

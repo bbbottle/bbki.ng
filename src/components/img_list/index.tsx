@@ -7,13 +7,15 @@ interface imgListProps {
   className: string;
   imgList: Photo[];
   description?: any;
+  beforeListRenderer?: () => void;
 }
 
 const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
-  const { imgList, className } = props;
+  const { imgList, className, beforeListRenderer } = props;
 
   return (
     <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
+      {beforeListRenderer && beforeListRenderer()}
       {imgList.map((img, index) => {
         const isLast = index === imgList.length - 1;
         return (

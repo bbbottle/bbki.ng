@@ -1,4 +1,5 @@
 import * as 网站说明书 from "./bbking-manual.mdx";
+import * as 回暖 from "./warming-up.mdx";
 import * as 可以攻玉 from "./quote.mdx";
 import * as 离开 from "./travel.mdx";
 import * as 降温 from "./cooldown.mdx";
@@ -20,4 +21,5 @@ export const MdxArticleList = [
   一天计划,
   大雪,
   大寒,
+  回暖,
 ];

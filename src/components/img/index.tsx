@@ -65,6 +65,8 @@ export const Img = (props: ImgProps) => {
         "inline-block",
         "relative",
         "overflow-hidden",
+        "leading-none",
+        "align-bottom",
         "border-0"
       )}
       style={Object.assign({}, baseWrapperStyle, dynamicWrapperStyle)}

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   CenterListWithTitleSkeleton,
   DisabledText,
@@ -7,7 +7,7 @@ import {
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
-import { DropImage } from "@bbki.ng/components";
+import { DropImage, BlinkDot } from "@bbki.ng/components";
 
 const imageFormatter = (image: any) => {
   const { rendered_width, thumbnail_src, avg_color, process_type, ...rest } =
@@ -23,6 +23,7 @@ const imageFormatter = (image: any) => {
 
 export default () => {
   const { id } = useParams();
+  const [uploading, setUploading] = useState(false);
   const { projects, isError, isLoading } = useProjects(id);
 
   if (isError) {
@@ -38,32 +39,46 @@ export default () => {
     );
   }
 
-  const descriptionJSX = (
-    <>
-      <DisabledText className="block">{projects.description}</DisabledText>
-    </>
-  );
-
   const renderUploader = () => (
     <AuthRequired shouldBeKing>
       <DropImage
-        className="mb-128"
-        placeholder={<DisabledText>丢进来上传</DisabledText>}
+        className="mb-256"
+        onUploadFinish={() => {
+          setUploading(false);
+        }}
         uploader={() => {
+          setUploading(true);
           return Promise.resolve(true);
         }}
-      />
-      <span className="block mb-128">&nbsp;</span>
+        ghost
+      >
+        {() => {
+          if (!uploading) {
+            return null;
+          }
+
+          return <BlinkDot className="ml-8" />;
+        }}
+      </DropImage>
     </AuthRequired>
   );
 
+  const renderTitle = () => {
+    return (
+      <div className="flex items-start">
+        {projects.name}
+        {renderUploader()}
+      </div>
+    );
+  };
   return (
     <ImgList
-      title={projects.name}
+      title={renderTitle()}
       className=""
       imgList={projects.images.map(imageFormatter)}
-      description={descriptionJSX}
-      beforeListRenderer={renderUploader}
+      description={
+        <DisabledText className="block">{projects.description}</DisabledText>
+      }
     />
   );
 };

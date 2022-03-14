@@ -22,7 +22,7 @@ interface listProps {
 export const List: FunctionComponent<listProps> = (props) => {
   const { items, itemRenderer, className, horizontal, compact } = props;
 
-  const spaceCls = compact ? "" : horizontal ? "mr-3" : "mb-2";
+  const spaceCls = compact ? "" : horizontal ? "mr-3" : "mb-4";
   return (
     <ul
       className={cls(className, "list-style-none", {

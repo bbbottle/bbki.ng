@@ -1,4 +1,4 @@
-import React, { FunctionComponent } from "react";
+import React, { FunctionComponent, ReactElement, ReactNode } from "react";
 import cls from "classnames";
 import { Photo } from "@/types/photo";
 import { Img, ThreeColLayout, withTitleAndDescription } from "@/components";
@@ -7,7 +7,7 @@ interface imgListProps {
   className: string;
   imgList: Photo[];
   description?: any;
-  beforeListRenderer?: () => void;
+  beforeListRenderer?: () => ReactNode;
 }
 
 const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
@@ -15,13 +15,12 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
 
   return (
     <div className={cls("max-h-full no-scrollbar overflow-auto", className)}>
-      {beforeListRenderer && beforeListRenderer()}
+      {beforeListRenderer && <>{beforeListRenderer()}</>}
       {imgList.map((img, index) => {
         const isLast = index === imgList.length - 1;
         return (
           <div key={img.src}>
-            <Img {...img} className="mb-128" />
-            {!isLast && <span className="block mb-128" />}
+            <Img {...img} className={cls({ "mb-256": !isLast })} />
           </div>
         );
       })}
@@ -32,7 +31,7 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
 const ImgListWithTitle = withTitleAndDescription(BaseImgList);
 
 interface TitledImageListProps extends imgListProps {
-  title: string;
+  title: string | ReactElement;
 }
 
 export const ImgList = (props: TitledImageListProps) => {

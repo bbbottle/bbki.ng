@@ -1,9 +1,46 @@
-import useSWR from "swr";
+import useSWR, { useSWRConfig } from "swr";
 import { API } from "@/constants/routes";
+import { useCallback } from "react";
+import { Photo } from "@/types/photo";
 
 export const useProjects = (name: string = "") => {
-  const { data, error } = useSWR(`${API.PROJECTS}${name ? "/" : ""}${name}`);
+  const URL = `${API.PROJECTS}${name ? "/" : ""}${name}`;
+
+  const { data, error } = useSWR(URL, {
+    revalidateOnFocus: false,
+  });
+
+  const { mutate } = useSWRConfig();
+
+  const refresh = useCallback(() => {
+    return mutate(URL);
+  }, [URL]);
+
+  const addLocalPhotoImmediately = useCallback(
+    (photo: Photo) => {
+      if (!name) {
+        return;
+      }
+
+      if (!data || error) {
+        return;
+      }
+
+      return mutate(
+        URL,
+        {
+          ...data,
+          images: [photo, ...data.images],
+        },
+        false
+      );
+    },
+    [data, error]
+  );
+
   return {
+    refresh,
+    addLocalPhotoImmediately,
     projects: data,
     isError: error,
     isLoading: !data && !error,

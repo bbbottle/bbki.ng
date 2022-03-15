@@ -5,3 +5,11 @@ export enum ossProcessType {
   oWEBP = "owebp",
   PROG = "prog",
 }
+
+export interface UploadResult {
+  name: string;
+  res: {
+    status: number;
+  };
+  url: string;
+}

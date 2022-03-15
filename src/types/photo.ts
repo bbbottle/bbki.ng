@@ -2,12 +2,12 @@ import { ossProcessType } from "@/types/oss";
 
 export interface Photo {
   src: string;
-  processType?: ossProcessType;
-  thumbnailSrc?: string;
-  renderedWidth?: number;
   width: number;
   height: number;
-  avgColor: string;
+  processType?: ossProcessType;
+  avgColor?: string;
+  thumbnailSrc?: string;
+  renderedWidth?: number;
 }
 
 export interface PhotoProject {

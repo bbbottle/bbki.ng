@@ -90,6 +90,22 @@ export const withBBApi =
 
 export const apiFetcher = withBBApi(baseFetcher)(API_ENDPOINT);
 
+export const getImageFileSize = (
+  file: File
+): Promise<{ width: number; height: number }> => {
+  const url = URL.createObjectURL(file);
+  const img = new Image();
+  return new Promise((resolve) => {
+    img.src = url;
+    img.onload = function (e) {
+      resolve({
+        width: img.naturalWidth,
+        height: img.naturalHeight,
+      });
+    };
+  });
+};
+
 export const buildSimpleApiHooks = (api: string, payloadKey: string) => {
   return () => {
     const { data, error } = useSWR(api);

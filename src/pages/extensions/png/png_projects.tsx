@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import {
   CenterListWithTitleSkeleton,
   DisabledText,
@@ -8,6 +8,7 @@ import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
 import { DropImage, BlinkDot } from "@bbki.ng/components";
+import { useUploader } from "@/hooks/use_uploader";
 
 const imageFormatter = (image: any) => {
   const { rendered_width, thumbnail_src, avg_color, process_type, ...rest } =
@@ -24,7 +25,15 @@ const imageFormatter = (image: any) => {
 export default () => {
   const { id } = useParams();
   const [uploading, setUploading] = useState(false);
-  const { projects, isError, isLoading } = useProjects(id);
+  const uploader = useUploader();
+  const { projects, isError, isLoading, addLocalPhotoImmediately, refresh } =
+    useProjects(id);
+
+  useEffect(() => {
+    return () => {
+      refresh().then(() => {});
+    };
+  }, []);
 
   if (isError) {
     return null;
@@ -43,12 +52,18 @@ export default () => {
     <AuthRequired shouldBeKing>
       <DropImage
         className="mb-256"
-        onUploadFinish={() => {
+        onUploadFinish={async (photo) => {
+          addLocalPhotoImmediately(photo);
           setUploading(false);
+          await refresh();
         }}
-        uploader={() => {
+        uploader={async (file) => {
           setUploading(true);
-          return Promise.resolve(true);
+          try {
+            return await uploader(projects.id || "", id || "", file);
+          } catch (e) {
+            console.error(e, "failed to upload image.");
+          }
         }}
         ghost
       >

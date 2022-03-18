@@ -10,19 +10,16 @@ type ArticlePageProps = {
 };
 
 export const ArticlePage = (props: ArticlePageProps) => {
-  const renderArticle = () => {
-    const { tags: tagNames, title } = props;
-    const tags = tagNames
-      ? tagNames.map((t) => ({ children: t, to: `${ROUTES.TAGS}/${t}` }))
-      : [];
-    return (
-      <>
-        <Article title={title}>
-          <article className="prose mb-20">{props.children}</article>
-        </Article>
-        {tagNames && <Tags tags={tags} />}
-      </>
-    );
-  };
-  return <ThreeColLayout middleRenderer={renderArticle} />;
+  const { tags: tagNames, title } = props;
+  const tags = tagNames
+    ? tagNames.map((t) => ({ children: t, to: `${ROUTES.TAGS}/${t}` }))
+    : [];
+  return (
+    <>
+      <Article title={title}>
+        <article className="prose mb-20">{props.children}</article>
+      </Article>
+      {tagNames && <Tags tags={tags} />}
+    </>
+  );
 };

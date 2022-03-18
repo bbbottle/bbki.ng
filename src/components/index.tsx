@@ -6,7 +6,6 @@ export {
 } from "./layout";
 
 export {
-  List,
   ListWithTitleAndDescription,
   CenterListWithTitleSkeleton,
 } from "./list";

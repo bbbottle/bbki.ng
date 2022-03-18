@@ -1,11 +1,7 @@
 import React from "react";
 import classnames from "classnames";
-import {
-  List,
-  ListWithTitleAndDescription,
-  ThreeColLayout,
-} from "@/components";
-import { Tag, Link } from "@bbki.ng/components";
+import { ListWithTitleAndDescription, ThreeColLayout } from "@/components";
+import { List, Tag, Link } from "@bbki.ng/components";
 import { ROUTES } from "@/constants";
 
 type MyTag =

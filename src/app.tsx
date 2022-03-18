@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-import { Nav, Page } from "@bbki.ng/components";
+import { Nav, Page, ThreeColLayout } from "@bbki.ng/components";
 import { Footer, HotKeyNav } from "./components";
 import {
   Cover,
@@ -26,7 +26,7 @@ const Layout = () => {
   return (
     <Page
       nav={<Nav paths={usePaths()} className="blur-cover" />}
-      main={<Outlet />}
+      main={<ThreeColLayout middleRenderer={() => <Outlet />} />}
       footer={<Footer />}
     />
   );

@@ -3,7 +3,6 @@ import { pathObj } from "@/types/path";
 import { useRouteName } from "@/hooks";
 import { ListWithTitleAndDescription } from "../list";
 import { Link } from "@bbki.ng/components";
-import { ThreeColLayout } from "../layout";
 
 type centerLinkListProps = {
   title?: string;
@@ -22,7 +21,7 @@ export const CenterLinkList = (props: centerLinkListProps) => {
     );
   };
 
-  const renderList = () => (
+  return (
     <ListWithTitleAndDescription
       items={list}
       itemRenderer={renderExt}
@@ -30,5 +29,4 @@ export const CenterLinkList = (props: centerLinkListProps) => {
       description={description}
     />
   );
-  return <ThreeColLayout middleRenderer={renderList} />;
 };

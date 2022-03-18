@@ -28,14 +28,4 @@ const BaseImgList: FunctionComponent<imgListProps> = (props: imgListProps) => {
   );
 };
 
-const ImgListWithTitle = withTitleAndDescription(BaseImgList);
-
-interface TitledImageListProps extends imgListProps {
-  title: string | ReactElement;
-}
-
-export const ImgList = (props: TitledImageListProps) => {
-  const renderList = () => <ImgListWithTitle {...props} />;
-
-  return <ThreeColLayout middleRenderer={renderList} />;
-};
+export const ImgList = withTitleAndDescription(BaseImgList);

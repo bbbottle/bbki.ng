@@ -1,18 +1,16 @@
 import React, { useEffect, useState } from "react";
 import cls from "classnames";
-import { List } from "@bbki.ng/components";
+import { TitledList } from "@bbki.ng/components";
 import { BgColors } from "@/types/color";
-import { withTitleAndDescription } from "@/components/with_title_description";
 import { FadeOutCover } from "@/components/fade_out_cover";
 import { DEFAULT_DELAY } from "@/constants";
-
-export const ListWithTitleAndDescription = withTitleAndDescription(List);
 
 type SkeletonProps = {
   bgColor: BgColors;
   width?: number;
   height?: number;
 };
+
 export const Skeleton = (props: SkeletonProps) => {
   const { bgColor, width = 26, height = 24 } = props;
   return (
@@ -43,7 +41,7 @@ export const ListWithTitleSkeleton = (props: ListWithTitleSkeletonProps) => {
     });
 
   return (
-    <ListWithTitleAndDescription
+    <TitledList
       title={
         <Skeleton
           bgColor={BgColors.LIGHT_GRAY}

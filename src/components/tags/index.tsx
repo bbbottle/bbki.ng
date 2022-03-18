@@ -1,7 +1,6 @@
 import React from "react";
 import classnames from "classnames";
-import { ListWithTitleAndDescription, ThreeColLayout } from "@/components";
-import { List, Tag, Link } from "@bbki.ng/components";
+import { List, Tag, Link, TitledList } from "@bbki.ng/components";
 import { ROUTES } from "@/constants";
 
 type MyTag =
@@ -41,8 +40,8 @@ export const Tags = (props: Tags) => {
       </>
     );
   }
-  const renderList = () => (
-    <ListWithTitleAndDescription
+  return (
+    <TitledList
       title={"标签"}
       items={tags}
       itemRenderer={renderTag}
@@ -50,5 +49,4 @@ export const Tags = (props: Tags) => {
       className={className}
     />
   );
-  return <ThreeColLayout middleRenderer={renderList} />;
 };

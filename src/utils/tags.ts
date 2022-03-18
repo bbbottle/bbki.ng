@@ -14,7 +14,7 @@ export const getArticleListByTag = (mdxArticles: MdxArticle[], tag: string) => {
     })
     .map(({ meta }) => {
       return {
-        path: `${ROUTES.TXT}/${meta.title}`,
+        to: `${ROUTES.TXT}/${meta.title}`,
         name: meta.title,
       };
     });

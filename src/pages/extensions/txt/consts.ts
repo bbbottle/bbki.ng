@@ -2,7 +2,7 @@ import { MdxArticleList } from "@/articles";
 
 export const ArticleList = MdxArticleList.map(({ meta }) => {
   return {
-    path: meta.title,
+    to: meta.title,
     name: meta.title,
   };
 });

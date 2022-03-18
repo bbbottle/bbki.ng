@@ -1,6 +1,7 @@
 import React from "react";
-import { CenterLinkList, CenterListWithTitleSkeleton } from "@/components";
+import { CenterListWithTitleSkeleton } from "@/components";
 import { useProjects } from "@/hooks/use_projects";
+import { LinkList } from "@bbki.ng/components";
 
 export default () => {
   const { projects, isLoading, isError } = useProjects();
@@ -16,8 +17,9 @@ export default () => {
     );
   }
   const projectRoutes = projects.map((p: { id: string; name: string }) => ({
-    path: p.name,
+    to: p.name,
     name: p.name,
   }));
-  return <CenterLinkList list={projectRoutes} title="图片" />;
+
+  return <LinkList links={projectRoutes} title="图片" />;
 };

@@ -37,7 +37,10 @@ export default () => {
 
   if (isLoading) {
     return (
-      <ArticleSkeleton titleLength={id?.length || 0} descriptionLength={8} />
+      <ArticleSkeleton
+        titleLength={id?.length || 0}
+        descriptionLength={projects?.description.length || 8}
+      />
     );
   }
 

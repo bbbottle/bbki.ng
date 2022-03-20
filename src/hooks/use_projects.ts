@@ -10,7 +10,14 @@ export const useProjects = (name: string = "") => {
     revalidateOnFocus: false,
   });
 
-  const { mutate } = useSWRConfig();
+  const { mutate, cache } = useSWRConfig();
+
+  const getCachedProjects = (n: string) => {
+    if (!n) {
+      return;
+    }
+    return cache.get("projects").find((p: { name: string }) => p.name === n);
+  };
 
   const refresh = useCallback(() => {
     return mutate(URL);
@@ -41,7 +48,7 @@ export const useProjects = (name: string = "") => {
   return {
     refresh,
     addLocalPhotoImmediately,
-    projects: data,
+    projects: data || getCachedProjects(name),
     isError: error,
     isLoading: !data && !error,
   };

@@ -1,11 +1,4 @@
-import React, {
-  EventHandler,
-  MouseEventHandler,
-  useEffect,
-  useState,
-} from "react";
-import classnames from "classnames";
-import { BgColors } from "@/types/color";
+import React, { EventHandler, useEffect } from "react";
 import { PopConfirm } from "@bbki.ng/components";
 
 type cornerPromptBoxProps = {
@@ -19,16 +12,7 @@ type cornerPromptBoxProps = {
 };
 
 export const CornerPromptBox = (props: cornerPromptBoxProps) => {
-  const {
-    onOk,
-    // okLabel,
-    onCancel,
-    // cancelLabel,
-    content,
-    showBox,
-    autoCancelAfter,
-  } = props;
-  const [loading, setLoading] = useState(false);
+  const { onOk, onCancel, content, showBox, autoCancelAfter } = props;
 
   useEffect(() => {
     if (!autoCancelAfter || !onCancel || !showBox) {
@@ -47,9 +31,7 @@ export const CornerPromptBox = (props: cornerPromptBoxProps) => {
     if (!onOk) {
       return;
     }
-    setLoading(true);
-    await onOk();
-    setLoading(false);
+    return onOk;
   };
 
   if (!showBox) {
@@ -67,9 +49,6 @@ export const CornerPromptBox = (props: cornerPromptBoxProps) => {
         >
           {content}
         </PopConfirm>
-        {/*{renderContent()}*/}
-        {/*{renderOkBtn()}*/}
-        {/*{renderCancelBtn()}*/}
       </div>
     </div>
   );

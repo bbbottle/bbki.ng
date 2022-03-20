@@ -13,7 +13,7 @@ export const useProjects = (name: string = "") => {
   const { mutate, cache } = useSWRConfig();
 
   const getCachedProjects = (n: string) => {
-    if (!n) {
+    if (!n || !cache) {
       return;
     }
     return cache.get("projects").find((p: { name: string }) => p.name === n);

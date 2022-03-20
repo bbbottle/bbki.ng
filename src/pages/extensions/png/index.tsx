@@ -1,20 +1,15 @@
 import React from "react";
-import { CenterListWithTitleSkeleton } from "@/components";
 import { useProjects } from "@/hooks/use_projects";
-import { LinkList } from "@bbki.ng/components";
+import { LinkList, LinkListSkeleton } from "@bbki.ng/components";
 
 export default () => {
   const { projects, isLoading, isError } = useProjects();
   if (isError) {
     return null;
   }
+
   if (isLoading) {
-    return (
-      <CenterListWithTitleSkeleton
-        titleLength={2}
-        listItemWidthArray={[16 * 3, 16 * 4, 16 * 3, 16 * 5, 16 * 4]}
-      />
-    );
+    return <LinkListSkeleton titleLength={2} linksLength={[3, 4, 3, 5, 4]} />;
   }
   const projectRoutes = projects.map((p: { id: string; name: string }) => ({
     to: p.name,

@@ -1,7 +1,6 @@
 import React from "react";
 import { DisabledText } from "@/components";
 import { Link, LinkColor, Article } from "@bbki.ng/components";
-// import { useSupabaseSession } from "@/hooks/use_supa_session";
 
 export const Cover = () => {
   return (
@@ -26,27 +25,4 @@ export const Cover = () => {
       </DisabledText>
     </Article>
   );
-
-  // const session = useSupabaseSession();
-  // const user = session?.user?.user_metadata;
-  // return (
-  //   <CenterPage title="Hi">
-  //     <div className="flex">
-  //       <div className="mr-16">
-  //         <img src={user.avatar_url} style={{ height: 42 }} />
-  //       </div>
-  //       <div>
-  //         {user.name}
-  //         <br />
-  //         <DisabledText>
-  //           Welcome to{" "}
-  //           <Link to="/ext" color={LinkColor.BLUE}>
-  //             bbki.ng
-  //           </Link>
-  //           .
-  //         </DisabledText>
-  //       </div>
-  //     </div>
-  //   </CenterPage>
-  // );
 };

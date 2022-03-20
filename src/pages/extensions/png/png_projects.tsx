@@ -1,13 +1,9 @@
 import React, { useEffect, useState } from "react";
-import {
-  CenterListWithTitleSkeleton,
-  DisabledText,
-  ImgList,
-} from "@/components";
+import { DisabledText, ImgList } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
-import { DropImage, BlinkDot } from "@bbki.ng/components";
+import { DropImage, BlinkDot, ArticleSkeleton } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 
 const imageFormatter = (image: any) => {
@@ -41,10 +37,7 @@ export default () => {
 
   if (isLoading) {
     return (
-      <CenterListWithTitleSkeleton
-        titleLength={2}
-        listItemWidthArray={[16 * 10]}
-      />
+      <ArticleSkeleton titleLength={id?.length || 0} descriptionLength={8} />
     );
   }
 

@@ -2,12 +2,7 @@ import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { Nav, Page, ThreeColLayout } from "@bbki.ng/components";
 import { Footer, HotKeyNav } from "./components";
-import {
-  Cover,
-  // NowPage,
-  // PhotoProjects,
-  // Png,
-} from "./pages";
+import { Cover } from "./pages";
 
 import ArticlePage from "@/pages/extensions/txt/article";
 import Ext from "@/pages/extensions";

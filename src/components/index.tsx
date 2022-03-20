@@ -1,5 +1,3 @@
-export { CenterListWithTitleSkeleton } from "./list";
-
 export { Footer } from "./footer";
 
 export { DisabledText, SmallDisabledText } from "./disabled_text";

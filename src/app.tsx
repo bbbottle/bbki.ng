@@ -16,14 +16,17 @@ import Txt from "@/pages/extensions/txt";
 import { usePaths } from "@/hooks";
 import { Login } from "@/pages/login";
 import { SWR } from "@/swr";
+import { NotFound } from "@bbki.ng/components/src";
 
 const Layout = () => {
   return (
-    <Page
-      nav={<Nav paths={usePaths()} className="blur-cover" />}
-      main={<ThreeColLayout middleRenderer={() => <Outlet />} />}
-      footer={<Footer />}
-    />
+    <>
+      <Page
+        nav={<Nav paths={usePaths()} className="blur-cover" />}
+        main={<ThreeColLayout middleRenderer={() => <Outlet />} />}
+        footer={<Footer />}
+      />
+    </>
   );
 };
 
@@ -44,6 +47,7 @@ export const App = () => {
             <Route path="login" element={<Login />} />
             <Route path="tags/:tag" element={<TagsResult />} />
           </Route>
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </HotKeyNav>
     </SWR>

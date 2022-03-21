@@ -1,6 +1,6 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
-import { Nav, Page, ThreeColLayout } from "@bbki.ng/components";
+import { Nav, Page, ThreeColLayout, NotFound } from "@bbki.ng/components";
 import { Footer, HotKeyNav } from "./components";
 import { Cover } from "./pages";
 
@@ -16,7 +16,6 @@ import Txt from "@/pages/extensions/txt";
 import { usePaths } from "@/hooks";
 import { Login } from "@/pages/login";
 import { SWR } from "@/swr";
-import { NotFound } from "@bbki.ng/components/src";
 
 const Layout = () => {
   return (

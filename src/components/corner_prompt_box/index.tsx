@@ -31,7 +31,7 @@ export const CornerPromptBox = (props: cornerPromptBoxProps) => {
     if (!onOk) {
       return;
     }
-    return onOk;
+    return onOk();
   };
 
   if (!showBox) {

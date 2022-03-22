@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Link } from "@bbki.ng/components";
+import { Table, Link, Error } from "@bbki.ng/components";
 import { TableSkeleton } from "@/components/table_skeleton";
 import { useMovies } from "@/hooks";
 
@@ -11,7 +11,7 @@ const CELL_STYLE = {
 export const MovieList = () => {
   const { movies, isLoading, isError } = useMovies();
   if (isError) {
-    return null;
+    return <Error error={isError} />;
   }
 
   if (isLoading) {

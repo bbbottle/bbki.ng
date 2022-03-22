@@ -3,7 +3,12 @@ import { DisabledText, ImgList } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
-import { DropImage, BlinkDot, ArticleSkeleton } from "@bbki.ng/components";
+import {
+  DropImage,
+  BlinkDot,
+  ArticleSkeleton,
+  Error,
+} from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 
 const imageFormatter = (image: any) => {
@@ -32,7 +37,7 @@ export default () => {
   }, []);
 
   if (isError) {
-    return null;
+    return <Error error={isError} />;
   }
 
   if (isLoading) {

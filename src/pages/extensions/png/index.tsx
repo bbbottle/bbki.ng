@@ -1,11 +1,11 @@
 import React from "react";
 import { useProjects } from "@/hooks/use_projects";
-import { LinkList, LinkListSkeleton } from "@bbki.ng/components";
+import { Error, LinkList, LinkListSkeleton } from "@bbki.ng/components";
 
 export default () => {
   const { projects, isLoading, isError } = useProjects();
   if (isError) {
-    return null;
+    return <Error error={isError} />;
   }
 
   if (isLoading) {

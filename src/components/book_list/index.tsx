@@ -1,5 +1,5 @@
 import React from "react";
-import { Table, Link } from "@bbki.ng/components";
+import { Table, Link, Error } from "@bbki.ng/components";
 import { useBooks } from "@/hooks";
 import { TableSkeleton } from "@/components/table_skeleton";
 
@@ -11,7 +11,7 @@ const CELL_STYLE = {
 export const BookList = () => {
   const { books, isLoading, isError } = useBooks();
   if (isError) {
-    return null;
+    return <Error error={isError} />;
   }
 
   if (isLoading) {

@@ -1,7 +1,7 @@
 import React from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import { Nav, Page, ThreeColLayout, NotFound } from "@bbki.ng/components";
-import { Footer, HotKeyNav } from "./components";
+import { Footer, HotKeyNav, Stickers } from "./components";
 import { Cover } from "./pages";
 
 import ArticlePage from "@/pages/extensions/txt/article";
@@ -22,7 +22,12 @@ const Layout = () => {
     <>
       <Page
         nav={<Nav paths={usePaths()} className="blur-cover" />}
-        main={<ThreeColLayout middleRenderer={() => <Outlet />} />}
+        main={
+          <ThreeColLayout
+            middleRenderer={() => <Outlet />}
+            rightRenderer={() => <Stickers />}
+          />
+        }
         footer={<Footer />}
       />
     </>

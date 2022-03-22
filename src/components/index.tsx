@@ -18,6 +18,8 @@ export { Img } from "./img";
 
 export { ReloadPrompt } from "./reload_prompt";
 
+export { Stickers } from "./stickers";
+
 export { CornerPromptBox } from "./corner_prompt_box";
 
 export { Tags } from "./tags";

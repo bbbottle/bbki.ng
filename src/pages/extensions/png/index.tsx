@@ -9,7 +9,7 @@ export default () => {
   }
 
   if (isLoading) {
-    return <LinkListSkeleton titleLength={2} linksLength={[3, 4, 3, 5, 4]} />;
+    return <LinkListSkeleton titleLength={2} linksLength={[2, 3, 4, 5, 6]} />;
   }
   const projectRoutes = projects.map((p: { id: string; name: string }) => ({
     to: p.name,

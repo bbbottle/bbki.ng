@@ -44,7 +44,7 @@ export default () => {
     return (
       <ArticleSkeleton
         titleLength={id?.length || 0}
-        descriptionLength={projects?.description.length || 8}
+        descriptionLength={projects?.description?.length || 8}
       />
     );
   }

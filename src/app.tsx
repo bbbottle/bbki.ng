@@ -11,10 +11,8 @@ import { Footer, HotKeyNav, Stickers } from "./components";
 import { Cover } from "./pages";
 
 import ArticlePage from "@/pages/extensions/txt/article";
-import Ext from "@/pages/extensions";
 import NowPage from "@/pages/now";
 import PhotoProjects from "@/pages/extensions/png/png_projects";
-import Png from "@/pages/extensions/png";
 import Tags from "@/pages/tags";
 import TagsResult from "@/pages/tags/tag_result";
 import Txt from "@/pages/extensions/txt";
@@ -51,7 +49,6 @@ export const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<Cover />} />
-            <Route path="ext" element={<Ext />} />
             <Route path="now" element={<NowPage />} />
             <Route path="content" element={<Txt />} />
             <Route path="content/:title" element={<ArticlePage />} />

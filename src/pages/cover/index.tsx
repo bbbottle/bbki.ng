@@ -17,7 +17,7 @@ export const Cover = () => {
           risk, and BBKi.ng disclaims responsibility or liability in the event
           of your violation of laws by accessing the website. Do you wish to
           access the website? (
-          <Link to="/ext" color={LinkColor.RED}>
+          <Link to="/content" color={LinkColor.RED}>
             Yes
           </Link>
           /<DisabledText className="mb-8">No</DisabledText>)

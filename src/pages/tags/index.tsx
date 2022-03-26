@@ -20,7 +20,7 @@ export default (props: {
 
   if (props.withAll) {
     tags.unshift({
-      path: ROUTES.TXT,
+      path: ROUTES.CONTENT,
       name: "全部",
     });
   }

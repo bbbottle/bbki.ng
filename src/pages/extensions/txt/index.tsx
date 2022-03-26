@@ -2,7 +2,7 @@ import React from "react";
 import { ArticleList } from "./consts";
 import Tags from "@/pages/tags";
 import { LinkList, LinkProps } from "@bbki.ng/components";
-import { ROUTE_NAME, ROUTES } from "@/constants";
+import { useRouteName } from "@/hooks";
 
 type TxtProps = {
   title?: string;
@@ -10,10 +10,11 @@ type TxtProps = {
 };
 
 export default (props: TxtProps) => {
+  const name = useRouteName();
   return (
     <LinkList
       links={props.articleList || ArticleList}
-      title={props.title || ROUTE_NAME[ROUTES.TXT]}
+      title={props.title || name}
       description={<Tags inline className="ml-0" withAll />}
     />
   );

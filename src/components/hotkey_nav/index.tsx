@@ -6,6 +6,7 @@ import { GITHUB_REPO_ADDRESS, ROUTES } from "@/constants";
 enum HotKeys {
   i = "i",
   e = "e",
+  c = "c",
   t = "t",
   p = "p",
   a = "a",
@@ -18,10 +19,7 @@ enum HotKeys {
 
 const KEY_ROUTES = [
   { key: HotKeys.i, route: ROUTES.INDEX },
-  { key: HotKeys.e, route: ROUTES.EXT },
-  { key: HotKeys.t, route: ROUTES.TXT },
-  { key: HotKeys.p, route: ROUTES.PNG },
-  // { key: HotKeys.a, route: ROUTES.AVI },
+  { key: HotKeys.c, route: ROUTES.CONTENT },
   { key: HotKeys.h, route: ROUTES.HELP },
   { key: HotKeys.T, route: ROUTES.TAGS },
 ];

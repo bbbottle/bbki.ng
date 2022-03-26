@@ -1,18 +1,12 @@
 export const ROUTES = {
   INDEX: "/",
-  EXT: "/ext",
-  PNG: "/ext/png",
-  TXT: "/ext/txt",
-  AVI: "/ext/avi",
-  HELP: "/ext/txt/网站说明书",
+  CONTENT: "/content",
+  HELP: "/content/网站说明书",
   TAGS: "/tags",
 };
 
 export const ROUTE_NAME = {
-  [ROUTES.EXT]: "媒体类型",
-  [ROUTES.PNG]: "图像",
-  [ROUTES.TXT]: "文字",
-  [ROUTES.AVI]: "视频",
+  [ROUTES.CONTENT]: "目录",
   unknown: "未知",
 };
 

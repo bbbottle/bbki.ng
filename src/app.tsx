@@ -53,10 +53,9 @@ export const App = () => {
             <Route index element={<Cover />} />
             <Route path="ext" element={<Ext />} />
             <Route path="now" element={<NowPage />} />
-            <Route path="ext/txt" element={<Txt />} />
-            <Route path="ext/txt/:title" element={<ArticlePage />} />
-            <Route path="ext/png" element={<Png />} />
-            <Route path="ext/png/:id" element={<PhotoProjects />} />
+            <Route path="content" element={<Txt />} />
+            <Route path="content/:title" element={<ArticlePage />} />
+            <Route path="content/:title/:id" element={<PhotoProjects />} />
             <Route path="tags" element={<Tags />} />
             <Route path="login" element={<Login />} />
             <Route path="tags/:tag" element={<TagsResult />} />

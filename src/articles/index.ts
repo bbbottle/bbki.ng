@@ -9,10 +9,12 @@ import * as 一天计划 from "./movie-day.mdx";
 // import * as 网站图片展示 from "./img.mdx";
 import * as 大雪 from "./fall.mdx";
 import * as 大寒 from "./major-cold.mdx";
+import * as 图片 from "./projects.mdx";
 
 export const MdxArticleList = [
   网站说明书,
   // 网站图片展示,
+  图片,
   与或非禁区,
   可以攻玉,
   离开,

@@ -9,12 +9,12 @@ export default () => {
   }
 
   if (isLoading) {
-    return <LinkListSkeleton titleLength={2} linksLength={[2, 3, 4, 5, 6]} />;
+    return <LinkListSkeleton linksLength={[2, 3, 4, 5, 6]} />;
   }
   const projectRoutes = projects.map((p: { id: string; name: string }) => ({
     to: p.name,
     name: p.name,
   }));
 
-  return <LinkList links={projectRoutes} title="图片" />;
+  return <LinkList links={projectRoutes} />;
 };

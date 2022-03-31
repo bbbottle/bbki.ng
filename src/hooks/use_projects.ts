@@ -3,11 +3,12 @@ import { API } from "@/constants/routes";
 import { useCallback } from "react";
 import { Photo } from "@/types/photo";
 
-export const useProjects = (name: string = "") => {
+export const useProjects = (name: string = "", suspense?: boolean) => {
   const URL = `${API.PROJECTS}${name ? "/" : ""}${name}`;
 
   const { data, error } = useSWR(URL, {
     revalidateOnFocus: false,
+    suspense,
   });
 
   const { mutate, cache } = useSWRConfig();

@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Suspense } from "react";
 import { DisabledText, ImgList } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
@@ -7,7 +7,7 @@ import {
   DropImage,
   BlinkDot,
   ArticleSkeleton,
-  Error,
+  ErrorBoundary,
 } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 
@@ -23,31 +23,17 @@ const imageFormatter = (image: any) => {
   };
 };
 
-export default () => {
+const ProjectDetail = () => {
   const { id } = useParams();
   const [uploading, setUploading] = useState(false);
   const uploader = useUploader();
-  const { projects, isError, isLoading, addLocalPhotoImmediately, refresh } =
-    useProjects(id);
+  const { projects, addLocalPhotoImmediately, refresh } = useProjects(id, true);
 
   useEffect(() => {
     return () => {
       refresh().then(() => {});
     };
   }, []);
-
-  if (isError) {
-    return <Error error={isError} />;
-  }
-
-  if (isLoading) {
-    return (
-      <ArticleSkeleton
-        titleLength={id?.length || 0}
-        descriptionLength={projects?.description?.length || 8}
-      />
-    );
-  }
 
   const renderUploader = () => (
     <AuthRequired shouldBeKing>
@@ -87,6 +73,7 @@ export default () => {
       </div>
     );
   };
+
   return (
     <ImgList
       title={renderTitle()}
@@ -96,5 +83,25 @@ export default () => {
         <DisabledText className="block">{projects.description}</DisabledText>
       }
     />
+  );
+};
+
+export default () => {
+  const { id } = useParams();
+  const { projects } = useProjects(id);
+
+  return (
+    <ErrorBoundary>
+      <Suspense
+        fallback={
+          <ArticleSkeleton
+            titleLength={id?.length || 0}
+            descriptionLength={projects?.description?.length || 8}
+          />
+        }
+      >
+        <ProjectDetail />
+      </Suspense>
+    </ErrorBoundary>
   );
 };

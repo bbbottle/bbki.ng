@@ -10,6 +10,7 @@ import * as 一天计划 from "./movie-day.mdx";
 import * as 大雪 from "./fall.mdx";
 import * as 大寒 from "./major-cold.mdx";
 import * as 图片 from "./projects.mdx";
+import * as 春雨 from "./spring-rain.mdx";
 
 export const MdxArticleList = [
   网站说明书,
@@ -24,4 +25,5 @@ export const MdxArticleList = [
   大雪,
   大寒,
   回暖,
+  春雨,
 ];

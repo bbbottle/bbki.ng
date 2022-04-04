@@ -15,7 +15,7 @@ const Projects = () => {
 export default () => {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<LinkListSkeleton linksLength={[1， 2, 3, 4, 5, 6, 7]} />}>
+      <Suspense fallback={<LinkListSkeleton linksLength={[1, 2, 3, 4, 5, 6, 7]} />}>
         <Projects />
       </Suspense>
     </ErrorBoundary>

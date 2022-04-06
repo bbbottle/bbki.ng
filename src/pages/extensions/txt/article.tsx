@@ -2,7 +2,7 @@ import React, { ReactElement } from "react";
 import { MdxArticleList } from "@/articles";
 import { withArticleWrapper } from "@/components";
 import { MdxArticle } from "@/types/articles";
-import { Article } from "@bbki.ng/components";
+import { Article, NotFound } from "@bbki.ng/components";
 import { useParams } from "react-router-dom";
 
 type TArticleMap = {
@@ -16,8 +16,6 @@ MdxArticleList.forEach((article: unknown) => {
   const Article = withArticleWrapper(component);
   ArticleMap[meta.title] = <Article {...meta} />;
 });
-
-const NotFound = () => <div>404</div>;
 
 export default () => {
   const { title } = useParams();

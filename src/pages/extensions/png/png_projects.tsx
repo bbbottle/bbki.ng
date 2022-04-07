@@ -24,7 +24,7 @@ const ProjectDetail = () => {
   const { id } = useParams();
   const { setIsLoading } = useContext(GlobalLoadingContext);
   const uploader = useUploader();
-  const { projects, addLocalPhotoImmediately, refresh } = useProjects(id, true);
+  const { projects, refresh } = useProjects(id, true);
 
   useEffect(() => {
     return () => {
@@ -36,8 +36,7 @@ const ProjectDetail = () => {
     <AuthRequired shouldBeKing>
       <DropImage
         className="mb-256"
-        onUploadFinish={async (photo) => {
-          addLocalPhotoImmediately(photo);
+        onUploadFinish={async () => {
           setIsLoading(false);
           await refresh();
         }}

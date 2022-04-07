@@ -25,7 +25,7 @@ export const Img = (props: ImgProps) => {
   const { width, height } = calcDefaultImgSize(
     props,
     renderedWidth,
-    size === "large" ? 1 : 0.6
+    size === "normal" ? 0.6 : 1
   );
   const [loaded, setLoaded] = useState(false);
   const [decoded, setDecoded] = useState(false);

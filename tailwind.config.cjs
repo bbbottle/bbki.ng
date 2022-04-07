@@ -5,6 +5,7 @@ module.exports = {
     "./src/**/*.{js,ts,jsx,tsx, mdx}",
     "./node_modules/@bbki.ng/components/**/*.js",
   ],
+  safelist: ["md:basis-1/2", "md:basis-full", "md:ml-64", "md:mr-64"],
   theme: {
     flex: {
       "almost-half": "0 0 42%",

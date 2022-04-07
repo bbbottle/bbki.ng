@@ -6,7 +6,7 @@ import { ossProcessType } from "@/types/oss";
 
 interface ImgProps extends Photo {
   className?: string;
-  size: "large" | "normal";
+  size?: "large" | "normal";
 }
 
 const emptyDataURL =

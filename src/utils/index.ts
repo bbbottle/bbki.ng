@@ -44,13 +44,15 @@ export const addOssWebpProcessStyle = (
 
 export const calcDefaultImgSize = (
   img: Photo,
-  defaultWidth?: number
+  defaultWidth?: number,
+  scale?: number
 ): { width: number; height: number } => {
   const { width, height } = img;
   const whRatio = width / height;
   const isHorizontal = width > height;
 
-  const finalWidth = defaultWidth || (isHorizontal ? 576 : 384);
+  const finalWidth =
+    (defaultWidth || (isHorizontal ? 576 : 384)) * (scale || 1);
 
   return {
     width: finalWidth,

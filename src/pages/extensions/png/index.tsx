@@ -1,6 +1,7 @@
-import React, { Suspense } from "react";
+import React from "react";
 import { useProjects } from "@/hooks/use_projects";
-import { LinkList, LinkListSkeleton, ErrorBoundary } from "@bbki.ng/components";
+import { LinkList, LinkListSkeleton } from "@bbki.ng/components";
+import { MySuspense } from "@/components";
 
 const Projects = () => {
   const { projects } = useProjects("", true);
@@ -14,10 +15,10 @@ const Projects = () => {
 
 export default () => {
   return (
-    <ErrorBoundary>
-      <Suspense fallback={<LinkListSkeleton linksLength={[1, 2, 3, 4, 5, 6, 7]} />}>
-        <Projects />
-      </Suspense>
-    </ErrorBoundary>
+    <MySuspense
+      fallback={<LinkListSkeleton linksLength={[1, 2, 3, 4, 5, 6, 7]} />}
+    >
+      <Projects />
+    </MySuspense>
   );
 };

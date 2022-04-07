@@ -1,15 +1,12 @@
-import React, { useEffect, useState, Suspense } from "react";
-import { DisabledText, ImgList } from "@/components";
+import React, { useContext, useEffect, useState } from "react";
+import classnames from "classnames";
+import { Img, MySuspense, RandomRowsLayout } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
-import {
-  DropImage,
-  BlinkDot,
-  ArticleSkeleton,
-  ErrorBoundary,
-} from "@bbki.ng/components";
+import { DropImage } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
+import { GlobalLoadingContext } from "@/global_loading_state_provider";
 
 const imageFormatter = (image: any) => {
   const { rendered_width, thumbnail_src, avg_color, process_type, ...rest } =
@@ -25,7 +22,7 @@ const imageFormatter = (image: any) => {
 
 const ProjectDetail = () => {
   const { id } = useParams();
-  const [uploading, setUploading] = useState(false);
+  const { setIsLoading } = useContext(GlobalLoadingContext);
   const uploader = useUploader();
   const { projects, addLocalPhotoImmediately, refresh } = useProjects(id, true);
 
@@ -41,11 +38,11 @@ const ProjectDetail = () => {
         className="mb-256"
         onUploadFinish={async (photo) => {
           addLocalPhotoImmediately(photo);
-          setUploading(false);
+          setIsLoading(false);
           await refresh();
         }}
         uploader={async (file) => {
-          setUploading(true);
+          setIsLoading(true);
           try {
             return await uploader(projects.id || "", id || "", file);
           } catch (e) {
@@ -54,54 +51,47 @@ const ProjectDetail = () => {
         }}
         ghost
       >
-        {() => {
-          if (!uploading) {
-            return null;
-          }
-
-          return <BlinkDot className="ml-8" />;
-        }}
+        {() => null}
       </DropImage>
     </AuthRequired>
   );
 
-  const renderTitle = () => {
+  const renderImage = (index: number, isLargeImage: boolean, col: number) => {
+    const image: any = projects.images[index];
+    if (!image) {
+      return null;
+    }
+
+    const img = imageFormatter(image);
+
     return (
-      <div className="flex items-start">
-        {projects.name}
-        {renderUploader()}
+      <div
+        className={classnames("mb-256", {
+          "md:mr-64": col === 0,
+          "md:ml-64": col !== 0,
+        })}
+      >
+        <Img {...img} size={isLargeImage ? "large" : "normal"} />
       </div>
     );
   };
 
   return (
-    <ImgList
-      title={renderTitle()}
-      className=""
-      imgList={projects.images.map(imageFormatter)}
-      description={
-        <DisabledText className="block">{projects.description}</DisabledText>
-      }
-    />
+    <div className="w-full flex justify-center">
+      <RandomRowsLayout
+        classNames="mx-32 mt-128 max-w-screen-xl"
+        cellsCount={projects.images.length}
+        cellRenderer={renderImage}
+      />
+      {renderUploader()}
+    </div>
   );
 };
 
 export default () => {
-  const { id } = useParams();
-  const { projects } = useProjects(id);
-
   return (
-    <ErrorBoundary>
-      <Suspense
-        fallback={
-          <ArticleSkeleton
-            titleLength={id?.length || 0}
-            descriptionLength={projects?.description?.length || 8}
-          />
-        }
-      >
-        <ProjectDetail />
-      </Suspense>
-    </ErrorBoundary>
+    <MySuspense>
+      <ProjectDetail />
+    </MySuspense>
   );
 };

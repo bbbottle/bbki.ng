@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useContext } from "react";
 import { Routes, Route, Outlet } from "react-router-dom";
 import {
   Nav,
@@ -20,45 +20,68 @@ import Txt from "@/pages/extensions/txt";
 import { usePaths } from "@/hooks";
 import { Login } from "@/pages/login";
 import { SWR } from "@/swr";
+import {
+  GlobalLoadingContext,
+  GlobalLoadingStateProvider,
+} from "@/global_loading_state_provider";
 
 const Layout = () => {
+  const { isLoading } = useContext(GlobalLoadingContext);
   return (
     <>
       <Page
-        nav={<Nav paths={usePaths()} className="blur-cover" />}
-        main={
-          <ThreeColLayout
-            middleRenderer={() => (
-              <ErrorBoundary>
-                <Outlet />
-              </ErrorBoundary>
-            )}
-            rightRenderer={() => <Stickers />}
-          />
+        nav={
+          <Nav paths={usePaths()} className="blur-cover" loading={isLoading} />
         }
+        main={<Outlet />}
         footer={<Footer />}
       />
     </>
   );
 };
 
+const threeColWrapper =
+  <T extends object>(Component: any) =>
+  (props: T) => {
+    return (
+      <ThreeColLayout
+        middleRenderer={() => (
+          <ErrorBoundary>
+            <Component {...props} />
+          </ErrorBoundary>
+        )}
+        rightRenderer={() => <Stickers />}
+      />
+    );
+  };
+
+const CoverInMidCol = threeColWrapper(Cover);
+const NowInMidCol = threeColWrapper(NowPage);
+const ContentInMidCol = threeColWrapper(Txt);
+const ArticleInMidCol = threeColWrapper(ArticlePage);
+const TagsInMidCol = threeColWrapper(Tags);
+const LoginInMidCol = threeColWrapper(Login);
+const TagsResultInMidCol = threeColWrapper(TagsResult);
+
 export const App = () => {
   return (
     <SWR>
       <HotKeyNav>
-        <Routes>
-          <Route path="/" element={<Layout />}>
-            <Route index element={<Cover />} />
-            <Route path="now" element={<NowPage />} />
-            <Route path="content" element={<Txt />} />
-            <Route path="content/:title" element={<ArticlePage />} />
-            <Route path="content/:title/:id" element={<PhotoProjects />} />
-            <Route path="tags" element={<Tags />} />
-            <Route path="login" element={<Login />} />
-            <Route path="tags/:tag" element={<TagsResult />} />
-          </Route>
-          <Route path="*" element={<NotFound />} />
-        </Routes>
+        <GlobalLoadingStateProvider>
+          <Routes>
+            <Route path="/" element={<Layout />}>
+              <Route index element={<CoverInMidCol />} />
+              <Route path="now" element={<NowInMidCol />} />
+              <Route path="content" element={<ContentInMidCol />} />
+              <Route path="content/:title" element={<ArticleInMidCol />} />
+              <Route path="content/:title/:id" element={<PhotoProjects />} />
+              <Route path="tags" element={<TagsInMidCol />} />
+              <Route path="login" element={<LoginInMidCol />} />
+              <Route path="tags/:tag" element={<TagsResultInMidCol />} />
+            </Route>
+            <Route path="*" element={<NotFound />} />
+          </Routes>
+        </GlobalLoadingStateProvider>
       </HotKeyNav>
     </SWR>
   );

@@ -6,15 +6,27 @@ import { ossProcessType } from "@/types/oss";
 
 interface ImgProps extends Photo {
   className?: string;
+  size: "large" | "normal";
 }
 
 const emptyDataURL =
   "data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7";
 
 export const Img = (props: ImgProps) => {
-  const { src, className, renderedWidth, avgColor, thumbnailSrc, processType } =
-    props;
-  const { width, height } = calcDefaultImgSize(props, renderedWidth);
+  const {
+    src,
+    className,
+    renderedWidth,
+    avgColor,
+    thumbnailSrc,
+    processType,
+    size,
+  } = props;
+  const { width, height } = calcDefaultImgSize(
+    props,
+    renderedWidth,
+    size === "large" ? 1 : 0.6
+  );
   const [loaded, setLoaded] = useState(false);
   const [decoded, setDecoded] = useState(false);
 

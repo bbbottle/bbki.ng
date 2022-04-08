@@ -1,7 +1,8 @@
 import * as React from "react";
 import classnames from "classnames";
 
-export const generateRandomBoolean = (): boolean => Math.random() < 0.5;
+export const generateRandomBoolean = (p: number = 0.5): boolean =>
+  Math.random() < p;
 
 const generateRandomColNum = (total: number): number[] => {
   const colNumArr = [];
@@ -40,7 +41,9 @@ export const RandomRowsLayout = (props: RandomRowsLayoutProps) => {
   return (
     <div className={classNames}>
       {colNums.map((colNum, row) => {
-        const randBool = generateRandomBoolean();
+        const randBool = generateRandomBoolean(
+          colNum < 2 ? 0.4 : 0.5 /* 增加单列大图概率 */
+        );
         const randBoolArr = [randBool, !randBool];
         return (
           <div className="flex items-center flex-wrap" key={row}>

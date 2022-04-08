@@ -3,7 +3,7 @@ import { Img } from "@/components";
 
 export const Stickers = () => {
   return (
-    <div className="fixed bottom-256 right-64">
+    <div className="fixed bottom-256 right-64 invisible xl:visible">
       <Img
         size="large"
         src="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/stickers/sticker-water-delivery.jpg"

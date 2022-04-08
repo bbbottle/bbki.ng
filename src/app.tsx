@@ -50,7 +50,6 @@ const threeColWrapper =
             <Component {...props} />
           </ErrorBoundary>
         )}
-        rightRenderer={() => <Stickers />}
       />
     );
   };
@@ -67,6 +66,7 @@ export const App = () => {
   return (
     <SWR>
       <HotKeyNav>
+        <Stickers />
         <GlobalLoadingStateProvider>
           <Routes>
             <Route path="/" element={<Layout />}>

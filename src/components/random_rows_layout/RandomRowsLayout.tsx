@@ -5,6 +5,10 @@ export const generateRandomBoolean = (): boolean => Math.random() < 0.5;
 
 const generateRandomColNum = (total: number): number[] => {
   const colNumArr = [];
+  if (total <= 2) {
+    return [total];
+  }
+
   let colSum = 0;
   while (colSum < total) {
     const num = generateRandomBoolean() ? 1 : 2;

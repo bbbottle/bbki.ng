@@ -10,13 +10,15 @@ const Projects = () => {
     name: p.name,
   }));
 
-  return <LinkList links={projectRoutes} />;
+  return <LinkList links={projectRoutes} title="图片" />;
 };
 
 export default () => {
   return (
     <MySuspense
-      fallback={<LinkListSkeleton linksLength={[1, 2, 3, 4, 5, 6, 7]} />}
+      fallback={
+        <LinkListSkeleton titleLength={2} linksLength={[1, 2, 3, 4, 5, 6, 7]} />
+      }
     >
       <Projects />
     </MySuspense>

@@ -1,10 +1,9 @@
-import React, { useContext, useEffect, useState } from "react";
-import classnames from "classnames";
-import { MySuspense, RandomRowsLayout } from "@/components";
+import React, { useContext, useEffect } from "react";
+import { MySuspense } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
-import { DropImage, Img } from "@bbki.ng/components";
+import { DropImage, Gallery } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
 
@@ -55,35 +54,10 @@ const ProjectDetail = () => {
     </AuthRequired>
   );
 
-  const renderImage = (index: number, isLargeImage: boolean, col: number) => {
-    const image: any = projects.images[index];
-    if (!image) {
-      return null;
-    }
-
-    const img = imageFormatter(image);
-
-    return (
-      <div
-        className={classnames("mb-256", {
-          "md:mr-64": col === 0,
-          "md:ml-64": col !== 0,
-        })}
-      >
-        <Img {...img} size={isLargeImage ? "large" : "normal"} />
-      </div>
-    );
-  };
-
   return (
-    <div className="w-full flex justify-center">
-      <RandomRowsLayout
-        classNames="mx-32 mt-128 max-w-screen-xl"
-        cellsCount={projects.images.length}
-        cellRenderer={renderImage}
-      />
+    <Gallery images={projects.images.map(imageFormatter)}>
       {renderUploader()}
-    </div>
+    </Gallery>
   );
 };
 

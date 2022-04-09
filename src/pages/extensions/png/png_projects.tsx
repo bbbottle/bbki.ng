@@ -3,21 +3,10 @@ import { MySuspense } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
+import { imageFormatter } from "@/utils";
 import { DropImage, Gallery } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
-
-const imageFormatter = (image: any) => {
-  const { rendered_width, thumbnail_src, avg_color, process_type, ...rest } =
-    image;
-  return {
-    renderedWidth: rendered_width,
-    thumbnailSrc: thumbnail_src,
-    avgColor: avg_color,
-    processType: process_type,
-    ...rest,
-  };
-};
 
 const ProjectDetail = () => {
   const { id } = useParams();

@@ -1,25 +1,42 @@
 import React from "react";
+import classnames from "classnames";
 import { useProjects } from "@/hooks/use_projects";
-import { LinkList, LinkListSkeleton } from "@bbki.ng/components";
+import { Link, Gallery, ImageRenderer } from "@bbki.ng/components";
 import { MySuspense } from "@/components";
+import { imageFormatter } from "@/utils";
 
 const Projects = () => {
   const { projects } = useProjects("", true);
-  const projectRoutes = projects.map((p: { id: string; name: string }) => ({
-    to: p.name,
-    name: p.name,
-  }));
 
-  return <LinkList links={projectRoutes} title="图片" />;
+  const renderImage: ImageRenderer = (img, index, col) => {
+    const project = projects[index];
+    return (
+      <div
+        className={classnames("mb-128", {
+          "md:mr-64": col === 0,
+          "md:ml-64": col !== 0,
+        })}
+      >
+        <Link to={project.name}>
+          <div className="invert hover:invert-0 transition-all duration-700">
+            {img}
+          </div>
+        </Link>
+      </div>
+    );
+  };
+
+  return (
+    <Gallery
+      images={projects.map((p: any) => p.cover).map(imageFormatter)}
+      imageRenderer={renderImage}
+    />
+  );
 };
 
 export default () => {
   return (
-    <MySuspense
-      fallback={
-        <LinkListSkeleton titleLength={2} linksLength={[1, 2, 3, 4, 5, 6, 7]} />
-      }
-    >
+    <MySuspense>
       <Projects />
     </MySuspense>
   );

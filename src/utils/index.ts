@@ -118,3 +118,15 @@ export const buildSimpleApiHooks = (api: string, payloadKey: string) => {
     };
   };
 };
+
+export const imageFormatter = (image: any) => {
+  const { rendered_width, thumbnail_src, avg_color, process_type, ...rest } =
+    image;
+  return {
+    renderedWidth: rendered_width,
+    thumbnailSrc: thumbnail_src,
+    avgColor: avg_color,
+    processType: process_type,
+    ...rest,
+  };
+};

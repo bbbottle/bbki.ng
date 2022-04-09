@@ -9,6 +9,17 @@ const last = <T extends any>(arr: T[]): T => {
   return arr[arr.length - 1];
 };
 
+const defaultCellClsGenerator = (
+  colNum: number,
+  isCenterSingleCell: boolean
+) => {
+  const isSingleCell = colNum === 1;
+  const singleCellWidth = isCenterSingleCell ? "full" : "1/2";
+  const cellWidth = isSingleCell ? singleCellWidth : "1/2";
+
+  return `md:basis-${cellWidth}`;
+};
+
 export const generateRandomBoolean = (p: number = 0.5): boolean =>
   Math.random() < p;
 
@@ -30,6 +41,7 @@ const generateRandomColNum = (total: number): number[] => {
 
 export interface RandomRowsLayoutProps {
   classNames?: string;
+  cellWrapperClsGenerator?: (colNum: number, randBoolean: boolean) => string;
   cellsCount: number;
   cellRenderer: (
     index: number,
@@ -39,7 +51,12 @@ export interface RandomRowsLayoutProps {
 }
 
 export const RandomRowsLayout = (props: RandomRowsLayoutProps) => {
-  const { cellsCount, cellRenderer, classNames = "" } = props;
+  const {
+    cellsCount,
+    cellRenderer,
+    classNames = "",
+    cellWrapperClsGenerator = defaultCellClsGenerator,
+  } = props;
   const colNums = generateRandomColNum(cellsCount);
 
   const indexRef = React.useRef(0);
@@ -58,15 +75,15 @@ export const RandomRowsLayout = (props: RandomRowsLayoutProps) => {
           <div className="flex items-center flex-wrap" key={row}>
             {new Array(colNum).fill(null).map((_, col) => {
               indexRef.current += 1;
-              const isSingleCell = colNum === 1;
-              const isCenterSingleCell = generateRandomBoolean();
-              const singleCellWidth = isCenterSingleCell ? "full" : "1/2";
-              const cellWidth = isSingleCell ? singleCellWidth : "1/2";
+              const generatedCls = cellWrapperClsGenerator(
+                colNum,
+                generateRandomBoolean()
+              );
 
               const cls = classnames(
                 "flex items-center justify-center flex-shrink-0 flex-grow-0",
-                `md:basis-${cellWidth}`,
-                "basis-full"
+                "basis-full",
+                generatedCls
               );
               return (
                 <div className={cls} key={col}>

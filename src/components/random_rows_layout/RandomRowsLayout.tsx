@@ -1,6 +1,14 @@
 import * as React from "react";
 import classnames from "classnames";
 
+const last = <T extends any>(arr: T[]): T => {
+  if (arr.length < 2) {
+    return arr[0];
+  }
+
+  return arr[arr.length - 1];
+};
+
 export const generateRandomBoolean = (p: number = 0.5): boolean =>
   Math.random() < p;
 
@@ -12,7 +20,8 @@ const generateRandomColNum = (total: number): number[] => {
 
   let colSum = 0;
   while (colSum < total) {
-    const num = generateRandomBoolean() ? 1 : 2;
+    const p: number = last<number>(colNumArr) === 2 ? 0.9 : 0.5;
+    const num = generateRandomBoolean(p) ? 1 : 2;
     colNumArr.push(num);
     colSum += num;
   }
@@ -42,7 +51,7 @@ export const RandomRowsLayout = (props: RandomRowsLayoutProps) => {
     <div className={classNames}>
       {colNums.map((colNum, row) => {
         const randBool = generateRandomBoolean(
-          colNum < 2 ? 0.4 : 0.5 /* 增加单列大图概率 */
+          colNum < 2 ? 0.6 : 0.5 /* 增加单列大图概率 */
         );
         const randBoolArr = [randBool, !randBool];
         return (

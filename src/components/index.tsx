@@ -14,8 +14,6 @@ export { ProgressBar } from "./progress_bar";
 
 export { BlurCover } from "./blur_cover";
 
-export { Img } from "./img";
-
 export { ReloadPrompt } from "./reload_prompt";
 
 export { Stickers } from "./stickers";

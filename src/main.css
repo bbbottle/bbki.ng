@@ -19,10 +19,6 @@
     backdrop-filter: blur(7px);
   }
 
-  .lqip-blur {
-    backdrop-filter: blur(20px);
-  }
-
   .prose pre {
     color: #24292f !important;
     background-color: #f6f8fa !important;

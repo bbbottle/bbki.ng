@@ -1,8 +1,7 @@
 import React, { FunctionComponent, ReactElement, ReactNode } from "react";
 import cls from "classnames";
 import { Photo } from "@/types/photo";
-import { Img } from "@/components";
-import { Article } from "@bbki.ng/components";
+import { Article, Img } from "@bbki.ng/components";
 
 interface imgListProps {
   className: string;

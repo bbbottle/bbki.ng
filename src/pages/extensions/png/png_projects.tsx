@@ -1,10 +1,10 @@
 import React, { useContext, useEffect, useState } from "react";
 import classnames from "classnames";
-import { Img, MySuspense, RandomRowsLayout } from "@/components";
+import { MySuspense, RandomRowsLayout } from "@/components";
 import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
-import { DropImage } from "@bbki.ng/components";
+import { DropImage, Img } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
 

@@ -2,8 +2,8 @@ import React, { ReactElement, ReactNode, Suspense } from "react";
 import { ErrorBoundary, Spinner } from "@bbki.ng/components";
 
 const CenterSpinner = () => (
-  <div className="grid place-content-center	overflow-hidden max-h-[400px] md:max-h-full">
-    <Spinner pathClassName="stroke-gray-200" className="animate-spin" />
+  <div className="grid place-content-center	overflow-hidden">
+    <Spinner pathClassName="stroke-gray-200" />
   </div>
 );
 

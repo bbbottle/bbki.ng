@@ -1,24 +1,11 @@
-import React, {
-  ReactElement,
-  ReactNode,
-  Suspense,
-  useContext,
-  useEffect,
-} from "react";
-import { ErrorBoundary } from "@bbki.ng/components";
-import { GlobalLoadingContext } from "@/global_loading_state_provider";
+import React, { ReactElement, ReactNode, Suspense } from "react";
+import { ErrorBoundary, Spinner } from "@bbki.ng/components";
 
-const LoadingSwitch = (props: { children?: ReactElement }) => {
-  const { setIsLoading } = useContext(GlobalLoadingContext);
-  useEffect(() => {
-    setIsLoading(true);
-    return () => {
-      setIsLoading(false);
-    };
-  }, []);
-
-  return props.children || <div />;
-};
+const CenterSpinner = () => (
+  <div className="grid place-content-center	overflow-hidden max-h-[400px] md:max-h-full">
+    <Spinner pathClassName="stroke-gray-200" className="animate-spin" />
+  </div>
+);
 
 export const MySuspense = (props: {
   children: ReactNode;
@@ -26,9 +13,7 @@ export const MySuspense = (props: {
 }) => {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<LoadingSwitch>{props.fallback}</LoadingSwitch>}>
-        {props.children}
-      </Suspense>
+      <Suspense fallback={<CenterSpinner />}>{props.children}</Suspense>
     </ErrorBoundary>
   );
 };

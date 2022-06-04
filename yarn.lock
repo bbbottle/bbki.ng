@@ -969,15 +969,15 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bbki.ng/components@1.5.18":
-  version "1.5.18"
-  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.5.18.tgz#ba4e4f5ce206e7707aab8b23bae79a8850bf78a2"
-  integrity sha512-psRjHt7cTvp2idwpzu7yeFjrNLaDx/gBi4w9l4UdtPITiMDId/i0epxI6dVbUACZe290o5r6KwD2awG7nxK6eg==
+"@bbki.ng/components@1.5.25":
+  version "1.5.25"
+  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.5.25.tgz#561a119d4500daf2004254db0ac6540f7c66b9c9"
+  integrity sha512-TqG/oFyML1Lrwi+2dSDwhoDUJfmrA62AQWSSaKONLim/u6zJjXAF6de8ebudUhsbmWpoWIpoceQ4597ZDJ6A6Q==
 
-"@bbki.ng/design@1.1.3":
-  version "1.1.3"
-  resolved "https://registry.npmjs.org/@bbki.ng/design/-/design-1.1.3.tgz#aa91c79f217ce272c867a1ebcb58c200659b71bb"
-  integrity sha512-dz6G/jaqGd6u11e7iradAipMV6+EXCGiLQ4IgS06CzV9XA2Y5v5o/FfxwAs9I1e+HT/YnA3Unx7BSI6CoYqRWw==
+"@bbki.ng/design@1.1.4":
+  version "1.1.4"
+  resolved "https://registry.npmjs.org/@bbki.ng/design/-/design-1.1.4.tgz#969268da30bf5627e057c5edb6edc8098622c15c"
+  integrity sha512-h/e5JdYim7EX4KF+UxHizlSCUhfPf2FN6qWxz4I5lirRnyIeJcljttawAPysaSFqOnFlWQDHGMDj2hg1FjgN7A==
 
 "@bcoe/v8-coverage@^0.2.3":
   version "0.2.3"

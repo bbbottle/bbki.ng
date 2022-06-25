@@ -1,12 +1,14 @@
 export const ROUTES = {
   INDEX: "/",
-  CONTENT: "/content",
-  HELP: "/content/网站说明书",
+  CONTENT: "/blog",
+  HELP: "/blog/网站说明书",
   TAGS: "/tags",
+  BLOG: "/blog",
 };
 
 export const ROUTE_NAME = {
   [ROUTES.CONTENT]: "目录",
+  [ROUTES.BLOG]: "文章",
   unknown: "未知",
 };
 

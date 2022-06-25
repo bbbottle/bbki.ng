@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Routes, Route, Outlet } from "react-router-dom";
+import { Routes, Route, Outlet, Navigate } from "react-router-dom";
 import {
   Nav,
   Page,
@@ -10,6 +10,7 @@ import {
 import { Footer, HotKeyNav, Stickers } from "./components";
 import { Cover } from "./pages";
 
+import Png from "@/pages/extensions/png";
 import ArticlePage from "@/pages/extensions/txt/article";
 import NowPage from "@/pages/now";
 import PhotoProjects from "@/pages/extensions/png/png_projects";
@@ -54,13 +55,13 @@ const threeColWrapper =
     );
   };
 
-const CoverInMidCol = threeColWrapper(Cover);
 const NowInMidCol = threeColWrapper(NowPage);
 const ContentInMidCol = threeColWrapper(Txt);
 const ArticleInMidCol = threeColWrapper(ArticlePage);
 const TagsInMidCol = threeColWrapper(Tags);
 const LoginInMidCol = threeColWrapper(Login);
 const TagsResultInMidCol = threeColWrapper(TagsResult);
+const PngInMidCol = threeColWrapper(Png);
 
 export const App = () => {
   return (
@@ -70,14 +71,19 @@ export const App = () => {
         <GlobalLoadingStateProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<CoverInMidCol />} />
+              <Route index element={<PngInMidCol />} />
+              <Route path="/projects" element={<Navigate to="/" />} />
+              <Route path="/projects/:id" element={<PhotoProjects />} />
+
               <Route path="now" element={<NowInMidCol />} />
-              <Route path="content" element={<ContentInMidCol />} />
-              <Route path="content/:title" element={<ArticleInMidCol />} />
-              <Route path="content/:title/:id" element={<PhotoProjects />} />
               <Route path="tags" element={<TagsInMidCol />} />
-              <Route path="login" element={<LoginInMidCol />} />
               <Route path="tags/:tag" element={<TagsResultInMidCol />} />
+
+              <Route path="blog" element={<ContentInMidCol />} />
+              <Route path="blog/:title" element={<ArticleInMidCol />} />
+              <Route path="blog/:title/:id" element={<PhotoProjects />} />
+
+              <Route path="login" element={<LoginInMidCol />} />
             </Route>
             <Route path="*" element={<NotFound />} />
           </Routes>

@@ -17,7 +17,7 @@ const Projects = () => {
           "md:ml-64": col !== 0,
         })}
       >
-        <Link to={project.name}>
+        <Link to={`/projects/${project.name}`}>
           <div className="invert hover:invert-0 transition-all duration-700">
             {img}
           </div>

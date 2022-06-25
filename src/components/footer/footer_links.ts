@@ -1,10 +1,10 @@
 import { pathObj } from "@/types/path";
-import { GITHUB_REPO_ADDRESS } from "@/constants";
+import { GITHUB_REPO_ADDRESS, ROUTES } from "@/constants";
 
 export const FooterLinks: pathObj[] = [
   {
-    name: "source",
-    path: GITHUB_REPO_ADDRESS,
+    name: "blog",
+    path: ROUTES.BLOG,
   },
   // {
   //   text: "contributing",

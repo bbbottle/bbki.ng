@@ -1,10 +1,13 @@
 import React, { ReactElement, ReactNode, Suspense } from "react";
-import { ErrorBoundary, Spinner } from "@bbki.ng/components";
+import { ErrorBoundary, LoadingSpiral } from "@bbki.ng/components";
 
-const CenterSpinner = () => (
-  <div className="grid place-content-center	overflow-hidden">
-    <Spinner pathClassName="stroke-gray-200" />
-  </div>
+const Spinner = () => (
+  <LoadingSpiral
+    multiplier={30000}
+    color={[209, 213, 219, 1]}
+    spiralConstA={0.04}
+    spiralConstB={0.16}
+  />
 );
 
 export const MySuspense = (props: {
@@ -13,7 +16,7 @@ export const MySuspense = (props: {
 }) => {
   return (
     <ErrorBoundary>
-      <Suspense fallback={<CenterSpinner />}>{props.children}</Suspense>
+      <Suspense fallback={<Spinner />}>{props.children}</Suspense>
     </ErrorBoundary>
   );
 };

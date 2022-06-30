@@ -7,6 +7,7 @@ const Spinner = () => (
     color={[209, 213, 219, 1]}
     spiralConstA={0.04}
     spiralConstB={0.16}
+    offset={-150}
   />
 );
 

@@ -3,7 +3,7 @@ import { Img } from "@bbki.ng/components";
 
 export const Stickers = () => {
   return (
-    <div className="fixed bottom-256 right-64 invisible xl:visible">
+    <div className="fixed bottom-256 right-64 invisible xl:visible z-[1000]">
       <Img
         size="large"
         src="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/stickers/sticker-water-delivery.jpg"

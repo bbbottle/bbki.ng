@@ -35,7 +35,7 @@ const Layout = () => {
           <Nav paths={usePaths()} className="blur-cover" loading={isLoading} />
         }
         main={<Outlet />}
-        footer={<Footer />}
+        footer={isLoading ? <div /> : <Footer />}
       />
     </>
   );

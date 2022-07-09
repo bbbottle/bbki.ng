@@ -3,11 +3,11 @@ import { ErrorBoundary, LoadingSpiral } from "@bbki.ng/components";
 
 const Spinner = () => (
   <LoadingSpiral
-    multiplier={150000}
+    multiplier={10000}
     color={[209, 213, 219, 1]}
     spiralConstA={0.04}
     spiralConstB={0.16}
-    offset={-100}
+    offset={-0.3}
   />
 );
 

@@ -69,7 +69,7 @@ const TagsResultInMidCol = threeColWrapper(TagsResult);
 const CoverInMidCol = threeColWrapper(Cover);
 
 export const App = () => {
-  useScrollToTop();
+  useScrollToTop("/blog");
   return (
     <SWR>
       <HotKeyNav>

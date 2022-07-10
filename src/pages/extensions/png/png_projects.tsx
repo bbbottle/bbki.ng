@@ -4,11 +4,10 @@ import { useParams } from "react-router-dom";
 import { useProjects } from "@/hooks/use_projects";
 import { AuthRequired } from "@/auth_required";
 import { imageFormatter } from "@/utils";
-import { DropImage, Gallery } from "@bbki.ng/components";
+import { DropImage, Gallery, Nav } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
 import { useTransitionCls } from "@/hooks/useTransitionCls";
-import { Nav } from "@bbki.ng/components/src";
 import { usePaths } from "@/hooks";
 
 const ProjectDetail = () => {

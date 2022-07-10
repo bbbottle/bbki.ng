@@ -17,7 +17,7 @@
     "url": "git+https://github.com/bbbottle/bbki.ng.git"
   },
   "dependencies": {
-    "@bbki.ng/components": "1.5.39",
+    "@bbki.ng/components": "1.5.40",
     "@supabase/supabase-js": "^1.30.6",
     "classnames": "2.3.1",
     "react": "^18.0.0",

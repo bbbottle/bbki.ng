@@ -8,6 +8,8 @@ import { DropImage, Gallery } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
 import { useTransitionCls } from "@/hooks/useTransitionCls";
+import { Nav } from "@bbki.ng/components/src";
+import { usePaths } from "@/hooks";
 
 const ProjectDetail = () => {
   const { id } = useParams();
@@ -50,9 +52,12 @@ const ProjectDetail = () => {
   );
 
   return (
-    <Gallery images={projects.images.map(imageFormatter)} className={cls}>
-      {renderUploader()}
-    </Gallery>
+    <>
+      <Gallery images={projects.images.map(imageFormatter)} className={cls}>
+        {renderUploader()}
+      </Gallery>
+      <Nav paths={usePaths()} mini className="justify-center py-32 md:hidden" />
+    </>
   );
 };
 

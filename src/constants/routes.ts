@@ -1,7 +1,7 @@
 export const ROUTES = {
   INDEX: "/",
   CONTENT: "/blog",
-  HELP: "/blog/网站说明书",
+  HELP: "/blog/说明书",
   TAGS: "/tags",
   BLOG: "/blog",
 };

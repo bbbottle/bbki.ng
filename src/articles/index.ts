@@ -1,4 +1,4 @@
-import * as 网站说明书 from "./bbking-manual.mdx";
+import * as 说明书 from "./bbking-manual.mdx";
 import * as 回暖 from "./warming-up.mdx";
 import * as 可以攻玉 from "./quote.mdx";
 import * as 离开 from "./travel.mdx";
@@ -14,7 +14,7 @@ import * as 春寒 from "./spring-cooldown.mdx";
 import * as 入夏 from "./web-burnning.mdx";
 
 export const MdxArticleList = [
-  网站说明书,
+  说明书,
   网站图片展示,
   与或非禁区,
   可以攻玉,

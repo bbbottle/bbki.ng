@@ -14,7 +14,11 @@ const ProjectDetail = () => {
   const { setIsLoading } = useContext(GlobalLoadingContext);
   const uploader = useUploader();
   const { projects, refresh } = useProjects(id, true);
-  const cls = useTransitionCls();
+  const cls = useTransitionCls({
+    blur: false,
+    offset: true,
+    opacity: true,
+  });
 
   useEffect(() => {
     return () => {

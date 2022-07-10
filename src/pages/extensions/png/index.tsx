@@ -8,7 +8,11 @@ import { useTransitionCls } from "@/hooks/useTransitionCls";
 
 const Projects = () => {
   const { projects } = useProjects("", true);
-  const cls = useTransitionCls();
+  const cls = useTransitionCls({
+    blur: false,
+    offset: true,
+    opacity: true,
+  });
 
   const renderImage: ImageRenderer = useCallback(
     (img, index, col) => {

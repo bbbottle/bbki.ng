@@ -7,7 +7,6 @@ import { imageFormatter } from "@/utils";
 import { DropImage, Gallery, Nav } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
-import { useTransitionCls } from "@/hooks/useTransitionCls";
 import { usePaths } from "@/hooks";
 
 const ProjectDetail = () => {
@@ -15,11 +14,6 @@ const ProjectDetail = () => {
   const { setIsLoading } = useContext(GlobalLoadingContext);
   const uploader = useUploader();
   const { projects, refresh } = useProjects(id, true);
-  const cls = useTransitionCls({
-    blur: false,
-    offset: true,
-    opacity: true,
-  });
 
   useEffect(() => {
     return () => {
@@ -52,7 +46,7 @@ const ProjectDetail = () => {
 
   return (
     <>
-      <Gallery images={projects.images.map(imageFormatter)} className={cls}>
+      <Gallery images={projects.images.map(imageFormatter)}>
         {renderUploader()}
       </Gallery>
       <Nav paths={usePaths()} mini className="justify-center py-32 md:hidden" />

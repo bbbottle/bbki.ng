@@ -4,16 +4,9 @@ import { useProjects } from "@/hooks/use_projects";
 import { Link, Gallery, ImageRenderer } from "@bbki.ng/components";
 import { MySuspense } from "@/components";
 import { imageFormatter } from "@/utils";
-import { useTransitionCls } from "@/hooks/useTransitionCls";
 
 const Projects = () => {
   const { projects } = useProjects("", true);
-  const cls = useTransitionCls({
-    blur: false,
-    offset: true,
-    opacity: true,
-  });
-
   const renderImage: ImageRenderer = useCallback(
     (img, index, col) => {
       const project = projects[index];
@@ -33,7 +26,6 @@ const Projects = () => {
 
   return (
     <Gallery
-      className={cls}
       images={projects.map((p: any) => p.cover).map(imageFormatter)}
       imageRenderer={renderImage}
     />

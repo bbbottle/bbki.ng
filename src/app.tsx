@@ -26,6 +26,7 @@ import {
   GlobalLoadingStateProvider,
 } from "@/global_loading_state_provider";
 import { useTransitionCls } from "@/hooks/useTransitionCls";
+import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Layout = () => {
   const { isLoading } = useContext(GlobalLoadingContext);
@@ -68,6 +69,7 @@ const TagsResultInMidCol = threeColWrapper(TagsResult);
 const CoverInMidCol = threeColWrapper(Cover);
 
 export const App = () => {
+  useScrollToTop();
   return (
     <SWR>
       <HotKeyNav>

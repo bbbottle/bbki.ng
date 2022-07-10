@@ -2,9 +2,9 @@ import React from "react";
 import { DisabledText } from "@/components";
 import { Link, LinkColor, Article } from "@bbki.ng/components";
 
-export const Cover = () => {
+export const Cover = (props: { className: string }) => {
   return (
-    <Article title="十八歳未満？">
+    <Article title="十八歳未満？" className={props.className}>
       <DisabledText>
         <p style={{ textAlign: "justify" }}>
           请注意，您尝试访问的网站包含儿童内容。 任何年满 18

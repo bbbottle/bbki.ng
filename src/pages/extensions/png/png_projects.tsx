@@ -7,12 +7,14 @@ import { imageFormatter } from "@/utils";
 import { DropImage, Gallery } from "@bbki.ng/components";
 import { useUploader } from "@/hooks/use_uploader";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
+import { useTransitionCls } from "@/hooks/useTransitionCls";
 
 const ProjectDetail = () => {
   const { id } = useParams();
   const { setIsLoading } = useContext(GlobalLoadingContext);
   const uploader = useUploader();
   const { projects, refresh } = useProjects(id, true);
+  const cls = useTransitionCls();
 
   useEffect(() => {
     return () => {
@@ -44,7 +46,7 @@ const ProjectDetail = () => {
   );
 
   return (
-    <Gallery images={projects.images.map(imageFormatter)}>
+    <Gallery images={projects.images.map(imageFormatter)} className={cls}>
       {renderUploader()}
     </Gallery>
   );

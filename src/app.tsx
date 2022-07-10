@@ -1,5 +1,5 @@
 import React, { useContext } from "react";
-import { Routes, Route, Outlet, Navigate } from "react-router-dom";
+import { Routes, Route, Outlet } from "react-router-dom";
 import {
   Nav,
   Page,
@@ -7,7 +7,7 @@ import {
   NotFound,
   ErrorBoundary,
 } from "@bbki.ng/components";
-import { Footer, HotKeyNav, Stickers } from "./components";
+import { HotKeyNav, Stickers } from "./components";
 import { Cover } from "./pages";
 
 import Png from "@/pages/extensions/png";
@@ -25,6 +25,7 @@ import {
   GlobalLoadingContext,
   GlobalLoadingStateProvider,
 } from "@/global_loading_state_provider";
+import { useTransitionCls } from "@/hooks/useTransitionCls";
 
 const Layout = () => {
   const { isLoading } = useContext(GlobalLoadingContext);
@@ -44,14 +45,17 @@ const Layout = () => {
 const threeColWrapper =
   <T extends object>(Component: any) =>
   (props: T) => {
+    const cls = useTransitionCls();
     return (
-      <ThreeColLayout
-        middleRenderer={() => (
-          <ErrorBoundary>
-            <Component {...props} />
-          </ErrorBoundary>
-        )}
-      />
+      <div className={cls}>
+        <ThreeColLayout
+          middleRenderer={() => (
+            <ErrorBoundary>
+              <Component {...props} />
+            </ErrorBoundary>
+          )}
+        />
+      </div>
     );
   };
 

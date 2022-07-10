@@ -12,6 +12,7 @@ import * as 大寒 from "./major-cold.mdx";
 import * as 春雨 from "./spring-rain.mdx";
 import * as 春寒 from "./spring-cooldown.mdx";
 import * as 入夏 from "./web-burnning.mdx";
+import * as 六月 from "./black-river.mdx";
 
 export const MdxArticleList = [
   说明书,
@@ -28,4 +29,5 @@ export const MdxArticleList = [
   春雨,
   春寒,
   入夏,
+  六月,
 ];

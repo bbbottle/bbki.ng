@@ -74,9 +74,14 @@ export const withToken =
   (token?: string) =>
   (resource: string, init: RequestInit = {}) => {
     const { headers = {} } = init;
+    const tokenHeaders = token
+      ? {
+          "X-Supabase-Auth": token,
+        }
+      : {};
     const finalHeaders = {
       ...headers,
-      "X-Supabase-Auth": token,
+      ...tokenHeaders,
     };
     return fetcher(resource, {
       ...init,

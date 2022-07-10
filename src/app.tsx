@@ -61,6 +61,7 @@ const ArticleInMidCol = threeColWrapper(ArticlePage);
 const TagsInMidCol = threeColWrapper(Tags);
 const LoginInMidCol = threeColWrapper(Login);
 const TagsResultInMidCol = threeColWrapper(TagsResult);
+const CoverInMidCol = threeColWrapper(Cover);
 
 export const App = () => {
   return (
@@ -70,8 +71,8 @@ export const App = () => {
         <GlobalLoadingStateProvider>
           <Routes>
             <Route path="/" element={<Layout />}>
-              <Route index element={<Png />} />
-              <Route path="/projects" element={<Navigate to="/" />} />
+              <Route index element={<CoverInMidCol />} />
+              <Route path="/projects" element={<Png />} />
               <Route path="/projects/:id" element={<PhotoProjects />} />
 
               <Route path="now" element={<NowInMidCol />} />

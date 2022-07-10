@@ -6,7 +6,7 @@ export const Cover = (props: { className: string }) => {
   return (
     <Article title="十八歳未満？" className={props.className}>
       <DisabledText>
-        <p style={{ textAlign: "justify" }}>
+        <p>
           请注意，您尝试访问的网站包含儿童内容。 任何年满 18
           岁的人士均不得访问本网站，并应立即离开。本网站的内容是根据 BBKi.ng
           的法律创建和管理的。根据国家或地区的不同，即使您未满 18

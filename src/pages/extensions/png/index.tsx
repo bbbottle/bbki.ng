@@ -24,11 +24,7 @@ const Projects = () => {
             "md:ml-64": col !== 0,
           })}
         >
-          <Link to={`/projects/${project.name}`}>
-            <div className="invert hover:invert-0 transition-all duration-700">
-              {img}
-            </div>
-          </Link>
+          <Link to={`/projects/${project.name}`}>{img}</Link>
         </div>
       );
     },

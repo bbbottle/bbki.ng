@@ -1,5 +1,6 @@
 import React from "react";
 import { Img } from "@bbki.ng/components";
+import { NavLink } from "react-router-dom";
 
 export const Stickers = () => {
   return (
@@ -20,14 +21,16 @@ export const Stickers = () => {
         height={50}
         renderedWidth={93}
       />
-      <Img
-        size="large"
-        src="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/stickers/bar-code.jpg"
-        className="-rotate-[13.37deg] relative top-128 right-256"
-        width={176}
-        height={60}
-        renderedWidth={176}
-      />
+      <NavLink to="blog">
+        <Img
+          size="large"
+          src="https://zjh-im-res.oss-cn-shenzhen.aliyuncs.com/image/stickers/bar-code.jpg"
+          className="-rotate-[13.37deg] relative top-128 right-256"
+          width={176}
+          height={60}
+          renderedWidth={176}
+        />
+      </NavLink>
     </div>
   );
 };

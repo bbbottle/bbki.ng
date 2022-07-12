@@ -25,7 +25,6 @@ import {
   GlobalLoadingContext,
   GlobalLoadingStateProvider,
 } from "@/global_loading_state_provider";
-import { useTransitionCls } from "@/hooks/useTransitionCls";
 import { useScrollToTop } from "@/hooks/useScrollToTop";
 
 const Layout = () => {
@@ -46,17 +45,14 @@ const Layout = () => {
 const threeColWrapper =
   <T extends object>(Component: any) =>
   (props: T) => {
-    const cls = useTransitionCls();
     return (
-      <div className={cls}>
-        <ThreeColLayout
-          middleRenderer={() => (
-            <ErrorBoundary>
-              <Component {...props} />
-            </ErrorBoundary>
-          )}
-        />
-      </div>
+      <ThreeColLayout
+        middleRenderer={() => (
+          <ErrorBoundary>
+            <Component {...props} />
+          </ErrorBoundary>
+        )}
+      />
     );
   };
 

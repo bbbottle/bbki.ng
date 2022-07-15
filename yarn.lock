@@ -969,10 +969,12 @@
     "@babel/helper-validator-identifier" "^7.16.7"
     to-fast-properties "^2.0.0"
 
-"@bbki.ng/components@1.5.25":
-  version "1.5.25"
-  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.5.25.tgz#561a119d4500daf2004254db0ac6540f7c66b9c9"
-  integrity sha512-TqG/oFyML1Lrwi+2dSDwhoDUJfmrA62AQWSSaKONLim/u6zJjXAF6de8ebudUhsbmWpoWIpoceQ4597ZDJ6A6Q==
+"@bbki.ng/components@1.5.46":
+  version "1.5.46"
+  resolved "https://registry.npmjs.org/@bbki.ng/components/-/components-1.5.46.tgz#c9cfc01988bd6a2890ea6c6a46327f1fefeafa0d"
+  integrity sha512-s2siQZ8QJNTYBtxa4QpAfOsZY5w/sWlmXAtyvvY/S9Q6aiWtmP7I/J5GWSDlGc+oTYhOipKwMDztUtq1z/qUOA==
+  dependencies:
+    phenomenon "^1.6.0"
 
 "@bbki.ng/design@1.1.4":
   version "1.1.4"
@@ -5059,6 +5061,11 @@ periscopic@^2.0.0:
   dependencies:
     estree-walker "^2.0.2"
     is-reference "^1.1.4"
+
+phenomenon@^1.6.0:
+  version "1.6.0"
+  resolved "https://registry.npmjs.org/phenomenon/-/phenomenon-1.6.0.tgz#7b5b7647d0b48152cc0846994da3d92e8f6da677"
+  integrity sha512-7h9/fjPD3qNlgggzm88cY58l9sudZ6Ey+UmZsizfhtawO6E3srZQXywaNm2lBwT72TbpHYRPy7ytIHeBUD/G0A==
 
 picocolors@^1.0.0:
   version "1.0.0"

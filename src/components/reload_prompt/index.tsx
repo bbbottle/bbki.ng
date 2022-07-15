@@ -6,7 +6,6 @@ import { CornerPromptBox } from "@/components";
 
 export const ReloadPrompt = () => {
   const {
-    // offlineReady: [offlineReady, setOfflineReady],
     needRefresh: [needRefresh, setNeedRefresh],
     updateServiceWorker,
   } = useRegisterSW({
@@ -23,14 +22,17 @@ export const ReloadPrompt = () => {
     setNeedRefresh(false);
   };
 
+  // @ts-ignore
+  const appVer = GLOBAL_BBKING_VERSION;
+  console.log("appVer: ", appVer);
+
   return (
     <CornerPromptBox
-      content="🚀 点击更新可获取最新内容。"
+      content={`🚀 可更新到 v${appVer}`}
       showBox={needRefresh}
       onCancel={close}
       cancelLabel="关闭"
-      onOk={needRefresh ? () => updateServiceWorker(true) : null}
-      okLabel="更新"
+      onOk={needRefresh ? () => updateServiceWorker(true) : close}
     />
   );
 };

@@ -43,6 +43,9 @@ export default defineConfig({
       },
     },
   },
+  define: {
+    GLOBAL_BBKING_VERSION: JSON.stringify(process.env.npm_package_version),
+  },
   plugins: [
     react(),
     (mdx as any).default(options),

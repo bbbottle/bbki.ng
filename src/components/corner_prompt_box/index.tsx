@@ -1,5 +1,6 @@
 import React, { EventHandler, useEffect } from "react";
 import { PopConfirm } from "@bbki.ng/components";
+import classNames from "classnames";
 
 type cornerPromptBoxProps = {
   okLabel?: string;
@@ -9,10 +10,12 @@ type cornerPromptBoxProps = {
   autoCancelAfter?: number;
   content: string;
   showBox: boolean;
+  className?: string;
 };
 
 export const CornerPromptBox = (props: cornerPromptBoxProps) => {
-  const { onOk, onCancel, content, showBox, autoCancelAfter } = props;
+  const { onOk, onCancel, content, showBox, autoCancelAfter, className } =
+    props;
 
   useEffect(() => {
     if (!autoCancelAfter || !onCancel || !showBox) {
@@ -40,7 +43,12 @@ export const CornerPromptBox = (props: cornerPromptBoxProps) => {
 
   return (
     <div className="p-0 m-0 w-0 h-0">
-      <div className="left-0 bottom-0 m-32 z-10 bg-white fixed">
+      <div
+        className={classNames(
+          "left-0 bottom-0 m-32 z-10 bg-white fixed",
+          className
+        )}
+      >
         <PopConfirm
           onOk={handleOk}
           onCancel={

@@ -28,7 +28,7 @@ export const ReloadPrompt = () => {
 
   return (
     <CornerPromptBox
-      content={`🚀 发现新版本。获取更新？`}
+      content={`🚀 发现新版本（当前 v${appVer}）。获取更新？`}
       showBox={needRefresh}
       onCancel={close}
       cancelLabel="关闭"

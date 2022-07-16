@@ -1,6 +1,6 @@
 {
   "name": "bbki.ng",
-  "version": "0.0.1",
+  "version": "0.0.2",
   "description": "code behind bbki.ng",
   "main": "index.js",
   "scripts": {
@@ -17,7 +17,7 @@
     "url": "git+https://github.com/bbbottle/bbki.ng.git"
   },
   "dependencies": {
-    "@bbki.ng/components": "1.5.46",
+    "@bbki.ng/components": "1.5.47",
     "@supabase/supabase-js": "^1.30.6",
     "classnames": "2.3.1",
     "react": "^18.0.0",

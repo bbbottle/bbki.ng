@@ -1,0 +1,123 @@
+---
+title: 加载动画
+tags:
+  - bbki.ng
+  - loading
+  - WebGL
+---
+
+import { Spinner } from "@/components/Spinner";
+
+<div style={{ border: 'solid 2px #ff8888', aspectRatio: 1 }}>
+  <Spinner disableDotIndicator offset={0} />
+</div>
+
+## 前言
+>《她》是讲述在不远的未来人与人工智能相爱的科幻爱情电影。主人公西奥多（杰昆·菲尼克斯 Joaquin Phoenix 饰）是一位信件撰写人，心思细腻而深邃，能写出最感人肺腑的信件。他刚结束与妻子凯瑟琳（鲁妮·玛拉 Rooney Mara 饰）的婚姻，还没走出心碎的阴影。一次偶然机会让他接触到最新的人工智能系统 OS1 ……
+
+相信大多数人，在看这部电影的时候，不仅仅会被剧情打动，也会被电影的镜头美学吸引。《她》呈现出一个没有被冷酷金属主导的科幻世界，那里光线柔和，色调温暖。人们的着装跟我们并没有太大区别，但是人工智能操作系统能完成的事情以及普及程度，现在看来很难想象。有意思的是，技术的发展并没有消灭「加载时间」，OS1 在安装的时候，西奥多依然需要等待。屏幕上精美的加载动画给我留下深刻的印象，从那时候起，就希望动画能出现在我的网站上。
+
+根据 Atwood's Law
+
+> Any application that _can_ be written in JavaScript, _will_ eventually be written in JavaScript.
+
+肯定有人已经用 JS 实现 OS1 系统的加载动画。没错，这个人是 [@psyonline](https://codepen.io/psyonline)，他的[在线示例](https://codepen.io/psyonline/pen/yayYWg)也非常惊艳。
+那么，直接复制粘贴过来可以吗？该示例使用 Three.js 实现，写这篇文章的时候，根据 [bundlephobia](https://bundlephobia.com/package/three@0.142.0) 显示，`three@142.0` 压缩后仍然有 `596.9kB`。对于个人网站，仅仅用来实现一个加载动画，无疑很不划算。
+
+## 灵感
+[@shuding](https://twitter.com/shuding_)发布过一[系列推文](https://twitter.com/shuding_/status/1475916082875666441)介绍他如何制作一个轻量级的 [WebGL 地球库](https://github.com/shuding/cobe)，十分精彩。开篇提及两个轻量级 WebGL 库：
+
+- [phenomenon](https://github.com/vaneenige/phenomenon)
+- [W](https://xem.github.io/W/)
+
+前者压缩后，只有 `5.4KB`。正是我想找的工具。接下来，只需要 3 步就能实现文首的动画：
+1. 熟悉 phenomenon 的 API
+2. 用 phenomenon 绘制曲线
+3. 让曲线动起来
+
+## 行动
+### WebGL
+进行第一步时，发现自己还完全不了解 WebGL。看完 [The Book of Shaders](https://thebookofshaders.com/) 后，能基本理解 phenomenon 的[示例](https://codepen.io/collection/AOpMrm/)。至此，已经可以复制粘贴示例并修修改改，验证书中的概念和自己的理解。直到手痒痒想绘制自己想要的曲线，就进行到下一步。
+
+### Curve
+@psyonline [示例](https://codepen.io/psyonline/pen/yayYWg)中不难找到绘制曲线的代码：
+```
+function(percent) {
+  var x = length*Math.sin(pi2*percent)
+    , y = radius*Math.cos(pi2*3*percent)
+    , z
+    , t;
+
+  t = percent%0.25/0.25;
+  t = percent%0.25-(2*(1-t)*t* -0.0185 +t*t*0.25);
+
+  if (Math.floor(percent/0.25) == 0
+    || Math.floor(percent/0.25) == 2) {
+    t *= -1;
+  }
+
+  z = radius*Math.sin(pi2*2* (percent-t));
+
+  return new THREE.Vector3(x, y, z);
+}
+```
+
+我的主要目标变成移植这段代码，其中 `pi2`, `length` 和 `radius` 均为常量，原文取值:
+```
+const length = 30;
+const radius = 5.6;
+const pi2 = Math.PI * 2;
+```
+
+还有一个比较重要的参数 `percent`，打印发现取值范围为 0 到 1。有了这些，我愉快的写好 phenomenon 的 attributes:
+```
+const attributes = [
+  {
+    name: 'pos',
+    data: (index: number, total: number) => {
+      const percent = index / total;
+      // ...
+      // 复制粘贴 :)
+      // 此处省略
+
+      return [x, y, z];
+    },
+    size: 3,
+  },
+]
+```
+然后得到一个空白的画布
+<div style={{ border: 'solid 2px #ff8888', aspectRatio: 1 }} />
+
+因为对 WebGL 的了解依然接近于 0 在胡乱猜测并修改一通后，画布依然一片空白，于是沮丧放弃。直到晚上，突然想着将半径和长度都降低两个数量级，画布中终于出现一个扭曲的麻花。上次这么开心还是上一次。
+
+### Matrix
+现在可以回想一下大学课堂线性代数中矩阵运算的知识。回想不起来也没关系，如果有一个正在念大学的弟弟的话，他会帮助写出 `rotate` 方法。
+```
+export const VERTEX_SHADER = `
+  attribute vec3 pos;
+  uniform mat4 uProjectionMatrix;
+  uniform mat4 uModelMatrix;
+  uniform mat4 uViewMatrix;
+  uniform float uProgress;
+  mat4 rotate(float _angle){
+    return mat4(
+      1.0, 0.0, 0.0, 0.0,
+      0.0, cos(_angle), -sin(_angle), 0.0,
+      0.0, sin(_angle), cos(_angle), 0.0,
+      0.0, 0.0, 0.0, 1.0
+    );
+  }
+  void main(){
+    gl_Position = uProjectionMatrix
+      * uModelMatrix
+      * uViewMatrix
+      * rotate(uProgress)
+      * vec4(pos, 1.0);
+    gl_PointSize = 1.0;
+  }
+`;
+
+```
+
+这些碎片代码，和碎片想法，最终组装出心心念念的动画。

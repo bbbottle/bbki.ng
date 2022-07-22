@@ -4,7 +4,7 @@ import { LoadingSpiral } from "@bbki.ng/components";
 
 export const Spinner = (props: {
   disableDotIndicator?: boolean;
-  offset: number;
+  offset?: number;
 }) => {
   const { disableDotIndicator, offset = -0.3 } = props;
   const { setIsLoading } = useContext(GlobalLoadingContext);

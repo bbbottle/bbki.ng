@@ -21,11 +21,11 @@ export const Spinner = (props: {
 
   return (
     <LoadingSpiral
-      multiplier={10000}
+      multiplier={50000}
       color={[209, 213, 219, 1]}
-      spiralConstA={0.04}
-      spiralConstB={0.16}
       offset={offset}
+      length={0.15}
+      radius={0.028}
     />
   );
 };

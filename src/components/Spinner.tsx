@@ -1,12 +1,20 @@
 import React, { useContext, useEffect } from "react";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
-import { LoadingSpiral } from "@bbki.ng/components";
+import { LoadingSpiral, LoadingSpiralProps } from "@bbki.ng/components";
 
-export const Spinner = (props: {
+interface SpinnerProps extends LoadingSpiralProps {
   disableDotIndicator?: boolean;
-  offset?: number;
-}) => {
-  const { disableDotIndicator, offset = -0.3 } = props;
+}
+
+export const Spinner = (props: SpinnerProps) => {
+  const {
+    disableDotIndicator,
+    multiplier = 10000,
+    color = [209, 213, 219, 1],
+    offset = -0.3,
+    length = 0.3,
+    radius = 0.056,
+  } = props;
   const { setIsLoading } = useContext(GlobalLoadingContext);
 
   useEffect(() => {
@@ -21,11 +29,11 @@ export const Spinner = (props: {
 
   return (
     <LoadingSpiral
-      multiplier={50000}
-      color={[209, 213, 219, 1]}
+      multiplier={multiplier}
+      color={color}
       offset={offset}
-      length={0.15}
-      radius={0.028}
+      length={length}
+      radius={radius}
     />
   );
 };

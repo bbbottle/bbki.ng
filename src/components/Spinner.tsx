@@ -1,12 +1,8 @@
 import React, { useContext, useEffect } from "react";
 import { GlobalLoadingContext } from "@/global_loading_state_provider";
-import { LoadingSpiral, LoadingSpiralProps } from "@bbki.ng/components";
+import { LoadingSpiral } from "@bbki.ng/components";
 
-interface SpinnerProps extends LoadingSpiralProps {
-  disableDotIndicator?: boolean;
-}
-
-export const Spinner = (props: SpinnerProps) => {
+export const Spinner = (props: any) => {
   const {
     disableDotIndicator,
     multiplier = 10000,

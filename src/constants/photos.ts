@@ -261,3 +261,10 @@ export const OSS_PHOTOS = {
     avgColor: BgColors.LIGHT_GRAY,
   },
 };
+
+export const PHOTOS_FOR_DEMO = [
+  OSS_PHOTOS.riverSide,
+  OSS_PHOTOS.stone,
+  OSS_PHOTOS.chair,
+  OSS_PHOTOS.weapons,
+];

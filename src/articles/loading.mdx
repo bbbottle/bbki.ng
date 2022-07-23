@@ -6,12 +6,10 @@ tags:
   - WebGL
 ---
 
-import { Spinner } from "@/components/Spinner";
+import { SpinnerDemo } from "@/demo/SpinnerDemo";
+import { DemoBox } from "@/demo/DemoBox";
 
-<div style={{ border: 'solid 2px #ff8888', aspectRatio: 1 }}>
-  <Spinner disableDotIndicator offset={0} />
-</div>
-
+<SpinnerDemo />
 ## 前言
 >《她》是讲述在不远的未来人与人工智能相爱的科幻爱情电影。主人公西奥多（杰昆·菲尼克斯 Joaquin Phoenix 饰）是一位信件撰写人，心思细腻而深邃，能写出最感人肺腑的信件。他刚结束与妻子凯瑟琳（鲁妮·玛拉 Rooney Mara 饰）的婚姻，还没走出心碎的阴影。一次偶然机会让他接触到最新的人工智能系统 OS1 ……
 
@@ -87,7 +85,7 @@ const attributes = [
 ]
 ```
 然后得到一个空白的画布
-<div style={{ border: 'solid 2px #ff8888', aspectRatio: 1 }} />
+<DemoBox />
 
 因为对 WebGL 的了解依然接近于 0 在胡乱猜测并修改一通后，画布依然一片空白，于是沮丧放弃。直到晚上，突然想着将半径和长度都降低两个数量级，画布中终于出现一个扭曲的麻花。上次这么开心还是上一次。
 
@@ -128,3 +126,4 @@ export const VERTEX_SHADER = `
 3. https://thebookofshaders.com/
 4. https://shud.in/posts/metaballs-1
 5. https://codepen.io/cvaneenige/pen/MGBZpB
+6. https://movie.douban.com/subject/6722879/

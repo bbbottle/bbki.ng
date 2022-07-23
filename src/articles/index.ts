@@ -18,7 +18,7 @@ import * as 六月 from "./black-river.mdx";
 export const MdxArticleList = [
   说明书,
   网站图片展示,
-  加载动画,
+  // 加载动画,
   与或非禁区,
   可以攻玉,
   离开,

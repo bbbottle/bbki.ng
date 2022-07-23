@@ -1,8 +1,8 @@
 import React, { useState } from "react";
-import { Button, Img } from "@bbki.ng/components";
+import { Button, Img, ImgProps } from "@bbki.ng/components";
 import { PHOTOS_FOR_DEMO } from "@/constants/photos";
-import { ImgProps } from "@bbki.ng/components/src/img/types";
 import { DemoBox } from "@/demo/DemoBox";
+import { Photo } from "@/types/photo";
 
 interface WrapperProps extends ImgProps {
   aspectRatio?:
@@ -30,6 +30,7 @@ export const ImgDemo = () => {
     setCount(count + 1);
   };
 
+  const images: Photo[] = PHOTOS_FOR_DEMO;
   return (
     <div>
       <ImgWrapper

@@ -4,14 +4,13 @@ import { Spinner } from "@/components/Spinner";
 
 export const SpinnerDemo = () => {
   return (
-    <DemoBox style={{ background: "#d1684e", borderColor: "white" }}>
+    <DemoBox style={{ background: "#dc5530", borderColor: "white" }}>
       <Spinner
         disableDotIndicator
         offset={0}
-        length={0.3}
-        radius={0.056}
+        length={0.4}
         color={[255, 255, 255, 1]}
-        multiplier={50000}
+        multiplier={20000}
       />
     </DemoBox>
   );

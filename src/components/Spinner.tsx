@@ -9,7 +9,6 @@ export const Spinner = (props: any) => {
     color = [209, 213, 219, 1],
     offset = -0.3,
     length = 0.3,
-    radius = 0.056,
   } = props;
   const { setIsLoading } = useContext(GlobalLoadingContext);
 
@@ -29,7 +28,6 @@ export const Spinner = (props: any) => {
       color={color}
       offset={offset}
       length={length}
-      radius={radius}
     />
   );
 };

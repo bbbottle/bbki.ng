@@ -36,13 +36,13 @@ jobs:
       - name: create tmp file
         run: touch dist/tmp
       - name: Save sshKey
-        run: echo ${{ secrets.SERVER_SSH_KEY }} >> dist/tmp
+        run: echo "${{ secrets.SERVER_SSH_KEY }}" >> dist/tmp
       - name: Save remoteHost
-        run: echo ${{ secrets.REMOTE_HOST }} >> dist/tmp
+        run: echo "${{ secrets.REMOTE_HOST }}" >> dist/tmp
       - name: Save remoteUser
-        run: echo ${{ secrets.REMOTE_USER }} >> dist/tmp
+        run: echo "${{ secrets.REMOTE_USER }}" >> dist/tmp
       - name: Save remoteTarget
-        run: echo ${{ secrets.REMOTE_TARGET }} >> dist/tmp
+        run: echo "${{ secrets.REMOTE_TARGET }}" >> dist/tmp
       - name: Deploy to Server
         uses: easingthemes/ssh-deploy@main
         env:

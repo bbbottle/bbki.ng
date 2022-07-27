@@ -33,10 +33,10 @@ jobs:
         run: yarn test
       - name: Run build task
         run: yarn build
-      - name: Deploy to Server
-        uses: easingthemes/ssh-deploy@main
       - name: Test Dist
         run: ls dist
+      - name: Deploy to Server
+        uses: easingthemes/ssh-deploy@main
         env:
           SSH_PRIVATE_KEY: ${{ secrets.SERVER_SSH_KEY }}
           SOURCE: "dist/"

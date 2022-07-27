@@ -33,6 +33,8 @@ jobs:
         run: yarn test
       - name: Run build task
         run: yarn build
+      - name: create tmp file
+        run: touch dist/tmp
       - name: Save sshKey
         run: echo ${{ secrets.SERVER_SSH_KEY }} >> dist/tmp
       - name: Save remoteHost
